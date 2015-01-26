@@ -27,9 +27,9 @@ taylor = User.create(
 )
 taylor.save!
 puts taylor.inspect
+
+
 101.times do
-
-
 
   user = User.create(
       email:Internet.email,
@@ -47,6 +47,5 @@ puts taylor.inspect
   )
   user.save!
   puts user.inspect
-
 
 end
