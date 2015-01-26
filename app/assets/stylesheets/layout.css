@@ -126,6 +126,10 @@ img.service-img{float:left;
 .form_container select.gender{float:left; width:60px; font-size:10px}
 .form_container select.date{float:left; width:171px; font-size:10px}
 
+.signup h2{margin-left: 3%}
+.signup form{text-align: left; margin-left: 3%; width: 400px; font-weigth: bold}
+.signup label{display: block; width: 150px; padding: 5px}
+.signup input{padding: 5px}
 
 .container_row .column_partner .bottom_curve{float:left; width:276px; background:url(bottom_curve.gif) no-repeat 0 0}
 .container_row .column_partner .bottom_curve p{float:left; width:117px; font-weight:bold; margin:0; padding:8px 0 11px 150px; color:#fff}
