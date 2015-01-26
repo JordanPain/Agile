@@ -4,7 +4,8 @@ Rails.application.routes.draw do
 
   get 'home', to: 'page#home'
 
-  get 'browse', to: 'users#index'
+  get 'browse', to: 'page#browse'
+  post 'browse', to: 'page#browse'
 
   get 'match', to: 'page#match'
 
@@ -18,7 +19,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :users
 
-  get 'users/edit', to: 'users#edit'
+  #get 'users/edit', to: 'users#edit'
 
 
 
