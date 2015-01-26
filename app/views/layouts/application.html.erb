@@ -23,7 +23,7 @@
           <li><%= link_to "HOME", home_path %></li>
           <li><%= link_to "BROWSE", browse_path %></li>
           <li><%= link_to "MATCH", match_path %></li>
-          <li><%= link_to "PROFILE", profile_path %></li>
+          <li><%= link_to "PROFILE", edit_user_registration_path %></li>
           <li><%= link_to "SUPPORT", support_path %></li>
           <li><%= link_to "CONTACT US", contact_us_path %></li>
         </ul>
@@ -31,24 +31,25 @@
 
       <% if user_signed_in? %>
           Logged in as <strong><%= current_user.email %></strong>.
-          <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
           <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
       <% else %>
           <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
           <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
       <% end %>
 
-      <div class="banner"><a href="#"><%= image_tag "banner.jpg" %></a></div>
-
-
       <% if notice %>
-          <p class="alert alert-success"><%= notice %></p>
+          <p class="alert alert-success"><%#= notice %></p>
       <% end %>
       <% if alert %>
           <p class="alert alert-danger"><%= alert %></p>
       <% end %>
 
-      <%= link_to "Logout", destroy_user_session_path %>
+      <div class="banner"><a href="#"><%= image_tag "banner.jpg" %></a></div>
+
+
+
+
+
 
       <%= yield %>
 
