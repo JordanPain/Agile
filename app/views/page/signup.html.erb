@@ -1,0 +1,32 @@
+<div>
+  <h2>Signup</h2>
+
+  <%= form_tag("/signup") do %>
+
+      <%= label_tag("email", "Email")%>
+      <%= email_field_tag("email")%><br />
+      <%= label_tag("password", "Password")%>
+      <%= password_field_tag("password")%><br/>
+      <%= label_tag("first_name", "First Name")%>
+      <%= text_field_tag("first_name")%><br/>
+      <%= label_tag("last_name", "Last Name")%>
+      <%= text_field_tag("last_name")%><br/>
+      <%= label_tag("city", "City")%>
+      <%= text_field_tag("city")%><br/>
+      <%= label_tag("state", "State")%>
+      <%= select_tag("state", options_for_select(['WA', 'WA'], ['OR', 'OR']))%><br/>
+      <%= label_tag("zip", "Zip")%>
+      <%= text_field_tag("zip")%><br/>
+      <%= text_area_tag("about", "Tell us about yourself", size: "25x10")%><br/>
+      <%= label_tag("gender", "Male")%>
+      <%= radio_button_tag("gender", "male")%><br/>
+      <%= label_tag("gender", "Female")%>
+      <%= radio_button_tag("gender", "female")%><br/>
+      <%= label_tag("birthdate", "Birthdate")%>
+      <%= date_field_tag("birthdate")%><br/>
+      <%= label_tag("user_name", "Username")%>
+      <%= text_field_tag("user_name")%><br/>
+      <%= submit_tag("Sign Up")%>
+
+  <% end %>
+</div>

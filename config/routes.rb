@@ -1,5 +1,15 @@
 Rails.application.routes.draw do
   resources :users
+  get "page/index"
+  get "page/about_us"
+  get "page/contact_us"
+  get "page/privacy"
+  get "page/projects"
+  get "page/services"
+  get "page/signup"
+  get "page/support"
+
+  root "page#index"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

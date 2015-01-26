@@ -1,14 +1,50 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-  <title>Agile</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+  <title>SoulMate</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <%= stylesheet_link_tag "layout" %>
 </head>
 <body>
+<div id="layout">
+  <div id="header">
+    <div id="logo"><%= image_tag "let_mingle.jpg" %></div>
+
+  </div>
+
+
+  <div id="body_container">
+
+    <div id="body_container_inner">
+
+
+      <div id="menu">
+        <ul>
+          <li><%= link_to("Home", root_path ) %></li>
+          <li><%= link_to("About Us", page_about_us_path )%></li>
+          <li><%= link_to("Contact Us", page_contact_us_path )%></li>
+          <li><%= link_to("Privacy", page_privacy_path )%></li>
+          <li><%= link_to("Projects", page_projects_path )%></li>
+          <li><%= link_to("Services", page_services_path )%></li>
+          <li><%= link_to("Support", page_support_path )%></li>
+        </ul>
+      </div>
+
+
+
+      <div class="banner"><a href="#"><%= image_tag "banner.jpg" %></a></div>
 
 <%= yield %>
 
+      <div id="footer">
+        <div class="footer_link">
+          <ul style="color:#FFf;">
+            Copyright (c) Sitename.com. All rights reserved. Design by Stylish <a href="http://www.stylishtemplate.com" style="text-decoration:underline; color:#FFF;">Website Templates</a>.
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 </body>
 </html>
