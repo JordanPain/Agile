@@ -15,8 +15,10 @@ ActiveRecord::Schema.define(version: 20150126020956) do
 
   create_table "users", force: true do |t|
     t.string   "password"
+    t.string   "userName"
     t.string   "firstName"
     t.string   "lastName"
+    t.date     "birthdate"
     t.string   "city"
     t.string   "state"
     t.integer  "zip"
@@ -25,8 +27,6 @@ ActiveRecord::Schema.define(version: 20150126020956) do
     t.boolean  "admin"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.date     "birthdate"
-    t.string   "userName"
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
