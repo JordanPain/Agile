@@ -1,6 +1,10 @@
-<h1>Editing user</h1>
+<h1><%= @user.firstName %></h1>
+
+
+<div class="usersForm">
 
 <%= render 'form' %>
 
 <%= link_to 'Show', @user %> |
 <%= link_to 'Back', users_path %>
+</div>
