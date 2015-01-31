@@ -1,10 +1,17 @@
 class PageController < ApplicationController
+
+
+  include SmartListing::Helper::ControllerExtensions
+  helper  SmartListing::Helper
+
   def home
   end
 
   def browse
+=begin
     page = params[:page]
     limit = 10
+
     whereString = ""
     whereArray = [whereString]
 
@@ -30,8 +37,17 @@ class PageController < ApplicationController
     if @byCity == true && (@male == true || @female == true)
       whereString << ")"
     end
+=end
 
-    @users = User.all.where(whereArray).page(page).per(limit)
+
+    @users = smart_listing_create(:users,
+                                  User.all,#.where(whereArray),
+                                  partial: "page/listing")
+                                  #, default_sort: {firstName: "asc"}
+
+
+    #@users = @users.page(page).per(limit)
+
   end
 
   def match
