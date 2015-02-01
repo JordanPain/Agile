@@ -55,6 +55,9 @@ class UsersController < ApplicationController
 
   before_action :redirect, only: [:index, :show]
 
+  include SmartListing::Helper::ControllerExtensions
+  helper  SmartListing::Helper
+
   def redirect
     #redirect_to home_path
   end
@@ -62,16 +65,10 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    page = params[:page]
-    limit = 10
-    if params[:byCity] == "yes"
-      @users = User.all
-    else
-      @users = User.page(page).per(limit)
 
-    end
+    @users = smart_listing_create(:users, User.all, partial: "users/listing") #, default_sort: {firstName: "asc"}
 
-    #
+
   end
 
   # GET /users/1
