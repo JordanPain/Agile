@@ -26,7 +26,9 @@
           <li><%= link_to "HOME", home_path %></li>
           <li><%= link_to "BROWSE", browse_path %></li>
           <li><%= link_to "MATCH", match_path %></li>
+          <% if current_user %>
           <li><%= link_to "PROFILE", user_path(current_user[:id]) %></li>
+          <% end %>
           <li><%= link_to "SUPPORT", support_path %></li>
           <li><%= link_to "CONTACT US", contact_us_path %></li>
         </ul>
