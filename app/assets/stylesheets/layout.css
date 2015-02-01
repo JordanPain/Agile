@@ -35,50 +35,50 @@ img{border:none}
 #body_container_inner{float:left; width:884px; margin:0; background:#fff}
 
 #menu{
-	float:left;
-	width:884px;
-	margin:0;
-	background:url(menu_bg.gif) no-repeat 0 0;
-	padding-top: 0;
-	padding-right: 0;
-	padding-bottom: 8px;
-	padding-left: 0;
+    float:left;
+    width:884px;
+    margin:0;
+    background:url(menu_bg.gif) no-repeat 0 0;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 8px;
+    padding-left: 0;
 }
 #menu ul{float:left; width:834px; margin:0; padding:0 0 0 50px; list-style:none}
 #menu li{float:left; width:auto; font:20px/22px Arial, Helvetica, sans-serif; color:#fff; background:url(menu_border.gif) no-repeat 0 4px; padding:7px 0 3px 0;}
 #menu li a{
-	width:auto;
-	color:#fff;
-	text-decoration:none;
-	display:block;
-	font-size: 13px;
-	text-transform: uppercase;
-	font-weight: bold;
-	padding-top: 0;
-	padding-right: 24px;
-	padding-bottom: 5px;
-	padding-left: 24px;
+    width:auto;
+    color:#fff;
+    text-decoration:none;
+    display:block;
+    font-size: 13px;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding-top: 0;
+    padding-right: 24px;
+    padding-bottom: 5px;
+    padding-left: 24px;
 }
 input.button {
-background:#414141 none repeat scroll 0 0;
-border:1px solid #000000;
-color:#FFFFFF;
-font-family:Arial,Helvetica,sans-serif;
-font-size:11px;
-font-size-adjust:none;
-font-stretch:normal;
-font-style:normal;
-font-variant:normal;
-font-weight:bold;
-line-height:normal;
-margin:0 5px 5px 0;
-padding:10px;
-text-decoration:none;
+    background:#414141 none repeat scroll 0 0;
+    border:1px solid #000000;
+    color:#FFFFFF;
+    font-family:Arial,Helvetica,sans-serif;
+    font-size:11px;
+    font-size-adjust:none;
+    font-stretch:normal;
+    font-style:normal;
+    font-variant:normal;
+    font-weight:bold;
+    line-height:normal;
+    margin:0 5px 5px 0;
+    padding:10px;
+    text-decoration:none;
 }
 img.service-img{float:left;
-				margin-right:10px;
-				margin-bottom:10px;
-				}
+    margin-right:10px;
+    margin-bottom:10px;
+}
 #menu li a:hover{color:#003465; width:auto; text-decoration:none;}
 #menu li a:hover.browse{color:#003465; width:auto; text-decoration:none; background:url(browse.gif) no-repeat 5px 0}
 #menu li a:hover.search{color:#003465; width:auto; text-decoration:none; background:url(search.gif) no-repeat 5px 0}
@@ -90,12 +90,7 @@ img.service-img{float:left;
 #menu li a.current{color:#003465; }
 #menu li.first{background:none; padding:7px 0 3px 0}
 
-.banner{float:left; width:884px;}
-.banner img{float:left; width:auto; padding:0 0 5px 10px}
 
-.lets_create_memories{
-	text-align: center;
-}
 
 /*.find_more{float:left; width:884px; background:url(../images/bg.gif) no-repeat 10px 0}*/
 .find_more p{float:left; width:844px; font:26px/28px "Gill Sans MT", Arial, Helvetica; color:#4c8698; padding:30px 0 30px 40px; margin:0}
@@ -127,11 +122,12 @@ img.service-img{float:left;
 .form_container select.date{float:left; width:171px; font-size:10px}
 
 
+
 .container_row .column_partner .bottom_curve{float:left; width:276px; background:url(bottom_curve.gif) no-repeat 0 0}
 .container_row .column_partner .bottom_curve p{float:left; width:117px; font-weight:bold; margin:0; padding:8px 0 11px 150px; color:#fff}
 .container_row .column_partner .bottom_curve p img{float:none; width:auto; vertical-align:middle; padding:0 5px 0 0}
 .container_row .column_partner .bottom_curve p a{color:#fff; text-decoration:none}
-.container_row .column_partner .bottom_curve p a:hover{color:#fff; text-decoration:underline} 
+.container_row .column_partner .bottom_curve p a:hover{color:#fff; text-decoration:underline}
 
 .container_row .column_profile{float:left; width:276px; padding:0 0 0 19px}
 .container_row .column_profile h2{float:left; width:203px; background:url(new_profile.gif) no-repeat 0 0; font-size:12px; line-height:14px; font-weight:bold; padding:17px 0 21px 74px; color:#fff; margin:0}
@@ -149,7 +145,7 @@ img.service-img{float:left;
 .container_row .column_profile .bottom_curve p{float:left; width:117px; font-weight:bold; margin:0; padding:8px 0 11px 150px; color:#fff}
 .container_row .column_profile .bottom_curve p img{float:none; width:auto; padding:0 5px 0 0}
 .container_row .column_profile .bottom_curve p a{color:#fff; text-decoration:none}
-.container_row .column_profile .bottom_curve p a:hover{color:#fff; text-decoration:underline} 
+.container_row .column_profile .bottom_curve p a:hover{color:#fff; text-decoration:underline}
 
 .container_row .column_photo{float:left; width:276px; padding:0 0 0 19px}
 .container_row .column_photo h2{float:left; width:203px; background:url(recently_photo.gif) no-repeat 0 0; font-size:12px; line-height:14px; font-weight:bold; padding:17px 0 21px 74px; color:#fff; margin:0}
@@ -176,7 +172,7 @@ img.service-img{float:left;
 /***** inner page css starts *****/
 
 #left_box{width:200px; float:left}
-#right_box{width:650px; floaT:left} 
+#right_box{width:650px; floaT:left}
 
 h1{font:24px/26px Georgia, "Times New Roman", Times, serif; color:#221E21; font-style:italic; padding:20px 0 22px 0; margin:0}
 h1 span{color:#221E21}
@@ -207,3 +203,74 @@ h3{font:bold 13px Arial, Helvetica, sans-serif;	color:#221E21; padding:0px 0px 5
 /* 	Inside Page Design  */
 textarea{width:322px}
 /***** inner page css ends *****/
+
+
+.banner{
+    float:left;
+    width:884px;
+    background:url(banner.jpg);
+    height: 210px;
+    background-repeat: no-repeat;
+
+}
+.banner img{float:left; width:auto; padding:0 0 5px 10px}
+
+.lets_create_memories{
+    text-align: center;
+}
+
+/* STYLING FOR PROFILE PAGE */
+
+.head{
+    height: 250px;
+    background: url("comming%20soon.jpg");
+}
+
+.profilePicture{
+    background: url("placeholder.jpg") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    bottom: 100px;
+    height: 250px;
+    position: relative;
+}
+.btn {
+    background: linear-gradient(to bottom, #3498db, #2980b9) repeat scroll 0 0 #3498db;
+    border-radius: 28px;
+    color: #ffffff;
+    font-size: 20px;
+    padding: 10px 20px;
+    position: relative;
+    text-decoration: none;
+    top: -50px;
+    width: 25%;
+}
+
+.btn:hover {
+    background: #3cb0fd;
+    background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+    text-decoration: none;
+}
+
+.usersName{
+    font-size: 25px;
+}
+.usersForm{
+
+    border: 1px solid #999;
+    border-radius: 10px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+    color: #09c;
+    font-family: 'Nunito', sans-serif;
+    font-size: 14px;
+    height: auto;
+    line-height: 24px;
+    margin: auto;
+    padding: 10px;
+    position: relative;
+    text-decoration: none;
+    width: 550px;
+
+}
