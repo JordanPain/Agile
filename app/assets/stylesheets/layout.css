@@ -1,7 +1,7 @@
-body{margin:0px; font:11px/13px Arial, Helvetica, sans-serif; color:#010000; background:#e7eef6 url(body_bg.jpg) repeat-x 0 0}
+body{margin:0px; font:11px/13px Arial, Helvetica, sans-serif; color:#010000; }
 img{border:none}
 .clear{clear:both}
-
+/*background:#e7eef6 url(body_bg.jpg) repeat-x 0 0 fixed*/
 #layout{width:950px; margin:0 auto;}
 #header{float:left; width:950px}
 #logo{float:left; width:300px}

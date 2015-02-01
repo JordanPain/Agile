@@ -28,24 +28,24 @@ taylor = User.create(
 taylor.save!
 puts taylor.inspect
 
-
+userNameNumber = 1
 101.times do
 
   user = User.create(
       email:Internet.email,
       password:"password",
-      userName:App.name,
+      userName:App.name + userNameNumber.to_s,
       firstName:Name.first_name,
       lastName:Name.last_name,
       birthdate:Time.at((rand * Time.now.to_i) - 18.years),
       city:Address.city,
       state:Address.state_abbr,
-      zip:Address.zip_code,
+      zip:99203,
       about:Lorem.sentence(6, false, 12),
       gender:["male", "female"].sample(),
       admin:false
   )
   user.save!
   puts user.inspect
-
+userNameNumber += 1
 end

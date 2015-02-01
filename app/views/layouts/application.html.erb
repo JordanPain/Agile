@@ -3,6 +3,9 @@
 <head>
   <title>SoulMate</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <%= stylesheet_link_tag "reset" %>
+  <%= stylesheet_link_tag "layout-tablet" %>
+  <%= stylesheet_link_tag "layout-phone" %>
   <%= stylesheet_link_tag "layout" %>
 </head>
 <body>
@@ -23,7 +26,7 @@
           <li><%= link_to "HOME", home_path %></li>
           <li><%= link_to "BROWSE", browse_path %></li>
           <li><%= link_to "MATCH", match_path %></li>
-          <li><%= link_to "PROFILE", edit_user_registration_path %></li>
+          <li><%= link_to "PROFILE", user_path(current_user[:id]) %></li>
           <li><%= link_to "SUPPORT", support_path %></li>
           <li><%= link_to "CONTACT US", contact_us_path %></li>
         </ul>
