@@ -10,7 +10,7 @@
 <div id="layout">
   <!-- Main header / Logo -->
   <div id="header">
-    <div id="logo"><%= image_tag "let_mingle.jpg" %></div>
+    <div id="logo"><%= link_to(image_tag ("let_mingle.jpg"), :url => home_path )%></div>
 
   </div>
   <!-- End Main header / Logo -->
@@ -55,9 +55,7 @@
       <!-- Main footer -->
       <div id="footer">
         <div class="footer_link">
-          <ul style="color:#FFf;">
-            Copyright (c) Sitename.com. All rights reserved. Design by Stylish <a href="http://www.stylishtemplate.com" style="text-decoration:underline; color:#FFF;">Website Templates</a>.
-          </ul>
+              <p>Copyright (c) Sitename.com. All rights reserved. Design by Stylish <a href="http://www.stylishtemplate.com" style="text-decoration:underline; color:#FFF;">Website Templates</a>.</p>
         </div>
       </div>
       <!-- End Main footer-->
