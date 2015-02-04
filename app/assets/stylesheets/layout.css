@@ -1,4 +1,4 @@
-body{margin:0px; font:11px/13px Arial, Helvetica, sans-serif; color:#010000; }
+body{margin:0px; font:11px/13px Arial, Helvetica, sans-serif; color:#010000; background:#e7eef6 url(body_bg.jpg) repeat-x 0 0; }
 img{border:none}
 .clear{clear:both}
 /*background:#e7eef6 url(body_bg.jpg) repeat-x 0 0 fixed*/
@@ -31,7 +31,7 @@ img{border:none}
 
 
 
-#body_container{float:left; width:884px; margin:0; padding:17px 33px 0 33px}
+/*#body_container{float:left; width:884px; margin:0; padding:17px 33px 0 33px}*/
 #body_container_inner{float:left; width:884px; margin:0; background:#fff}
 
 #menu{
@@ -223,7 +223,7 @@ textarea{width:322px}
 
 .head{
     height: 250px;
-    background: url("comming%20soon.jpg");
+    background: url("coming-soon.jpg");
 }
 
 .profilePicture{
@@ -273,4 +273,11 @@ textarea{width:322px}
     text-decoration: none;
     width: 550px;
 
+}
+ul.pagination li {
+    display: inline;
+}
+
+a {
+    color: blue;
 }
