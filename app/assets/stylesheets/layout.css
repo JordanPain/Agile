@@ -1,7 +1,7 @@
-body{margin:0px; font:11px/13px Arial, Helvetica, sans-serif; color:#010000; }
+
 img{border:none}
 .clear{clear:both}
-/*background:#e7eef6 url(body_bg.jpg) repeat-x 0 0 fixed*/
+body{margin:0px; font:11px/13px Arial, Helvetica, sans-serif; color:#010000; background:#e7eef6 url(body_bg.jpg) repeat-x 0 0}
 #layout{width:950px; margin:0 auto;}
 #header{float:left; width:950px}
 #logo{float:left; width:300px}
@@ -223,7 +223,7 @@ textarea{width:322px}
 
 .head{
     height: 250px;
-    background: url("comming%20soon.jpg");
+    background: url("coming-soon.jpg");
 }
 
 .profilePicture{
@@ -273,4 +273,36 @@ textarea{width:322px}
     text-decoration: none;
     width: 550px;
 
+}
+
+/* Home */
+
+.home_title{
+    text-align: center;
+}
+
+.carousel {
+    top: 10px;
+    width: 75%;
+}
+.item{
+    background: #333;
+    text-align: center;
+}
+.carousel{
+    margin-top: 50px;
+    left: 13%;
+}
+.bs-example{
+    margin: 20px;
+}
+.commitment{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    line-height: initial;
+    border: 2px solid #a1a1a1;
+    padding: 10px 40px;
+    background: #dddddd;
+    width: auto;
+    border-radius: 25px;
 }
