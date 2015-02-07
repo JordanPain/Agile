@@ -6,21 +6,18 @@
   <%= stylesheet_link_tag "layout" %>
 </head>
 <body>
-<!-- Layout container -->
 <div id="layout">
-  <!-- Main header / Logo -->
   <div id="header">
-    <div id="logo"><%= link_to(image_tag ("let_mingle.jpg"), :url => home_path )%></div>
+    <div id="logo"><%= image_tag "let_mingle.jpg" %></div>
 
   </div>
-  <!-- End Main header / Logo -->
 
-  <!-- Body container -->
+
   <div id="body_container">
 
     <div id="body_container_inner">
 
-      <!-- Main navigation -->
+
       <div id="menu">
         <ul>
           <li><%= link_to "HOME", home_path %></li>
@@ -31,9 +28,7 @@
           <li><%= link_to "CONTACT US", contact_us_path %></li>
         </ul>
       </div>
-      <!-- End Main navigation -->
 
-      <!-- User sign in -->
       <% if user_signed_in? %>
           Logged in as <strong><%= current_user.email %></strong>.
           <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
@@ -48,24 +43,30 @@
       <% if alert %>
           <p class="alert alert-danger"><%= alert %></p>
       <% end %>
-      <!-- End user sign in -->
+
+      <div class="banner"><a href="#"><%= image_tag "banner.jpg" %></a></div>
+
+
+
+
+
 
       <%= yield %>
 
-      <!-- Main footer -->
+
+
+
+
+
       <div id="footer">
         <div class="footer_link">
-              <p>Copyright (c) Sitename.com. All rights reserved. Design by Stylish <a href="http://www.stylishtemplate.com" style="text-decoration:underline; color:#FFF;">Website Templates</a>.</p>
+          <ul style="color:#FFf;">
+            Copyright (c) Sitename.com. All rights reserved. Design by Stylish <a href="http://www.stylishtemplate.com" style="text-decoration:underline; color:#FFF;">Website Templates</a>.
+          </ul>
         </div>
       </div>
-      <!-- End Main footer-->
-
     </div>
-    <!-- End body inner container -->
   </div>
-  <!-- End body container -->
 </div>
-<!-- End layout container -->
-
 </body>
 </html>

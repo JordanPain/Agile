@@ -149,15 +149,18 @@ img {
     width: 884px;
     margin: 0;
     /*background:url(menu_bg.gif) no-repeat 0 0;*/
-    background-color: #288cbd;
-    color: #fff;
+    background-color: #2a86b9;
+    /*padding-top: 0;*/
+    /*padding-right: 0;*/
+    /*padding-bottom: 8px;*/
+    /*padding-left: 0;*/
 }
 
 #menu ul {
     float: left;
     width: 834px;
     margin: 0;
-    padding: 0 0 0 50px;
+    /*padding: 0 0 0 50px;*/
     list-style: none
 }
 
@@ -166,9 +169,12 @@ img {
     width: auto;
     font: 20px/22px Arial, Helvetica, sans-serif;
     color: #fff;
-    /*background: url(menu_border.gif) no-repeat 0 4px;*/
-
+    /*background: url(menu_border.gif) no-repeat 0 10px;*/
 }
+/*#menu li:hover{*/
+  /*background-color: #fff;*/
+    /*color:#2a86b9;*/
+/*}*/
 
 #menu li a {
     width: auto;
@@ -178,7 +184,8 @@ img {
     font-size: 13px;
     text-transform: uppercase;
     font-weight: bold;
-    padding: 10px 24px;
+    padding: 10px 24px 15px 24px;
+
 }
 
 input.button {
@@ -204,12 +211,8 @@ img.service-img {
     margin-bottom: 10px;
 }
 
-#menu li:hover{
-
-}
-
 #menu li a:hover {
-    color: #4c5ea6;
+    color: #2a86b9;
     background-color: #fff;
     width: auto;
     text-decoration: none;
@@ -651,21 +654,17 @@ img.service-img {
     float: left;
     width: 884px;
     /*background: url(footer_bg.gif) repeat-x 0 0;*/
-    background-color:#288cbd;
-    margin-top: 20px;
-    padding: 10px 0;
-}
-#footer p{
-    text-align: center;
-    color:#fff;
+    background-color: #2a86b9;
+    margin-top: 20px
 }
 
-/*#footer .footer_link {
+#footer .footer_link {
+    float: left;
     width: 884px;
-    padding: 13px 0 0 0;
-}*/
+    padding: 15px 0 0 0;
+}
 
-/*#footer .footer_link ul {
+#footer .footer_link ul {
     width: 884px;
     text-align: center;
     list-style: none;
@@ -676,7 +675,7 @@ img.service-img {
 #footer .footer_link li {
     width: 884px;
     color: #d4dee8;
-    *//*background: url(footer_menu_border.gif) no-repeat 0 2px;*//*
+    background: url(footer_menu_border.gif) no-repeat 0 2px;
     display: inline;
     padding: 0 12px 0 12px
 }
@@ -699,7 +698,7 @@ img.service-img {
 #footer .footer_link li a.current {
     color: #d4dee8;
     text-decoration: underline
-}*/
+}
 
 /***** inner page css starts *****/
 
