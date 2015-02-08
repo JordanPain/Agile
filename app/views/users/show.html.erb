@@ -65,7 +65,9 @@
   <strong>Admin:</strong>
   <%= @user.admin %>
 </p>
-
+  <br/>
+  <%= link_to 'Take Survey to get matched', new_survey_path %>
+  <br/>
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
 </div>

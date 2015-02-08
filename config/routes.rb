@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :surveys
+
   root to: 'page#home'
 
   get 'home', to: 'page#home'

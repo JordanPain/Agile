@@ -1,7 +1,7 @@
-body{margin:0px; font:11px/13px Arial, Helvetica, sans-serif; color:#010000; }
+body{margin:0px; font:11px/13px Arial, Helvetica, sans-serif; color:#010000; background:#e7eef6 url(body_bg.jpg) repeat-x 0 0; }
 img{border:none}
 .clear{clear:both}
-/*background:#e7eef6 url(body_bg.jpg) repeat-x 0 0 fixed*/
+
 #layout{width:950px; margin:0 auto;}
 #header{float:left; width:950px}
 #logo{float:left; width:300px}
@@ -31,8 +31,8 @@ img{border:none}
 
 
 
-#body_container{float:left; width:884px; margin:0; padding:17px 33px 0 33px}
-#body_container_inner{float:left; width:884px; margin:0; background:#fff}
+#body_container{float:left; width:884px; margin:0; padding:17px 33px 0 33px;}
+#body_container_inner{float:left; width:884px; margin:0; background:white; }
 
 #menu{
     float:left;
@@ -163,7 +163,7 @@ img.service-img{float:left;
 #footer{float:left; width:884px; background:url(footer_bg.gif) repeat-x 0 0; margin-top:20px}
 #footer .footer_link{float:left; width:884px; padding:13px 0 0 0;}
 #footer .footer_link ul{width:884px; text-align:center; list-style:none; margin:0; padding:0 0 20px 0}
-#footer .footer_link li{width:884px;color:#d4dee8; background:url(footer_menu_border.gif) no-repeat 0 2px; display:inline; padding:0 12px 0 12px}
+#footer .footer_link li{width:884px;color:#d4dee8; display:inline; padding:0 12px 0 12px}
 #footer .footer_link li.first{background:none; padding:0 12px 0 12px}
 #footer .footer_link li a{color:#d4dee8; text-decoration:none}
 #footer .footer_link li a:hover{color:#d4dee8; text-decoration:underline}
@@ -223,7 +223,7 @@ textarea{width:322px}
 
 .head{
     height: 250px;
-    background: url("comming%20soon.jpg");
+    background: url("coming-soon.jpg");
 }
 
 .profilePicture{
@@ -273,4 +273,11 @@ textarea{width:322px}
     text-decoration: none;
     width: 550px;
 
+}
+ul.pagination li {
+    display: inline;
+}
+
+a {
+    color: blue;
 }

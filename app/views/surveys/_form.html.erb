@@ -1,0 +1,191 @@
+<%= form_for(@survey) do |f| %>
+  <% if @survey.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@survey.errors.count, "error") %> prohibited this survey from being saved:</h2>
+
+      <ul>
+      <% @survey.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+    <%= f.hidden_field :user_id %>
+    <div class="field">
+
+      <h3>Question 1: Are you interested in someone who has kids?</h3>
+        <%= f.label :question_one, "Yes" %>
+        <%= f.radio_button :question_one, "Yes" %>
+      <%= f.label :question_one, "No" %>
+      <%= f.radio_button :question_one, "No" %>
+  </div>
+  <div class="field">
+    <h3>Question 2: Do you mind somebody who smokes?</h3>
+    <%= f.label :question_two, "Yes" %>
+    <%= f.radio_button :question_two, "Yes" %>
+    <%= f.label :question_two, "No" %>
+    <%= f.radio_button :question_two, "No" %>
+  </div>
+  <div class="field">
+    <h3>Question 3: Do you like pets?</h3>
+    <%= f.label :question_three, "Yes" %>
+    <%= f.radio_button :question_three, "Yes" %>
+    <%= f.label :question_three, "No" %>
+    <%= f.radio_button :question_three, "No" %>
+  </div>
+  <div class="field">
+    <h3>Question 4: What kind of pets do you have?</h3>
+    <%= f.label :question_four, "Dog" %>
+    <%= f.radio_button :question_four, "Dog" %>
+    <%= f.label :question_four, "Cat" %>
+    <%= f.radio_button :question_four, "Cat" %>
+    <%= f.label :question_four, "Both" %>
+    <%= f.radio_button :question_four, "Both" %>
+    <%= f.label :question_four, "Other" %>
+    <%= f.radio_button :question_four, "Other" %>
+    <%= f.label :question_four, "None" %>
+    <%= f.radio_button :question_four, "None" %>
+  </div>
+  <div class="field">
+    <h3>Question 5: Do you drink alcohol?</h3>
+    <%= f.label :question_five, "Yes" %>
+    <%= f.radio_button :question_five, "Yes" %>
+    <%= f.label :question_five, "No" %>
+    <%= f.radio_button :question_five, "No" %>
+  </div>
+  <div class="field">
+    <h3>Question 6: What do you do for fun?</h3>
+    <%= f.label :question_six, "Read" %>
+    <%= f.radio_button :question_six, "Read" %>
+    <%= f.label :question_six, "Movies" %>
+    <%= f.radio_button :question_six, "Movies" %>
+    <%= f.label :question_six, "Bar Hop" %>
+    <%= f.radio_button :question_six, "Bar Hop" %>
+    <%= f.label :question_six, "Party" %>
+    <%= f.radio_button :question_six, "Party" %>
+    <%= f.label :question_six, "Video Games" %>
+    <%= f.radio_button :question_six, "Video Games" %>
+  </div>
+  <div class="field">
+    <h3>Question 7: Do you enjoy playing/watching sports?</h3>
+    <%= f.label :question_seven, "Yes" %>
+    <%= f.radio_button :question_seven, "Yes" %>
+    <%= f.label :question_seven, "No" %>
+    <%= f.radio_button :question_seven, "No" %>
+  </div>
+  <div class="field">
+    <h3>Question 8: Who are you interested in?</h3>
+    <%= f.label :question_eight, "Guys" %>
+    <%= f.radio_button :question_eight, "Guys" %>
+    <%= f.label :question_eight, "Girls" %>
+    <%= f.radio_button :question_eight, "Girls" %>
+    <%= f.label :question_eight, "Both" %>
+    <%= f.radio_button :question_eight, "Both" %>
+  </div>
+  <div class="field">
+    <h3>Question 9: Why type of relationship are you looking for?</h3>
+    <%= f.label :question_nine, "Short Term" %>
+    <%= f.radio_button :question_nine, "Short Term" %>
+    <%= f.label :question_nine, "Long Term" %>
+    <%= f.radio_button :question_nine, "Long Term" %>
+  </div>
+  <div class="field">
+    <h3>Question 10: Do you perfer someone who can cook?</h3>
+    <%= f.label :question_ten, "Yes" %>
+    <%= f.radio_button :question_ten, "Yes" %>
+    <%= f.label :question_ten, "Doesn't matter" %>
+    <%= f.radio_button :question_ten, "Doesn't matter" %>
+
+  </div>
+  <div class="field">
+    <h3>Question 11: Can you cook?</h3>
+    <%= f.label :question_eleven, "Yes" %>
+    <%= f.radio_button :question_eleven, "Yes" %>
+    <%= f.label :question_eleven, "No" %>
+    <%= f.radio_button :question_eleven, "No" %>
+
+  </div>
+  <div class="field">
+    <h3>Question 12: Can you drive?</h3>
+    <%= f.label :question_twelve, "Yes" %>
+    <%= f.radio_button :question_twelve, "Yes" %>
+    <%= f.label :question_twelve, "No" %>
+    <%= f.radio_button :question_twelve, "No" %>
+  </div>
+  <div class="field">
+    <h3>Question 13: Are you interested in somebody who can drive?</h3>
+    <%= f.label :question_thirteen, "Yes" %>
+    <%= f.radio_button :question_thirteen, "Yes" %>
+    <%= f.label :question_thirteen, "No" %>
+    <%= f.radio_button :question_thirteen, "No" %>
+    <%= f.label :question_thirteen, "Doesn't matter" %>
+    <%= f.radio_button :question_thirteen, "Doesn't matter" %>
+  </div>
+  <div class="field">
+    <h3>Question 14: Do you have kids?</h3>
+    <%= f.label :question_fourteen, "1" %>
+    <%= f.radio_button :question_fourteen, "1" %>
+    <%= f.label :question_fourteen, "2" %>
+    <%= f.radio_button :question_fourteen, "2" %>
+    <%= f.label :question_fourteen, "3 or more" %>
+    <%= f.radio_button :question_fourteen, "3 or more" %>
+    <%= f.label :question_fourteen, "No" %>
+    <%= f.radio_button :question_fourteen, "No" %>
+  </div>
+  <div class="field">
+    <h3>Question 15: Do you mind guns?</h3>
+    <%= f.label :question_fifthteen, "Yes" %>
+    <%= f.radio_button :question_fifthteen, "Yes" %>
+    <%= f.label :question_fifthteen, "No" %>
+    <%= f.radio_button :question_fifthteen, "No" %>
+  </div>
+  <div class="field">
+    <h3>Question 16: Do you own a gun?</h3>
+    <%= f.label :question_sixteen, "Yes" %>
+    <%= f.radio_button :question_sixteen, "Yes" %>
+    <%= f.label :question_sixteen, "No" %>
+    <%= f.radio_button :question_sixteen, "No" %>
+  </div>
+  <div class="field">
+    <h3>Question 17: Are you a vegetarian?</h3>
+    <%= f.label :question_seventeen, "Yes" %>
+    <%= f.radio_button :question_seventeen, "Yes" %>
+    <%= f.label :question_seventeen, "No" %>
+    <%= f.radio_button :question_seventeen, "No" %>
+  </div>
+  <div class="field">
+    <h3>Question 18: Do you mind somebody who doesn't eat meat?</h3>
+    <%= f.label :question_eighteen, "Yes" %>
+    <%= f.radio_button :question_eighteen, "Yes" %>
+    <%= f.label :question_eighteen, "No" %>
+    <%= f.radio_button :question_eighteen, "No" %>
+    <%= f.label :question_eighteen, "Doesn't matter" %>
+    <%= f.radio_button :question_eighteen, "Doesn't matter" %>
+  </div>
+  <div class="field">
+    <h3>Question 19: Age Preference?</h3>
+    <%= f.label :question_nineteen, "18-25" %>
+    <%= f.radio_button :question_nineteen, "18-25" %>
+    <%= f.label :question_nineteen, "25-40" %>
+    <%= f.radio_button :question_nineteen, "25-40" %>
+    <%= f.label :question_nineteen, "40-60" %>
+    <%= f.radio_button :question_nineteen, "40-60" %>
+    <%= f.label :question_nineteen, "60+" %>
+    <%= f.radio_button :question_nineteen, "60+" %>
+    <%= f.label :question_nineteen, "None" %>
+    <%= f.radio_button :question_nineteen, "None" %>
+  </div>
+  <div class="field">
+    <h3>Question 20: Are you interested in somebody who drinks alcohol?</h3>
+    <%= f.label :question_twenty, "Yes" %>
+    <%= f.radio_button :question_twenty, "Yes" %>
+    <%= f.label :question_twenty, "No" %>
+    <%= f.radio_button :question_twenty, "No" %>
+    <%= f.label :question_twenty, "Doesn't matter" %>
+    <%= f.radio_button :question_twenty, "Doesn't matter" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
