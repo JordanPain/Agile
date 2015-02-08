@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get 'support', to: 'page#support'
 
   get 'contact_us', to: 'page#contact_us'
+  post '/contact_us', to: 'page#contact_us'
 
 
   devise_for :users

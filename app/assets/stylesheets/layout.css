@@ -16,6 +16,7 @@ img {
 #layout {
     width: 950px;
     margin: 0 auto;
+    padding: 5px;
 }
 
 #header {
@@ -158,10 +159,11 @@ img {
 
 #menu ul {
     float: left;
-    width: 834px;
-    margin: 0;
+    /*width: 834px;*/
+    margin: 0 auto;
     /*padding: 0 0 0 50px;*/
-    list-style: none
+    list-style: none;
+    text-align: center;
 }
 
 #menu li {
@@ -184,7 +186,7 @@ img {
     font-size: 13px;
     text-transform: uppercase;
     font-weight: bold;
-    padding: 10px 24px 15px 24px;
+    padding: 10px 24px;
 
 }
 
@@ -835,3 +837,11 @@ textarea {
 }
 
 /***** inner page css ends *****/
+
+/* contact page */
+.contact-heading{
+    border-bottom: 1px solid #d8d6ba;
+    margin-bottom: 20px;
+}
+/* End contact page */
+
