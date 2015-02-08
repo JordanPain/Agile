@@ -1,76 +1,49 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
 <head>
-  <title>SoulMate</title>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <%= stylesheet_link_tag "reset" %>
-  <%= stylesheet_link_tag "layout-tablet" %>
-  <%= stylesheet_link_tag "layout-phone" %>
+  <title>Soul Mates</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <%= stylesheet_link_tag "layout" %>
+
+  <%= csrf_meta_tags %>
 </head>
-<body>
-<div id="layout">
-  <div id="header">
-    <div id="logo"><%= image_tag "let_mingle.jpg" %></div>
 
-  </div>
-
-
-  <div id="body_container">
-
-    <div id="body_container_inner">
-
-
-      <div id="menu">
-        <ul>
-          <li><%= link_to "HOME", home_path %></li>
-          <li><%= link_to "BROWSE", browse_path %></li>
-          <li><%= link_to "MATCH", match_path %></li>
-          <% if current_user %>
-          <li><%= link_to "PROFILE", user_path(current_user[:id]) %></li>
-          <% end %>
-          <li><%= link_to "SUPPORT", support_path %></li>
-          <li><%= link_to "CONTACT US", contact_us_path %></li>
-        </ul>
-      </div>
-
-      <% if user_signed_in? %>
-          Logged in as <strong><%= current_user.email %></strong>.
-          <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-      <% else %>
-          <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-          <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
-      <% end %>
-
-      <% if notice %>
-          <p class="alert alert-success"><%#= notice %></p>
-      <% end %>
-      <% if alert %>
-          <p class="alert alert-danger"><%= alert %></p>
-      <% end %>
-
-
-
-
-
-
-
-      <%= yield %>
-
-
-
-
-
-
-      <div id="footer">
-        <div class="footer_link">
-          <ul style="color:#FFf;">
-            Copyright (c) Sitename.com. All rights reserved. Design by Stylish <a href="http://www.stylishtemplate.com" style="text-decoration:underline; color:#FFF;">Website Templates</a>.
-          </ul>
-        </div>
-      </div>
+<body id="body_container_inner">
+<!--<div id="header">-->
+<!--<div id="logo"><a href="#"><%= image_tag "logo_1.gif" %></a></div>-->
+<!--</div>-->
+<!-- Fixed navbar -->
+<nav id="menu" class="navbar navbar-default navbar-fixed-bottom">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Soul Mates</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li><%= link_to "HOME", home_path %></li>
+        <li><%= link_to "BROWSE", browse_path %></li>
+        <li><%= link_to "MATCH", match_path %></li>
+        <% if current_user %>
+            <li><%= link_to "PROFILE", user_path(current_user[:id]) %></li>
+        <% end %>
+        <li><%= link_to "SUPPORT", support_path %></li>
+        <li><%= link_to "CONTACT US", contact_us_path %></li>
+      </ul>
     </div>
   </div>
+</nav>
+
+<%= yield %>
+<div id="footer">
+  FOOTER TEXT
 </div>
 </body>
+
 </html>

@@ -1,64 +1,96 @@
-<div id="layout">
+<div id="layout" class="container-fluid"><!--BEGINNING OF CONTAINER-->
+
   <div id="header">
     <div id="logo"><a href="#"><%= image_tag "logo_1.gif" %></a></div>
-
   </div>
-  <div id="body_container">
-    <div id="body_container_inner">
+  <div class="row"><!--BODY/CONTENT DIV-->
+
+    <div class="find_more "> <!-- FIND MORE DIV -->
+      <p>Find New Partners, Experience Romance &amp; Find Love!<br/>
+        <span class="col-xs-4 col-sm-9 col-lg-8"><a href="#">Register Now</a> and take a sneak peak at over 9 million Singles.</span></p>
+    </div>
+    <!-- FIND MORE DIV END -->
 
 
-      <div class="find_more">
-        <p>Find New Partners, Experience Romance &amp; Find Love!<br />
-          <span><a href="#">Register Now</a> and take a sneak peak at over 9 million Singles.</span></p>
+    <div class="welcomezone col-xs-4 col-sm-9  col-md-8"> <!-- CONTENT DIV -->
+
+
+      <div class="blueboldheading"> <!-- BLUE BOLD HEADING DIV -->
+        <h1>Company <span>Information</span></h1>
       </div>
-      <div class="container_row">
-        <div class="welcomezone">
-          <div class="blueboldheading">
-            <h1>Company <span>Information</span></h1>
+      <!-- BLUE BOLD HEADING END DIV -->
+
+
+      <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin sed odio et ante adipiscing lobortis. Quisque
+        eleifend, arcu a dictum varius, risus neque venenatis arcu, a semper massa mi eget ipsum.
+        <!--<p><img src="/assets/photo-about.jpg" alt="" width="226" height="150" class="project-img_1"/>Lorem ipsum dolor-->
+        sit amet, consectetuer adipiscing elit. Proin sed odio et ante adipiscing lobortis. Quisqueeleifend, arcu a
+        dictum varius, risus neque venenatis arcu, a semper massa mi eget ipsum. Proin sed odio et ante adipiscing
+        lobortis. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin sed odio et ante adipiscing
+        lobortis. Quisque eleifend, arcu a dictum varius, risus neque venenatis arcu, a semper massa mi eget ipsum.
+        Proin sed odio et ante adipiscing lobortis. </p>
+      <br/>
+
+      <h2>Our Values</h2>
+
+      <p>Quisque eleifend, arcu a dictum varius, risus neque venenatis arcu, a semper massa mi eget ipsum. Proin sed
+        odio et ante adipiscing lobortis. Proin sed odio et ante adipiscing lobortis. Lorem ipsum dolor sit amet,
+        consectetuer adipiscing elit. Proin sed odio et ante adipiscing lobortis.</p>
+
+      <div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+    <div class="row2 col-xs-4 col-sm-9 col-lg-8">
+      <div class="box1">
+        <div>
+          <h2>Customer Service</h2>
+
+          <div> <%= image_tag "ico-med-1.png" %> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin sed
+            odio et ante adipiscing lobortis. Quisque eleifend, arcu a dictum varius, <a href="#">Read More...</a>
           </div>
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin sed odio et ante adipiscing lobortis. Quisque eleifend, arcu a dictum varius, risus neque venenatis arcu, a semper massa mi eget ipsum.
-          <p><img src="/assets/photo-about.jpg" alt="" width="226" height="150" class="project-img_1" />Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin sed odio et ante adipiscing lobortis. Quisqueeleifend, arcu a dictum varius, risus neque venenatis arcu, a semper massa mi eget ipsum. Proin sed odio et ante adipiscing lobortis. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin sed odio et ante adipiscing lobortis. Quisque eleifend, arcu a dictum varius, risus neque venenatis arcu, a semper massa mi eget ipsum. Proin sed odio et ante adipiscing lobortis. </p>
-          <br />
-          <h2>Our Values</h2>
-          <p>Quisque eleifend, arcu a dictum varius, risus neque venenatis arcu, a semper massa mi eget ipsum. Proin sed odio et ante adipiscing lobortis. Proin sed odio et ante adipiscing lobortis. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin sed odio et ante adipiscing lobortis.</p>
-          <div class="clear"></div>
+          <br/>
+          <br/>
         </div>
-        <div class="clear"></div>
-        <div class="row2">
-          <div class="box1">
-            <div>
-              <h2>Customer Service</h2>
-              <div> <%= image_tag "ico-med-1.png" %> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin sed odio et ante adipiscing lobortis. Quisque eleifend, arcu a dictum varius, <a href="#">Read More...</a> </div>
-              <br />
-              <br />
-            </div>
-            <div><br />
-              <h2>Global Reach</h2>
-              <br />
-              <div> <%= image_tag "ico-med-3.png" %> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin sed odio et ante adipiscing lobortis. Quisque eleifend, arcu a dictum varius, <a href="#">Read More...</a></div>
-            </div>
+        <div><br/>
+
+          <h2>Global Reach</h2>
+          <br/>
+
+          <div> <%= image_tag "ico-med-3.png" %> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin sed
+            odio et ante adipiscing lobortis. Quisque eleifend, arcu a dictum varius, <a href="#">Read More...</a>
           </div>
-          <div class="box2">
-            <div>
-              <h2>Award Winning</h2>
-              <div> <%= image_tag "ico-med-2.png" %> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin sed odio et ante adipiscing lobortis. Quisque eleifend, arcu a dictum varius, <a href="#">Read More...</a></div>
-              <br />
-              <br />
-            </div>
-            <div>
-              <h2>Availability</h2>
-              <div><br />
-                <%= image_tag "ico-med-4.png" %> Lorem ipsum dolor sit amet, consd ectetuer adipiscing elit. Proin sed odio et ante adipiscing lobortis. Quisque eleifend, arcu a dictum varius, <a href="#">Read More...</a> </div>
-            </div>
-          </div>
-          <div class="clear"></div>
-        </div>
-        <div class="clear"></div>
-        <div class="welcomezone">
-          <h2>Our Commitment</h2>
-          <p>Quisque eleifend, arcu a dictum vaadrius, risus neque venenatis arcu, a semper massa mi eget ipsum. Proin sed odio et ante adipiscing lobortis. Proin sed odio et ante adipiscing lobortis. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin sed odio et ante adipiscing lobortis.</p>
         </div>
       </div>
+      <div class="box2">
+        <div>
+          <h2>Award Winning</h2>
+
+          <div> <%= image_tag "ico-med-2.png" %> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin sed
+            odio et ante adipiscing lobortis. Quisque eleifend, arcu a dictum varius, <a href="#">Read More...</a>
+          </div>
+          <br/>
+          <br/>
+        </div>
+        <div>
+          <h2>Availability</h2>
+
+          <div><br/>
+            <%= image_tag "ico-med-4.png" %> Lorem ipsum dolor sit amet, consd ectetuer adipiscing elit. Proin sed
+            odio et ante adipiscing lobortis. Quisque eleifend, arcu a dictum varius, <a href="#">Read More...</a>
+          </div>
+        </div>
+      </div>
+      <div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+    <div class="welcomezone col-xs-3 col-sm-9 col-lg-8">
+      <h2>Our Commitment</h2>
+
+      <p>Quisque eleifend, arcu a dictum vaadrius, risus neque venenatis arcu, a semper massa mi eget ipsum. Proin
+        sed odio et ante adipiscing lobortis. Proin sed odio et ante adipiscing lobortis. Lorem ipsum dolor sit
+        amet, consectetuer adipiscing elit. Proin sed odio et ante adipiscing lobortis.</p>
     </div>
   </div>
-</div>
+
+
+</div> <!--END OF CONTAINER-->
