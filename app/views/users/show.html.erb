@@ -1,7 +1,16 @@
 
 <header class="head"></header>
 
-<div class="profilePicture"></div>
+<div class="profilePicture"><%= image_tag(current_user.avatar.url, height: '250', width: '250') %></div>
+
+<%= form_for @user, :html => {:multipart => true} do |f| %>
+    <p>
+      <%= f.file_field :avatar %>
+    </p>
+    <p>
+      <%= f.submit %>
+    </p>
+<% end %>
 
 <div class="usersForm">
 <div class="usersName"></div>
@@ -64,6 +73,11 @@
 <p>
   <strong>Admin:</strong>
   <%= @user.admin %>
+</p>
+
+<p>
+  <strong>Avatar:</strong>
+  <%= @user.avatar.to_s %>
 </p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
