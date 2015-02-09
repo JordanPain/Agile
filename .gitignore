@@ -77,3 +77,5 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+/config/local_env.yml

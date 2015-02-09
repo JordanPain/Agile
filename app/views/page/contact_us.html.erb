@@ -1,2 +1,145 @@
-<h1>Page#contact_us</h1>
-<p>Find me in app/views/page/contact_us.html.erb</p>
+<div class="welcomezone">
+  <div class="contact-heading">
+    <div class="blueboldheading">
+      <h1>Contact Us</h1>
+    </div>
+
+    <div>
+      <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin sed odio et ante adipiscing lobortis. Quisque
+        eleifend, arcu a dictum varius, risus neque venenatis arcu, a semper massa mi eget ipsum.</p>
+    </div>
+
+    <div>
+      <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin sed odio et ante adipiscing lobortis. Quisque
+        eleifend, arcu a dictum varius, risus neque venenatis arcu, a semper massa mi eget ipsum.</p>
+    </div>
+  </div>
+
+
+  <%= form_tag('/contact_us', class: "contactForm") do %>
+      <span>All fields with a  * are required</span>
+
+      <div class="contactFormContent">
+        <!--begin personal section-->
+        <%= label_tag("first name", "*First name:") %>
+        <%= text_field_tag("first_name", @first_name, placeholder: "First Name", maxlength: 25) %>
+        <br>
+
+        <%= label_tag("last name", "*Last name:") %>
+        <%= text_field_tag("last_name", @last_name, placeholder: "Last name") %>
+        <br>
+
+        <%= label_tag("email", "*Email:") %>
+        <%= email_field_tag("email", @email, placeholder: "Email") %>
+        <br>
+
+        <%= label_tag("phone", "Phone:") %>
+        <%= telephone_field_tag("phone", @phone, placeholder: "xxx-xxx-xxxx") %>
+        <br>
+
+        <div class="preferredContactArea">
+          <h3>Preferred Contact Method</h3>
+
+          <div class="radioButtons">
+            <%= radio_button_tag("contact_me", "email", @contact_me == "email") %>
+            <%= label_tag("contact_email", "Email", class: "radioHeading") %>
+
+          </div>
+
+          <div class="radioButtons">
+            <%= radio_button_tag("contact_me", "phone", @contact_me == "phone") %>
+            <%= label_tag("contact_phone", "Phone", class: "radioHeading") %>
+
+          </div>
+        </div>
+        <!--end preferred contact method-->
+
+        <!--reason for contact-->
+        <div class="contact-reason">
+          <span>Reason for contact?</span>
+          <br>
+          <%= select_tag("contact_reason", options_for_select(@contact_reason, @reason_selected)) %>
+        </div>
+
+        <div class="contact-question">
+          <span>Enter your question:</span>
+          <br>
+          <%= text_area_tag("question", @question, class: "contactus-textarea") %>
+        </div>
+        <br>
+
+        <div class="contactFormCheckBox">
+          <%= check_box_tag("subscribe_newsletter", value = "1", @subscribe_newsletter) %>
+          <!--<input type="checkbox" name="subscribe_newsletter" value="1" id="contactSubscribe"/>-->
+          <%= label_tag("newsletter", "Subscribe to newsletter?") %>
+        </div>
+        <br>
+
+        <div class="contactFormCheckBox">
+          <!-- <input type="checkbox" name="newProductNotify" value="1" id="newProductNotify"/>-->
+          <%= check_box_tag("notify_products", value = "1", @notify_products) %>
+          <%= label_tag("new_products", "Notify me of new products") %>
+        </div>
+        <br>
+
+        <%= submit_tag("Submit", class: "buttons") %>
+      </div>
+  <% end %>
+
+  <div class="formPost">
+    <% if flash[:notice] %>
+        <div class="notice">
+          <%= flash[:notice] %>
+        </div>
+    <% end %>
+
+    <% if @commit %>
+        <div class="user-info">
+          <span>First name: <%= @first_name %></span>
+          <span>Last name: <%= @last_name %></span>
+          <span>Email: <%= @email %></span>
+          <span>Phone: <%= @phone %></span>
+          <span>Contact Me: <%= @contact_me %></span>
+          <span>Reason for contact: <%= @reason_selected %></span>
+          <span>Question: <%= @question %></span>
+          <span>Subscribe to newsletter: <%= @subscribe_newsletter %> </span>
+          <span>Notify me of new products: <%= @notify_products %></span>
+        </div>
+    <% end %>
+  </div>
+
+  <div>
+
+    <div>
+      <br>
+
+      <h2>Location</h2>
+      <img class="project-img" width="226" vspace="15" hspace="15" height="150" alt="" src="assets/photo-contact.jpg"></img>
+
+
+      <address>
+        Soul Mate<br>
+        3941 Really Long Street<br>
+        Spokane Wa, 99207 US<br>
+        Phone:(509) 896-9370<br>
+        Fax: (509) 896-6597
+      </address>
+
+      <p>
+        <span><img src="assets/ico-phone.png" alt="Phone" align="middle" height="16" hspace="2" width="20"> Phone:</span>
+        (888) 123 456 789<br>
+        <span><img src="assets/ico-fax.png" alt="Fax" align="middle" height="16" hspace="2" width="20"> Fax:</span>
+        (888) 987 654 321<br>
+        <span><img src="assets/ico-website.png" alt="WWW Link" align="middle" height="16" hspace="2" width="20"> Website:</span>
+        <a href="#">www.mycompany.com</a><br>
+        <span><img src="assets/ico-email.png" alt="Email" align="middle" height="16" hspace="2" width="20"> Email:</span>
+        <a href="mailto:info@mycompany.com">info@mycompany.com</a><br>
+        <span><img class="jfksesrvomjedhhypqso" src="assets/ico-twitter.png" alt="Twitter Follow" align="middle" height="16" hspace="3" width="20"> <a href="#">Follow</a> on Twitter</span><br>
+
+      </p>
+    </div>
+
+  </div>
+</div>
+
+
