@@ -7,11 +7,13 @@
   <%= stylesheet_link_tag "layout-tablet" %>
   <%= stylesheet_link_tag "layout-phone" %>
   <%= stylesheet_link_tag "layout" %>
+
 </head>
 <body>
 <div id="layout">
   <div id="header">
-    <div id="logo"><%= image_tag "let_mingle.jpg" %></div>
+   <br/>
+    <div id="logo"> <%= link_to (image_tag "let_mingle.jpg"), home_path %></div>
 
   </div>
 
@@ -64,7 +66,7 @@
 
       <div id="footer">
         <div class="footer_link">
-          <ul style="color:#FFf;">
+          <ul>
             Copyright (c) Sitename.com. All rights reserved. Design by Stylish <a href="http://www.stylishtemplate.com" style="text-decoration:underline; color:#FFF;">Website Templates</a>.
           </ul>
         </div>

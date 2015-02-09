@@ -1,0 +1,110 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+<h3>Question 1: Do you like kids?</h3>
+  <%= @survey.question_one %>
+</p>
+
+<p>
+<h3>Question 2: Do you smoke?</h3>
+  <%= @survey.question_two %>
+</p>
+
+<p>
+<h3>Question 3: Do you like pets?</h3>
+  <%= @survey.question_three %>
+</p>
+
+<p>
+<h3>Question 4: What kind of pets do you have?</h3>
+  <%= @survey.question_four %>
+</p>
+
+<p>
+<h3>Question 5: Do you drink alcohol?</h3>
+  <%= @survey.question_five %>
+</p>
+
+<p>
+<h3>Question 6: What do you do for fun?</h3>
+  <%= @survey.question_six %>
+</p>
+
+<p>
+<h3>Question 7: Do you enjoy playing/watching sports?</h3>
+  <%= @survey.question_seven %>
+</p>
+
+<p>
+<h3>Question 8: Who are you interested in?</h3>
+  <%= @survey.question_eight %>
+</p>
+
+<p>
+<h3>Question 9: Why type of relationship are you looking for?</h3>
+  <%= @survey.question_nine %>
+</p>
+
+<p>
+<h3>Question 10: Do you perfer someone who can cook?</h3>
+  <%= @survey.question_ten %>
+</p>
+
+<p>
+<h3>Question 11: Can you cook?</h3>
+  <%= @survey.question_eleven %>
+</p>
+
+<p>
+<h3>Question 12: Can you drive?</h3>
+  <%= @survey.question_twelve %>
+</p>
+
+<p>
+<h3>Question 13: Are you interested in somebody who can drive?</h3>
+  <%= @survey.question_thirteen %>
+</p>
+
+<p>
+<h3>Question 14: Do you have kids?</h3>
+  <%= @survey.question_fourteen %>
+</p>
+
+<p>
+<h3>Question 15: Do you mind guns?</h3>
+  <%= @survey.question_fifthteen %>
+</p>
+
+<p>
+<h3>Question 16: Do you own a gun?</h3>
+  <%= @survey.question_sixteen %>
+</p>
+
+<p>
+<h3>Question 17: Are you a vegetarian?</h3>
+  <%= @survey.question_seventeen %>
+</p>
+
+<p>
+<h3>Question 18: Do you mind somebody who doesn't eat meat?</h3>
+  <%= @survey.question_eighteen %>
+</p>
+
+<p>
+<h3>Question 19: Age Preference?</h3>
+  <%= @survey.question_nineteen %>
+</p>
+
+<p>
+<h3>Question 20: Are you interested in somebody who drinks alcohol?</h3>
+  <%= @survey.question_twenty %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @survey.user_id %>
+</p>
+<% if (current_user[:id] == true)%>
+<%= link_to 'Edit', edit_survey_path(@survey) %> |
+<% end %>
+<%= link_to 'Back', user_path(current_user[:id]) %>

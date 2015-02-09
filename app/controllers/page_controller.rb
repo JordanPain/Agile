@@ -1,5 +1,5 @@
 class PageController < ApplicationController
-
+  before_action :set_survey, only: [:show, :edit, :update, :destroy]
 
   include SmartListing::Helper::ControllerExtensions
   helper  SmartListing::Helper
@@ -51,6 +51,8 @@ class PageController < ApplicationController
   end
 
   def match
+    @surveys = Survey.all
+
   end
 
   def profile
