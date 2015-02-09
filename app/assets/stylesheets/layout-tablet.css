@@ -4,11 +4,13 @@
         content:url(banner.jpg) !important;
     }
 
-    body{
+/*    body{
         margin:0px !important;
         font:14px/16px Arial, Helvetica, sans-serif !important;
         background-color: white !important;
     }
+    ------Jerry didn't have this so idk if we actually need it-----
+*/    
     #new_user, #new_user.a  {
         font: 20px Arial, Helvetica, sans-serif !important;
         margin-left: auto !important;
@@ -26,4 +28,3 @@
         font-size: 110% !important;
     }
 } /*end of the media query */
-

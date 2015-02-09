@@ -7,11 +7,13 @@
   <%= stylesheet_link_tag "layout-tablet" %>
   <%= stylesheet_link_tag "layout-phone" %>
   <%= stylesheet_link_tag "layout" %>
+
 </head>
 <body>
 <div id="layout">
   <div id="header">
-    <div id="logo"><%= image_tag "let_mingle.jpg" %></div>
+   <br/>
+    <div id="logo"> <%= link_to (image_tag "let_mingle.jpg"), home_path %></div>
 
   </div>
 
