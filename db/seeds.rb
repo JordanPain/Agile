@@ -43,7 +43,8 @@ userNameNumber = 1
       zip:99203,
       about:Lorem.sentence(6, false, 12),
       gender:["male", "female"].sample(),
-      admin:false
+      admin:false,
+      avatar:Avatar.image
   )
   user.save!
   puts user.inspect

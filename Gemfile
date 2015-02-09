@@ -22,7 +22,7 @@ gem 'kaminari'
 
 gem 'smart_listing'
 
-# Home page styling
+gem 'carrierwave'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

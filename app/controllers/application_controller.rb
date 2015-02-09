@@ -20,6 +20,9 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.for(:sign_up) << :zip
     devise_parameter_sanitizer.for(:sign_up) << :about
     devise_parameter_sanitizer.for(:sign_up) << :admin
+    devise_parameter_sanitizer.for(:sign_up) << :avatar
+    devise_parameter_sanitizer.for(:sign_up) << :avatar_cache
+    devise_parameter_sanitizer.for(:sign_up) << :remove_avatar
   end
 
 end
