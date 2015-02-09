@@ -9,7 +9,7 @@
 include Faker
 
 User.destroy_all
-
+# just to clear the table Survey.destroy_all
 
 taylor = User.create(
     email:"righteousquesty@gmail.com",

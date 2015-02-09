@@ -11,7 +11,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150126020956) do
+ActiveRecord::Schema.define(version: 20150203055609) do
+
+  create_table "surveys", force: true do |t|
+    t.string   "question_one"
+    t.string   "question_two"
+    t.string   "question_three"
+    t.string   "question_four"
+    t.string   "question_five"
+    t.string   "question_six"
+    t.string   "question_seven"
+    t.string   "question_eight"
+    t.string   "question_nine"
+    t.string   "question_ten"
+    t.string   "question_eleven"
+    t.string   "question_twelve"
+    t.string   "question_thirteen"
+    t.string   "question_fourteen"
+    t.string   "question_fifthteen"
+    t.string   "question_sixteen"
+    t.string   "question_seventeen"
+    t.string   "question_eighteen"
+    t.string   "question_nineteen"
+    t.string   "question_twenty"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "password"
