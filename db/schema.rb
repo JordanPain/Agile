@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150203055609) do
+ActiveRecord::Schema.define(version: 20150209020618) do
 
   create_table "surveys", force: true do |t|
     t.string   "question_one"
@@ -39,6 +39,8 @@ ActiveRecord::Schema.define(version: 20150203055609) do
     t.datetime "updated_at"
   end
 
+  add_index "surveys", ["user_id"], name: "index_surveys_on_user_id", unique: true
+
   create_table "users", force: true do |t|
     t.string   "password"
     t.string   "userName"
@@ -63,6 +65,7 @@ ActiveRecord::Schema.define(version: 20150203055609) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.integer  "survey"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

@@ -26,6 +26,11 @@ class SurveysController < ApplicationController
     @survey.user_id = current_user.id
     #------
     @survey.save
+
+    @user = current_user
+    @user.survey = @survey.id
+    @user.save
+
     respond_with(@survey)
   end
 
