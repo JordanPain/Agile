@@ -64,7 +64,10 @@
   <strong>Admin:</strong>
   <%= @user.admin %>
 </p>
-
+  <p>
+    <strong>Avatar:</strong>
+    <%= @user.avatar.to_s %>
+  </p>
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
 </div>
