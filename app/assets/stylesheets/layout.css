@@ -255,9 +255,6 @@ textarea{width:322px}
 }
 .usersForm{
 
-    border: 1px solid #999;
-    border-radius: 10px;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
     color: #09c;
     font-family: 'Nunito', sans-serif;
     font-size: 14px;
