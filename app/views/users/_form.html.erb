@@ -15,10 +15,7 @@
     <%= f.label :email %><br>
     <%= f.text_field :email %>
   </div>
-  <div class="field">
-    <%= f.label :password %><br>
-    <%= f.text_field :password %>
-  </div>
+
   <div class="field">
     <%= f.label :userName %><br>
     <%= f.text_field :userName %>
@@ -58,7 +55,13 @@
     <label>Female:</label>
     <%= f.radio_button :gender, "female" %>
   </div>
-  <div class="field">
+
+  <div>
+    <p>
+      <%= f.file_field :avatar %>
+    </p>
+  </div>
+    <div class="field">
     <%= f.label :admin %><br>
     <%= f.check_box :admin %>
   </div>

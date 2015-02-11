@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :surveys
+
   root to: 'page#home'
 
   get 'home', to: 'page#home'
@@ -14,6 +16,7 @@ Rails.application.routes.draw do
   get 'support', to: 'page#support'
 
   get 'contact_us', to: 'page#contact_us'
+  post '/contact_us', to: 'page#contact_us'
 
 
   devise_for :users

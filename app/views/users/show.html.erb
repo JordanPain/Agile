@@ -1,7 +1,7 @@
-<div id="layout" class="container-fluid ">
+
 <header class="head"></header>
   <div class="col-xs-6">
-<div class="profilePicture"></div>
+<div class="profilePicture"><%= image_tag(@user.avatar, height: '250', width: '250') %></div>
 <div class="usersForm">
 <div class="usersName"></div>
 
@@ -64,12 +64,34 @@
   <strong>Admin:</strong>
   <%= @user.admin %>
 </p>
+
+<p>
+  <strong>Avatar:</strong>
+  <%= @user.avatar.to_s %>
+</p>
+
   <p>
-    <strong>Avatar:</strong>
-    <%= @user.avatar.to_s %>
+    <strong>Survey:</strong>
+
+    <% if @user.survey %>
+        <%= @user.survey %>
+    <% else %>
+        This user hasn't taken a survey yet.
+    <% end %>
   </p>
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+
+  <br/>
+  <% if @user.id == @current_user.id %>
+      <% if @user.survey %>
+          <%= link_to "Edit My Survey", edit_survey_path(@user.survey) %>
+          <br/>
+      <% else %>
+          <%= link_to 'Take Survey to get matched', new_survey_path %>
+          <br/>
+      <% end %>
+    <%= link_to 'Edit My Profile', edit_user_path(@user) %>
+      <br>
+  <% end %>
+
+<%= link_to 'Back', browse_path %>
 </div>
-    </div>
-    </div>

@@ -1,5 +1,5 @@
 class PageController < ApplicationController
-
+  before_action :set_survey, only: [:show, :edit, :update, :destroy]
 
   include SmartListing::Helper::ControllerExtensions
   helper  SmartListing::Helper
@@ -51,6 +51,8 @@ class PageController < ApplicationController
   end
 
   def match
+    @surveys = Survey.all
+
   end
 
   def profile
@@ -60,5 +62,52 @@ class PageController < ApplicationController
   end
 
   def contact_us
+    flash[:notice] == nil
+    @email = params[:email]
+    if @email && @email.empty?
+      flash[:notice] = "Please enter your email!"
+    else
+      flash[:notice] == nil
+    end
+
+    @last_name = params[:last_name]
+    if @last_name && @last_name.empty?
+      flash[:notice] = "Please enter your last name!"
+    else
+      flash[:notice] == nil
+    end
+
+    @first_name = params[:first_name]
+    if @first_name && @first_name.empty?
+      flash[:notice] = "Please enter your first name!"
+    else
+      flash[:notice] == nil
+    end
+
+    @phone = params[:phone]
+
+    @contact_me = params[:contact_me]
+    if @contact_me.nil?
+      @contact_me = "email"
+    end
+
+    @reason_selected = params[:contact_reason]
+    @contact_reason = ["Customer Support", "Technical Issue"]
+
+    @question = params[:question]
+
+    @subscribe_newsletter = params[:subscribe_newsletter]
+    if @subscribe_newsletter == "1"
+      @subscribe_newsletter = "yes"
+    end
+
+    @notify_products = params[:notify_products]
+    if @notify_products == "1"
+      @notify_products = "yes"
+    end
+
+
+    @commit = params[:commit].nil? ? false : true
   end
+
 end
