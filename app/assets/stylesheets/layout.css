@@ -296,14 +296,11 @@ a {
 .bs-example{
     margin: 20px;
 }
-.commitment{
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
-    line-height: initial;
-    border: 2px solid #a1a1a1;
-    padding: 10px 40px;
-    background: #dddddd;
-    width: auto;
-    border-radius: 25px;
-}
 
+#menus li a {
+    color: blue;
+}
+#menus li a:hover {
+    color: black;
+    border: 1px solid cyan;
+}
