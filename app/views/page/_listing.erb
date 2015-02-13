@@ -11,7 +11,7 @@
     <th><%= smart_listing.sortable "City", :city %></th>
     <th><%= smart_listing.sortable "State", :state %></th>
     <th><%= smart_listing.sortable "Zip Code", :zip %></th>
-    <th><%= smart_listing.sortable "About", :about %></th>
+    <th class="xs-hidden"><%= smart_listing.sortable "About", :about %></th>
     <th><%= smart_listing.sortable "Gender", :gender %></th>
 
     <th colspan="1"></th>
@@ -28,7 +28,7 @@
         <td><%= user.city %></td>
         <td><%= user.state %></td>
         <td><%= user.zip %></td>
-        <td><%= user.about %></td>
+        <td class="xs-hidden"><%= user.about %></td>
         <td><%= user.gender %></td>
 
         <td><%= link_to 'Show', user %></td>
