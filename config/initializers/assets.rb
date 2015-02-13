@@ -8,5 +8,5 @@ Rails.application.config.assets.precompile += %w( reset.css )
 Rails.application.config.assets.precompile += %w( layout-tablet.css )
 Rails.application.config.assets.precompile += %w( layout-phone.css )
 # Precompile additional assets.
-# application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
+# application.js, application.scss, and all non-JS/CSS in app/assets folder are already added.
 # Rails.application.config.assets.precompile += %w( search.js )

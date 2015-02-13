@@ -1,15 +1,17 @@
-
+<div id="layout" class="container-fluid">
 <header class="head"></header>
-
 <div class="profilePicture"><%= image_tag(@user.avatar, height: '250', width: '250') %></div>
-
-
-<div class="usersForm">
+<div class="usersForm col-xs-6">
 <div class="usersName"></div>
 
 <p>
   <strong>Email:</strong>
   <%= @user.email %>
+</p>
+
+<p>
+  <strong>Password:</strong>
+  <%= @user.password %>
 </p>
 
 <p>
@@ -90,5 +92,6 @@
       <br>
   <% end %>
 
-<%= link_to 'Back', users_path %>
+<%= link_to 'Back', browse_path %>
 </div>
+      </div>

@@ -11,6 +11,11 @@
 // about supported directives.
 //
 //= require jquery
+//= require bootstrap
+//= require bootstrap-sprockets
+//= require bootstrap/scrollspy
+//= require bootstrap/modal
+//= require bootstrap/dropdown
 //= require jquery_ujs
 //= require turbolinks
 //= require smart_listing

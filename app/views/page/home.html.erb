@@ -1,100 +1,84 @@
-<h1 class="home_title" xmlns="http://www.w3.org/1999/html"> Lets Mingle </h1>
-<h4 class="home_title"> Lets Mingle is a leading social network for meeting new people. </h4>
-
-
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
-
-  <%= stylesheet_link_tag "layout" %>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-
-</head>
-<div class="bs-example">
-  <div id="myCarousel" class="carousel slide" data-interval="3000" data-ride="carousel">
-    <!-- Carousel indicators -->
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
-      <li data-target="#myCarousel" data-slide-to="3"></li>
-    </ol>
-    <!-- Carousel items -->
-    <div class="carousel-inner">
-      <div class="active item">
-        <%= image_tag("couple3.jpg", size: '435*355') %>
-        <div class="carousel-caption">
-          <p>Let us always meet each other with smile, for the smile is the beginning of love.</p>
-        </div>
-      </div>
-      <div class="item">
-        <%= image_tag("couple1.jpg", size: '435*355')%>
-        <div class="carousel-caption">
-          <p>Sometimes the heart sees what is invisible to the eye.</p>
-        </div>
-      </div>
-      <div class="item">
-        <%= image_tag("couple2.jpg", size: '435*355')%>
-        <div class="carousel-caption">
-          <p>The first duty of love is to listen.</p>
-        </div>
-      </div>
-      <div class="item">
-        <%= image_tag("couple5.jpg", size: '435*355')%>
-        <div class="carousel-caption">
-          <p>The first duty of love is to listen.</p>
-        </div>
-      </div>
-    </div>
-    <!-- Carousel nav -->
-
-    <a class="carousel-control left" href="#myCarousel" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left"></span>
-    </a>
-    <a class="carousel-control right" href="#myCarousel" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right"></span>
-    </a>
+<div id="layout" class="container-fluid"><!--BEGINNING OF CONTAINER-->
+  <div id="header">
+    <div id="logo"><a href="home.html.erb"><%= image_tag "logo_1.gif" %></a></div>
   </div>
+  <div class="bs-example hidden-xs hidden-sm">
+    <div id="myCarousel" class="carousel slide" data-interval="3000" data-ride="carousel">
+      <!-- Carousel indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+        <li data-target="#myCarousel" data-slide-to="3"></li>
+      </ol>
+      <!-- Carousel items -->
+      <div class="carousel-inner">
+        <div class="active item">
+          <%= image_tag("couple3.jpg", size: '435*355') %>
+          <div class="carousel-caption">
+            <p>Let us always meet each other with smile, for the smile is the beginning of love.</p>
+          </div>
+        </div>
+        <div class="item">
+          <%= image_tag("couple1.jpg", size: '435*355')%>
+          <div class="carousel-caption">
+            <p>Sometimes the heart sees what is invisible to the eye.</p>
+          </div>
+        </div>
+        <div class="item">
+          <%= image_tag("couple2.jpg", size: '435*355')%>
+          <div class="carousel-caption">
+            <p>The first duty of love is to listen.</p>
+          </div>
+        </div>
+        <div class="item">
+          <%= image_tag("couple5.jpg", size: '435*355')%>
+          <div class="carousel-caption">
+            <p>The first duty of love is to listen.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Carousel nav -->
 
-
-
-</div>
-<div class="welcomezone">
-  <h2>Our Commitment</h2>
-
-  <p class="commitment">The whole reason for a dating website is too get involved and get out there. Our main focus is not for you too be on social media all day. The point of this site is to get you out on a date as soon as possible. Here at LetsMingle.com we try too make users comfortable with sharing information and compare you with others with the same interests. </p>
-
-</div>
-
-
-
-<div class="row2">
-  <div class="box1">
-    <div>
-      <h2>Quote</h2>
-      <div> <%= image_tag "love-in-red.jpg" %> “There is never a time or place for true love. It happens accidentally, in a heartbeat, in a single flashing, throbbing moment.”
-        ― Sarah Dessen, The Truth About Forever </div>
-      <br />
-      <br />
+      <a class="carousel-control left" href="#myCarousel" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+      </a>
+      <a class="carousel-control right" href="#myCarousel" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+      </a>
     </div>
-    <div><br />
+</div>
 
+
+    <div class="welcomezone col-xs-4 col-sm-9  col-md-8">
+      <h2>Our Commitment</h2>
+
+      <p class="commitment">The whole reason for a dating website is too get involved and get out their. Our main focus is not for you too be on social media all day. Point of this site is to get you out on a date as soon as possible. Here in LetsMingle.com we try too make users comfortable with sharing information and compare you with others with the same interest. </p>
+
+    <div class="row2">
+      <div class="box1">
+        <div>
+          <h2>Quote</h2>
+          <div> <%= image_tag "love-in-red.jpg" %> “There is never a time or place for true love. It happens accidentally, in a heartbeat, in a single flashing, throbbing moment.”
+            ― Sarah Dessen, The Truth About Forever </div>
+          <br />
+          <br />
+        </div>
+        <div><br />
+
+        </div>
+      </div>
+      <div class="box1 ">
+        <div>
+          <h2>Questions / FAQ </h2>
+          <div> <%= image_tag "questions.jpg" %> Your feedback is very important to us <%= link_to "Contact Us", contact_us_path %> </div>
+          <p class="footer_home"> &copy; Founded in 2014 </p>
+          <br />
+          <br />
+
+
+        </div>
+      </div>
     </div>
-  </div>
-<div class="box1">
-  <div>
-    <h2>Questions / FAQ </h2>
-    <div> <%= image_tag "questions.jpg" %> Your feedback is very important to us <%= link_to "Contact Us", contact_us_path %> </div>
-      <p class="footer_home"> &copy; Founded in 2014 </p>
-    <br />
-    <br />
-
-
-</div>
-</div>
-
-</div>
-</html>
+      </div>
+</div> <!--END OF CONTAINER-->
