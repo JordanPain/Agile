@@ -1,5 +1,8 @@
 <h1>Page#match</h1>
 <p>Find me in app/views/page/match.html.erb</p>
+
+
+
 <table>
   <thead>
   <tr>
@@ -22,6 +25,7 @@
     <th> 17</th>
     <th> 19</th>
     <th> 20</th>
+    <th>Score</th>
     <th>User</th>
     <th colspan="3"></th>
   </tr>
@@ -29,31 +33,35 @@
 
   <tbody>
 
-  <% @surveys.each do |survey| %>
-      <tr>
-        <td><%= survey.question_one %></td>
-        <td><%= survey.question_two %></td>
-        <td><%= survey.question_three %></td>
-        <td><%= survey.question_four %></td>
-        <td><%= survey.question_five %></td>
-        <td><%= survey.question_six %></td>
-        <td><%= survey.question_seven %></td>
-        <td><%= survey.question_eight %></td>
-        <td><%= survey.question_nine %></td>
-        <td><%= survey.question_ten %></td>
-        <td><%= survey.question_eleven %></td>
-        <td><%= survey.question_twelve %></td>
-        <td><%= survey.question_thirteen %></td>
-        <td><%= survey.question_fourteen %></td>
-        <td><%= survey.question_fifthteen %></td>
-        <td><%= survey.question_sixteen %></td>
-        <td><%= survey.question_seventeen %></td>
-        <td><%= survey.question_eighteen %></td>
-        <td><%= survey.question_nineteen %></td>
-        <td><%= survey.question_twenty %></td>
-        <td><%= survey.user_id %></td>
-        <td><%= link_to 'Show', survey %></td>
-      </tr>
+  <% @test.each do |survey| %>
+    <% survey.each do |more| %>
+          <tr>
+            <td><%= more.question_one %></td>
+            <td><%= more.question_two %></td>
+            <td><%= more.question_three %></td>
+            <td><%= more.question_four %></td>
+            <td><%= more.question_five %></td>
+            <td><%= more.question_six %></td>
+            <td><%= more.question_seven %></td>
+            <td><%= more.question_eight %></td>
+            <td><%= more.question_nine %></td>
+            <td><%= more.question_ten %></td>
+            <td><%= more.question_eleven %></td>
+            <td><%= more.question_twelve %></td>
+            <td><%= more.question_thirteen %></td>
+            <td><%= more.question_fourteen %></td>
+            <td><%= more.question_fifthteen %></td>
+            <td><%= more.question_sixteen %></td>
+            <td><%= more.question_seventeen %></td>
+            <td><%= more.question_eighteen %></td>
+            <td><%= more.question_nineteen %></td>
+            <td><%= more.question_twenty %></td>
+            <td><%= %></td>
+            <td><%= more.user_id %></td>
+            <td><%= link_to 'Show', more %></td>
+          </tr>
+    <% end %>
   <% end %>
   </tbody>
 </table>
+
