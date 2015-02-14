@@ -1,6 +1,8 @@
 class PageController < ApplicationController
   before_action :set_survey, only: [:show, :edit, :update, :destroy]
-  helper_method :bool_compare, :score_surveys, :order_scores, :find_user
+  before_action :set_user, only: [:show, :edit, :update, :destroy]
+
+  helper_method :bool_compare, :score_surveys, :order_scores, :find_user, :find_score, :getUsername
   include SmartListing::Helper::ControllerExtensions
   helper  SmartListing::Helper
 
@@ -52,15 +54,30 @@ class PageController < ApplicationController
 
   def match
     @surveys = Survey.all
+
+
+    @current_survey = Survey.find( current_user.survey )
     @other_surveys = Survey.where("user_id != #{current_user.id}")
+    @person = User.where("id == id")
 
     @user = current_user.id
     #Current user is an User object. Also
-    @current_survey = Survey.find( current_user.survey )
+
     @surveys = Survey.all
     @ordered_surveys = score_surveys(@current_survey, @other_surveys )
+
     @test = find_user( @ordered_surveys)
+    @user_scores = find_score( @ordered_surveys)
     @survey_score = []
+  end
+
+  def getUsername( userid)
+    name = ""
+   person = User.where("id == #{userid}")
+     person.each do |person|
+     name = person.userName
+     end
+    return name
   end
 
   def find_user ( list )
@@ -73,6 +90,14 @@ class PageController < ApplicationController
      user_profile << Survey.where("user_id == #{profile}")
     end
     return user_profile
+  end
+
+  def find_score (list)
+  scores = []
+    list.each do |item|
+      scores << item[1]
+    end
+    return scores
   end
 
   def bool_compare( current_survey, other_survey, survey_score , question,  point_value)
