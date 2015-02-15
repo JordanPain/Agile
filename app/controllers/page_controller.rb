@@ -66,12 +66,12 @@ class PageController < ApplicationController
     @surveys = Survey.all
     @ordered_surveys = score_surveys(@current_survey, @other_surveys )
 
-    @test = find_user( @ordered_surveys)
+    @user_objects = find_user( @ordered_surveys)
     @user_scores = find_score( @ordered_surveys)
     @survey_score = []
   end
 
-  def getUsername( userid)
+  def getUsername( userid )
     name = ""
    person = User.where("id == #{userid}")
      person.each do |person|
@@ -80,6 +80,7 @@ class PageController < ApplicationController
     return name
   end
 
+ # Finds the User object asscioted with id
   def find_user ( list )
     users = []
     user_profile = []
@@ -92,6 +93,7 @@ class PageController < ApplicationController
     return user_profile
   end
 
+# Gets the score Associated with the id
   def find_score (list)
   scores = []
     list.each do |item|
@@ -99,8 +101,12 @@ class PageController < ApplicationController
     end
     return scores
   end
-
+ #This Method grabes current user survey question and compares it to other user survey method and if it match it adds a point to total
+  #This is where you need to change logic if some questions need to be other then true or false example: Question 10
+ # and 11. Depending on if they can cook or can't cook, And if they perfer they can cook or doens't matter if they can cook
+ # . If statments should complish this.
   def bool_compare( current_survey, other_survey, survey_score , question,  point_value)
+   
     if current_survey.send(question.to_sym) == other_survey.send(question.to_sym)
       survey_score += point_value
     else current_survey.send(question.to_sym) != other_survey.send(question.to_sym)
@@ -146,7 +152,7 @@ class PageController < ApplicationController
       compared_surveys << [s.user_id ,survey_array]
     end
     ##down here, we want to order the array by score
-
+    #ordered_surveys = compared_surveys
     ordered_surveys = order_scores (compared_surveys)
 
     # I just made up ^ ^this method^ ^ but we can find a way to do it
@@ -155,7 +161,7 @@ class PageController < ApplicationController
   end
 
   def order_scores( scores )
-    new = scores.sort_by { |score| [score[1], score[0]]}
+    new = scores.sort_by { |score| [-score[1], score[0]]}
     return new
   end
 

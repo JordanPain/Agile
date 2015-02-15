@@ -8,26 +8,26 @@
   <tr>
     <th>User</th>
     <th>Score</th>
+    <th>User Profile</th>
     <th colspan="3"></th>
   </tr>
   </thead>
 
   <tbody>
   <% counter = 0%>
-  <% @test.each do |survey| %>
+  <% @user_objects.each do |survey| %>
     <% survey.each do |more| %>
-
           <tr>
             <td><%= getUsername(more.user_id)%></td>
             <td><%= @user_scores[counter] %></td>
-            <td><%= link_to 'Show', more %></td>
+            <!--<td><%= link_to 'Show', more %></td>-->
+            <td><%= link_to 'Show', user_path(more.user_id) %></td>
+            <% counter += 1 %>
           </tr>
-          <% counter += 1 %>
+
     <% end %>
   <% end %>
   </tbody>
 </table>
-
-
 
 
