@@ -1,11 +1,23 @@
 <div id="layout" class="container-fluid">
 <h1>Listing <%=  %> users</h1>
+  <!--<%= smart_listing_controls_for(:users, {class: "form-inline text-right"}) do %>-->
+      <!--<div class="form-group filter input-append">-->
+        <!--<br />-->
+        <!--<%= text_field_tag :filter, '', class: "search form-control",placeholder: "Search...", autocomplete: :off  %>-->
+
+  <!--<% end %>-->
+  <!--</div>-->
+  <!--<button class="btn btn-primary disabled" type="<%= :submit %>">-->
+    <!--<span class="glyphicon glyphicon-search"></span>-->
+  <!--</button>-->
+
 
 
 <!-- This stuff will probably be scrapped on the next iteration
 <%= form_tag do |f| %>
+
     &lt;!&ndash;actually searches for 'Spokane' right now&ndash;&gt;
-    <label for="byCity">Spokane Users Only: </label>
+    <label for="byCity">Spokane Users Only: </label><
     <%= check_box_tag "byCity", "yes", @byCity %>
 <br>
     <label for="18-23">Male:  </label>
