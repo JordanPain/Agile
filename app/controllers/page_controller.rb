@@ -62,26 +62,27 @@ class PageController < ApplicationController
   end
 
   def contact_us
-    flash[:notice] == nil
+    flash[:error] == nil
+
     @email = params[:email]
     if @email && @email.empty?
-      flash[:notice] = "Please enter your email!"
+      flash[:error] = "Please enter your email!"
     else
-      flash[:notice] == nil
+      flash[:error] == nil
     end
 
     @last_name = params[:last_name]
     if @last_name && @last_name.empty?
-      flash[:notice] = "Please enter your last name!"
+      flash[:error] = "Please enter your last name!"
     else
-      flash[:notice] == nil
+      flash[:error] == nil
     end
 
     @first_name = params[:first_name]
     if @first_name && @first_name.empty?
-      flash[:notice] = "Please enter your first name!"
+      flash[:error] = "Please enter your first name!"
     else
-      flash[:notice] == nil
+      flash[:error] == nil
     end
 
     @phone = params[:phone]
@@ -101,13 +102,8 @@ class PageController < ApplicationController
       @subscribe_newsletter = "yes"
     end
 
-    @notify_products = params[:notify_products]
-    if @notify_products == "1"
-      @notify_products = "yes"
-    end
-
-
     @commit = params[:commit].nil? ? false : true
+
   end
 
 end
