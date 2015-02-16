@@ -53,22 +53,25 @@ class PageController < ApplicationController
   end
 
   def match
-    @surveys = Survey.all
 
 
-    @current_survey = Survey.find( current_user.survey )
-    @other_surveys = Survey.where("user_id != #{current_user.id}")
-    @person = User.where("id == id")
+if current_user.survey
+  @current_survey = Survey.find( current_user.survey )
+  @other_surveys = Survey.where("user_id != #{current_user.id}")
+  @person = User.where("id == id")
 
-    @user = current_user.id
-    #Current user is an User object. Also
+  @user = current_user.id
 
-    @surveys = Survey.all
-    @ordered_surveys = score_surveys(@current_survey, @other_surveys )
 
-    @user_objects = find_user( @ordered_surveys)
-    @user_scores = find_score( @ordered_surveys)
-    @survey_score = []
+  @surveys = Survey.all
+  @ordered_surveys = score_surveys(@current_survey, @other_surveys )
+
+  @user_objects = find_user( @ordered_surveys)
+  @user_scores = find_score( @ordered_surveys)
+  @survey_score = []
+end
+
+
   end
 
   def getUsername( userid )
@@ -119,11 +122,9 @@ class PageController < ApplicationController
     compared_surveys = []
     survey_score = 0
     surveys.each do |s|
-      #starting score for each survey is 0
-      #this keeps the survey object and it's score together
+
       survey_array = survey_score
-      # array = User Survey Other Survey Scored Points Question # Point Value
-      #returns User Suvery Survey Score survey_array =
+
       survey_array += bool_compare( current_survey, s, survey_score , "question_one", 1 )
       survey_array += bool_compare( current_survey, s, survey_score , "question_two", 1 )
       survey_array += bool_compare( current_survey, s, survey_score , "question_three", 1 )
