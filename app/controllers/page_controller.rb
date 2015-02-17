@@ -11,17 +11,21 @@ class PageController < ApplicationController
     @contact_list = []
     Message.all do |message|
       if message.author_id == current_user.id
-        if !@contact_list.include?(message.receiver_id)
-          @contact_list << message.receiver_id
+        if @contact_list.include?(message.receiver_id)
+          @contact_list.push(message.receiver_id.to_s)
+        else
+          #@contact_list << message.receiver_id
         end
       elsif message.receiver_id == current_user.id
         if !@contact_list.include?(message.author_id)
-          @contact_list << message.author_id
+          @contact_list.push(message.author_id.to_s)
+        else
+          #@contact_list << message.author_id
         end
       end
     end
 
-    @contacts = User.all.where( @contact_list )
+    @contacts = User.where( @contact_list )
 
   end
 

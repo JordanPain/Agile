@@ -28,6 +28,23 @@ taylor = User.create(
 taylor.save!
 puts taylor.inspect
 
+dave = User.create(
+    email:"dljones@gmail.com",
+    password:"password",
+    userName:"PirateSinker",
+    firstName:"Dave",
+    lastName:"Jones",
+    birthdate:Date.new(1865,4,26),
+    city:"Spokane",
+    state:"WA",
+    zip:99203,
+    about:"I am the ancient master of all things Macintosh.",
+    gender:"male",
+    admin:true
+)
+dave.save!
+puts dave.inspect
+
 userNameNumber = 1
 101.times do
 
@@ -49,4 +66,19 @@ userNameNumber = 1
   user.save!
   puts user.inspect
 userNameNumber += 1
+end
+
+Message.destroy_all
+
+50.times do
+    User.all.each do |user|
+        message = Message.create(
+            author_id:user.id,
+            receiver_id:User.order("RANDOM()").limit(1)[0].id,
+            subject:Lorem.words(2),
+            content:Lorem.sentences(2)
+        )
+        message.save!
+        puts message.inspect
+    end
 end
