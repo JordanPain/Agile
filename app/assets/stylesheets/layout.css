@@ -39,6 +39,9 @@ img{border:none}
     background-color: white;
 }
 
+.alt-layout{
+    background-color: #fff;
+}
 
 
 .member_login .login_box .column_4 label.password{float:left; width:auto; color:#003465; padding:5px 0px 0 3px}
@@ -86,7 +89,20 @@ img.service-img{float:left;
 /*#menu li a.current{color:#003465; }*/
 /*#menu li.first{background:none; padding:7px 0 3px 0}*/
 
+/*.find_more{float:left; width:884px; background:url(../images/bg.gif) no-repeat 10px 0}*/
+.find_more p {
+    float: left;
+    width: 844px;
+    font: 26px/28px "Gill Sans MT", Arial, Helvetica;
+    color: #4c8698;
+    padding: 30px 0 30px 40px;
+    margin: 0
+}
 
+.find_more p span {
+    font: 20px/22px "Gill Sans MT", Arial, Helvetica;
+    color: #4c8698
+}
 
 /*.find_more{float:left; width:884px; background:url(../images/bg.gif) no-repeat 10px 0}*/
 .find_more p{float:left; width:844px; font:26px/28px "Gill Sans MT", Arial, Helvetica; color:#4c8698; padding:30px 0 30px 40px; margin:0}
@@ -96,10 +112,25 @@ img.service-img{float:left;
 
 .container_row{float:left; width:884px}
 
+.container_row {
+    float: left;
+    width: 884px
+}
 
 .container_row .column_partner{float:left; width:276px; padding:0 0 0 9px}
 .container_row .column_partner h2{float:left; width:203px; background:url(search_partner_1.gif) no-repeat 0 0; font-size:12px; line-height:14px; font-weight:bold; padding:17px 0 21px 74px; color:#fff; margin:0}
 
+.container_row .column_partner h2 {
+    float: left;
+    width: 203px;
+    background: url(search_partner_1.gif) no-repeat 0 0;
+    font-size: 12px;
+    line-height: 14px;
+    font-weight: bold;
+    padding: 17px 0 21px 74px;
+    color: #fff;
+    margin: 0
+}
 
 .container_row .column_partner .form_container{float:left; width:276px; background:url(column_border.gif) repeat-y 0 0; padding:0; margin:0}
 .form_container .search_row{float:left; width:264px; padding-bottom:20px}
@@ -117,7 +148,17 @@ img.service-img{float:left;
 .form_container select.gender{float:left; width:60px; font-size:10px}
 .form_container select.date{float:left; width:171px; font-size:10px}
 
+.form_container .search_row.last {
+    float: left;
+    width: 264px;
+    padding: 5px 0 0 0
+}
 
+.form_container .search_row .search_column_1 {
+    float: left;
+    width: 72px;
+    padding: 0 0 0 10px
+}
 
 .container_row .column_partner .bottom_curve{float:left; width:276px; background:url(bottom_curve.gif) no-repeat 0 0}
 .container_row .column_partner .bottom_curve p{float:left; width:117px; font-weight:bold; margin:0; padding:8px 0 11px 150px; color:#fff}
@@ -155,6 +196,226 @@ img.service-img{float:left;
 .container_row .column_photo .bottom_curve p img{float:none; width:auto; vertical-align:middle; padding:0 5px 0 0}
 .container_row .column_photo .bottom_curve p a{color:#fff; text-decoration:none}
 .container_row .column_photo .bottom_curve p a:hover{color:#fff; text-decoration:underline}
+
+.form_container select.gender {
+    float: left;
+    width: 60px;
+    font-size: 10px
+}
+
+.form_container select.date {
+    float: left;
+    width: 171px;
+    font-size: 10px
+}
+
+.container_row .column_partner .bottom_curve {
+    float: left;
+    width: 276px;
+    background: url(bottom_curve.gif) no-repeat 0 0
+}
+
+.container_row .column_partner .bottom_curve p {
+    float: left;
+    width: 117px;
+    font-weight: bold;
+    margin: 0;
+    padding: 8px 0 11px 150px;
+    color: #fff
+}
+
+.container_row .column_partner .bottom_curve p img {
+    float: none;
+    width: auto;
+    vertical-align: middle;
+    padding: 0 5px 0 0
+}
+
+.container_row .column_partner .bottom_curve p a {
+    color: #fff;
+    text-decoration: none
+}
+
+.container_row .column_partner .bottom_curve p a:hover {
+    color: #fff;
+    text-decoration: underline
+}
+
+.container_row .column_profile {
+    float: left;
+    width: 276px;
+    padding: 0 0 0 19px
+}
+
+.container_row .column_profile h2 {
+    float: left;
+    width: 203px;
+    background: url(new_profile.gif) no-repeat 0 0;
+    font-size: 12px;
+    line-height: 14px;
+    font-weight: bold;
+    padding: 17px 0 21px 74px;
+    color: #fff;
+    margin: 0
+}
+
+.container_row .column_profile .detail {
+    float: left;
+    width: 276px;
+    background: url(column_border.gif) repeat-y 0 0
+}
+
+.container_row .column_profile .detail .row {
+    float: left;
+    width: 262px;
+    padding: 0 0 0 14px;
+    margin: 0;
+    background: url(bg_1.gif) no-repeat 15px 0
+}
+
+.container_row .column_profile .detail .row p.left {
+    float: left;
+    width: 82px;
+    padding: 7px 0 9px 0;
+    margin: 0;
+    font-weight: bold;
+    text-align: right;
+    color: #283781
+}
+
+.container_row .column_profile .detail .row p.right {
+    float: left;
+    width: 150px;
+    padding: 7px 0 9px 25px;
+    margin: 0;
+    color: #283781
+}
+
+.container_row .column_profile .detail .row_1 {
+    float: left;
+    width: 262px;
+    padding: 0 0 5px 14px;
+    margin: 0;
+    background: url(bg_2.gif) no-repeat 15px 0
+}
+
+.container_row .column_profile .detail .row_1 p.left {
+    float: left;
+    width: 82px;
+    padding: 7px 0 9px 0;
+    margin: 0;
+    font-weight: bold;
+    text-align: right;
+    color: #757575
+}
+
+.container_row .column_profile .detail .row_1 p.right {
+    float: left;
+    width: 150px;
+    padding: 7px 0 9px 25px;
+    margin: 0;
+    color: #757575
+}
+
+.container_row .column_profile .bottom_curve {
+    float: left;
+    width: 276px;
+    background: url(bottom_curve.gif) no-repeat 0 0
+}
+
+.container_row .column_profile .bottom_curve p {
+    float: left;
+    width: 117px;
+    font-weight: bold;
+    margin: 0;
+    padding: 8px 0 11px 150px;
+    color: #fff
+}
+
+.container_row .column_profile .bottom_curve p img {
+    float: none;
+    width: auto;
+    padding: 0 5px 0 0
+}
+
+.container_row .column_profile .bottom_curve p a {
+    color: #fff;
+    text-decoration: none
+}
+
+.container_row .column_profile .bottom_curve p a:hover {
+    color: #fff;
+    text-decoration: underline
+}
+
+.container_row .column_photo {
+    float: left;
+    width: 276px;
+    padding: 0 0 0 19px
+}
+
+.container_row .column_photo h2 {
+    float: left;
+    width: 203px;
+    background: url(recently_photo.gif) no-repeat 0 0;
+    font-size: 12px;
+    line-height: 14px;
+    font-weight: bold;
+    padding: 17px 0 21px 74px;
+    color: #fff;
+    margin: 0
+}
+
+.container_row .column_photo .gallery {
+    float: left;
+    width: 276px;
+    background: url(column_border.gif) repeat-y 0 0
+}
+
+.container_row .column_photo .gallery .photo_row {
+    float: left;
+    width: 263px;
+    padding: 8px 0 22px 13px
+}
+
+.container_row .column_photo .gallery .photo_row img {
+    float: left;
+    width: auto;
+    border: 3px solid #d8d8d8;
+    margin: 0 11px 0 0
+}
+
+.container_row .column_photo .bottom_curve {
+    float: left;
+    width: 276px;
+    background: url(bottom_curve.gif) no-repeat 0 0
+}
+
+.container_row .column_photo .bottom_curve p {
+    float: left;
+    width: 117px;
+    font-weight: bold;
+    margin: 0;
+    padding: 8px 0 11px 150px;
+    color: #fff
+}
+
+.container_row .column_photo .bottom_curve p img {
+    float: none;
+    width: auto;
+    vertical-align: middle;
+    padding: 0 5px 0 0
+}
+
+.container_row .column_photo .bottom_curve p a {
+    color: #fff;
+    text-decoration: none
+}
+
+.container_row .column_photo .bottom_curve p a:hover {
+    color: #fff;
+    text-decoration: underline
+}
 
 /*#footer{float:left; width:100%;margin-top:20px}*/
 /*#footer .footer_link{float:left; width:884px; padding:13px 0 0 0;}*/
@@ -236,7 +497,7 @@ textarea{width:322px}
     padding: 10px 20px;
     position: relative;
     text-decoration: none;
-    top: -50px;
+    /*top: -50px;*/
     width: 25%;
 }
 
@@ -292,6 +553,8 @@ a {
 .carousel{
     margin-top: 50px;
     left: 13%;
+    width: 70%;
+    padding: 1px;
 }
 .bs-example{
     margin: 20px;

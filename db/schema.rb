@@ -22,6 +22,16 @@ ActiveRecord::Schema.define(version: 20150213063159) do
     t.datetime "updated_at"
   end
 
+
+  create_table "messages", force: true do |t|
+    t.integer  "author_id"
+    t.integer  "receiver_id"
+    t.string   "subject"
+    t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "surveys", force: true do |t|
     t.string   "question_one"
     t.string   "question_two"
@@ -76,6 +86,7 @@ ActiveRecord::Schema.define(version: 20150213063159) do
     t.string   "last_sign_in_ip"
     t.integer  "survey"
     t.string   "avatar"
+    t.string   "thumbnail"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

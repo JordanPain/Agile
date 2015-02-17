@@ -1,6 +1,10 @@
 <div id="layout" class="container-fluid">
 <header class="head"></header>
-<div class="profilePicture"><%= image_tag(@user.avatar, height: '250', width: '250') %></div>
+  <% if @user.avatar.present? %>
+      <div class="profilePicture"><%=  image_tag(@user.avatar.url(:thumb).to_s) %></div>
+  <% else %>
+      <div class="profilePicture"><%= image_tag @user.thumbnail, height: '250', width: '250' %></div>
+  <% end %>
 <div class="usersForm col-xs-6">
 <div class="usersName"></div>
 
@@ -19,69 +23,55 @@
     <%= @user.id %>
   </p>
 
-    <p>
-      <strong>Email:</strong>
-      <%= @user.email %>
-    </p>
+<p>
+  <strong>Firstname:</strong>
+  <%= @user.firstName %>
+</p>
 
-    <p>
-      <strong>Firstname:</strong>
-      <%= @user.firstName %>
-    </p>
+<p>
+  <strong>Lastname:</strong>
+  <%= @user.lastName %>
+</p>
 
-    <p>
-      <strong>Lastname:</strong>
-      <%= @user.lastName %>
-    </p>
+<p>
+  <strong>Birthdate:</strong>
+  <%= @user.birthdate %>
+</p>
 
-    <p>
-      <strong>Birthdate:</strong>
-      <%= @user.birthdate %>
-    </p>
+<p>
+  <strong>City:</strong>
+  <%= @user.city %>
+</p>
 
-    <p>
-      <strong>City:</strong>
-      <%= @user.city %>
-    </p>
+<p>
+  <strong>State:</strong>
+  <%= @user.state %>
+</p>
 
-    <p>
-      <strong>State:</strong>
-      <%= @user.state %>
-    </p>
+<p>
+  <strong>Zip:</strong>
+  <%= @user.zip %>
+</p>
 
-    <p>
-      <strong>Zip:</strong>
-      <%= @user.zip %>
-    </p>
+<p>
+  <strong>About:</strong>
+  <%= @user.about %>
+</p>
 
-    <p>
-      <strong>About:</strong>
-      <%= @user.about %>
-    </p>
+<p>
+  <strong>Gender:</strong>
+  <%= @user.gender %>
+</p>
 
-    <p>
-      <strong>Gender:</strong>
-      <%= @user.gender %>
-    </p>
+<p>
+  <strong>Admin:</strong>
+  <%= @user.admin %>
+</p>
 
-    <p>
-      <strong>Admin:</strong>
-      <% if @user.admin %>
-          Yes
-      <% else %>
-          No
-      <% end %>
-    </p>
-
-    <p>
-      <strong>Avatar:</strong>
-      <% if @user.avatar %>
-          <%= @user.avatar.to_s %>
-      <% else %>
-          This user hasn't uploaded a profile picture yet.
-      <% end %>
-
-    </p>
+<p>
+  <strong>Avatar:</strong>
+  <%= @user.avatar.to_s %>
+</p>
 
   <p>
     <strong>Survey:</strong>

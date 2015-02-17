@@ -11,6 +11,8 @@ include Faker
 User.destroy_all
 # just to clear the table Survey.destroy_all
 
+# just to clear the table
+Survey.destroy_all
 taylor = User.create(
     email:"righteousquesty@gmail.com",
     password:"password",
@@ -61,12 +63,16 @@ userNameNumber = 1
       about:Lorem.sentence(6, false, 12),
       gender:["male", "female"].sample(),
       admin:false,
+      thumbnail: "https://placeimg.com/250/250/people#{rand(1..10000)}",
       avatar:Avatar.image
   )
   user.save!
   puts user.inspect
 userNameNumber += 1
 end
+
+
+=begin
 
 Message.destroy_all
 
@@ -82,3 +88,57 @@ Message.destroy_all
         puts message.inspect
     end
 end
+
+=end
+
+User.all.each do |user|
+    sampleone = ["Yes", "No"]
+    sampletwo = ["Yes", "No"]
+    samplethree = ["Yes", "No"]
+    samplefour = ["Dog", "Cat","Both","Other","None"]
+    samplefive = ["Yes", "No"]
+    samplesix = ["Read", "Movies", "Bar Hop", "Party", "Video Games"]
+    sampleseven = ["Yes", "No"]
+    sampleeight = ["Guys", "Girls", "Both"]
+    samplenine = ["Short Term", "Long Term"]
+    sampleten= ["Yes", "Doesn't matter"]
+    sampleelven = ["Yes", "No"]
+    sampletwelve = ["Yes", "No"]
+    samplethirteen = ["Yes", "No", "Doesn't matter"]
+    samplefourteen = ["1", "2", "3 or more", "No"]
+    samplefifthteen = ["Yes", "No"]
+    samplesixteen = ["Yes", "No"]
+    sampleseventeen = ["Yes", "No"]
+    sampleeightteen = ["Yes", "No", "Doesn't matter"]
+    samplenineteen = ["18-25", "25-40", "40-60", "60+", "None"]
+    sampletwenty = ["Yes", "No", "Doesn't matter"]
+
+    newSurvey = Survey.create(
+    question_one: sampleone.sample(),
+    question_two: sampletwo.sample(),
+    question_three: samplethree.sample(),
+    question_four: samplefour.sample(),
+    question_five: samplefive.sample(),
+    question_six: samplesix.sample(),
+    question_seven: sampleseven.sample(),
+    question_eight: sampleeight.sample(),
+    question_nine: samplenine.sample(),
+    question_ten: sampleten.sample(),
+    question_eleven: sampleelven.sample(),
+    question_twelve: sampletwelve.sample(),
+    question_thirteen: samplethirteen.sample(),
+    question_fourteen: samplefourteen.sample(),
+    question_fifthteen: samplefifthteen.sample(),
+    question_sixteen: samplesixteen.sample(),
+    question_seventeen: sampleseventeen.sample(),
+    question_eighteen: sampleeightteen.sample(),
+    question_nineteen: samplenineteen.sample(),
+    question_twenty: sampletwenty.sample(),
+    user_id: user.id
+
+    )
+    user.save!
+    puts user.inspect
+end
+
+

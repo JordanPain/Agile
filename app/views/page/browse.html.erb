@@ -1,25 +1,6 @@
 <div id="layout" class="container-fluid">
-<h1>Listing <%=  %> users</h1>
+<h1>Listing users</h1>
+  <%= smart_listing_render :users %>
 
-
-<!-- This stuff will probably be scrapped on the next iteration
-<%= form_tag do |f| %>
-    &lt;!&ndash;actually searches for 'Spokane' right now&ndash;&gt;
-    <label for="byCity">Spokane Users Only: </label>
-    <%= check_box_tag "byCity", "yes", @byCity %>
-<br>
-    <label for="18-23">Male:  </label>
-    <%= check_box_tag "male", "yes", @male %>
-<br>
-    <label for="18-23">Female:  </label>
-    <%= check_box_tag "female", "yes", @female %>
-<br>
-
-    <%= submit_tag "Refresh", method: :get %>
-
-<% end %>-->
-
-
-<%= smart_listing_render :users %>
 
 </div>
