@@ -109,8 +109,22 @@ end
  # and 11. Depending on if they can cook or can't cook, And if they perfer they can cook or doens't matter if they can cook
  # . If statments should complish this.
   def bool_compare( current_survey, other_survey, survey_score , question,  point_value)
-   
-    if current_survey.send(question.to_sym) == other_survey.send(question.to_sym)
+
+
+
+    if current_survey.send(question.to_sym) == current_survey.send("question_ten".to_sym) && current_survey.send(question.to_sym) == "Yes" &&
+        other_survey.send(question.to_sym) == other_survey.send("question_eleven".to_sym) && other_survey.send(question.to_sym) == "Yes"
+      survey_score += point_value
+    elsif current_survey.send(question.to_sym) == current_survey.send("question_ten".to_sym) && current_survey.send(question.to_sym) == "Doesn't Matter" &&
+        other_survey.send(question.to_sym) == other_survey.send("question_eleven".to_sym) && other_survey.send(question.to_sym) == "Yes"
+    survey_score += point_value
+    elsif  current_survey.send(question.to_sym) == current_survey.send("question_ten".to_sym) && current_survey.send(question.to_sym) == "Doesn't Matter" &&
+        other_survey.send(question.to_sym) == other_survey.send("question_eleven".to_sym) && other_survey.send(question.to_sym) == "No"
+      survey_score += point_value
+    elsif current_survey.send(question.to_sym) == current_survey.send("question_ten".to_sym) && current_survey.send(question.to_sym) == "Yes" &&
+         other_survey.send(question.to_sym) == other_survey.send("question_eleven".to_sym) && other_survey.send(question.to_sym) == "No"
+       survey_score += 0
+    elsif current_survey.send(question.to_sym) == other_survey.send(question.to_sym)
       survey_score += point_value
     else current_survey.send(question.to_sym) != other_survey.send(question.to_sym)
     survey_score += 0
