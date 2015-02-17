@@ -1,17 +1,16 @@
 <div id="layout" class="container-fluid">
 <header class="head"></header>
-<div class="profilePicture"><%= image_tag(@user.avatar.url(:thumb).to_s) %></div>
+  <% if @user.avatar.present? %>
+      <div class="profilePicture"><%=  image_tag(@user.avatar.url(:thumb).to_s) %></div>
+  <% else %>
+      <div class="profilePicture"><%= image_tag @user.thumbnail, height: '250', width: '250' %></div>
+  <% end %>
 <div class="usersForm col-xs-6">
 <div class="usersName"></div>
 
 <p>
   <strong>Email:</strong>
   <%= @user.email %>
-</p>
-
-<p>
-  <strong>Password:</strong>
-  <%= @user.password %>
 </p>
 
 <p>

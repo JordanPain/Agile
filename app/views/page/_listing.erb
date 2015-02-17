@@ -46,7 +46,8 @@
         <td><%= user.zip %></td>
 
         <% if user.avatar.present? %>
-            <td><%= image_tag user.avatar, size: '100x100' %></td>
+            <td><%= image_tag(user.avatar.url(:small_thumb).to_s) %></td>
+            <%#= image_tag user.avatar, size: '100x100' %>
         <% else %>
             <td><%= image_tag user.thumbnail, size: '100x100' %></td>
         <% end %>

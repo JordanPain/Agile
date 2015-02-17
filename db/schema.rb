@@ -13,6 +13,15 @@
 
 ActiveRecord::Schema.define(version: 20150216004029) do
 
+  create_table "messages", force: true do |t|
+    t.integer  "author_id"
+    t.integer  "receiver_id"
+    t.string   "subject"
+    t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "surveys", force: true do |t|
     t.string   "question_one"
     t.string   "question_two"
