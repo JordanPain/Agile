@@ -45,6 +45,7 @@ userNameNumber = 1
       about:Lorem.sentence(6, false, 12),
       gender:["male", "female"].sample(),
       admin:false,
+      thumbnail: "https://placeimg.com/250/250/people#{rand(1..10000)}",
       avatar:Avatar.image
   )
   user.save!

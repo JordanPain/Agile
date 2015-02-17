@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150209033242) do
+ActiveRecord::Schema.define(version: 20150216004029) do
 
   create_table "surveys", force: true do |t|
     t.string   "question_one"
@@ -67,6 +67,7 @@ ActiveRecord::Schema.define(version: 20150209033242) do
     t.string   "last_sign_in_ip"
     t.integer  "survey"
     t.string   "avatar"
+    t.string   "thumbnail"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
