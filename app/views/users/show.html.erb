@@ -1,110 +1,97 @@
 <div id="layout" class="container-fluid">
-  <header class="head"></header>
+<header class="head"></header>
+<div class="profilePicture"><%= image_tag(@user.avatar.url(:thumb).to_s) %></div>
+<div class="usersForm col-xs-6">
+<div class="usersName"></div>
 
-  <% if @user.avatar.present? %>
-      <div class="profilePicture"><%= image_tag(@user.avatar, height: '250', width: '250') %></div>
-  <% else %>
-      <div class="profilePicture"><%= image_tag @user.thumbnail, height: '250', width: '250' %></div>
-  <% end %>
-  <div class="usersForm col-xs-6">
-    <div class="usersName"></div>
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
 
-    <p>
-      <strong>Email:</strong>
-      <%= @user.email %>
-    </p>
+<p>
+  <strong>Password:</strong>
+  <%= @user.password %>
+</p>
 
-    <p>
-      <strong>Password:</strong>
-      <%= @user.password %>
-    </p>
+<p>
+  <strong>Username:</strong>
+  <%= @user.userName %>
+</p>
 
-    <p>
-      <strong>Username:</strong>
-      <%= @user.userName %>
-    </p>
+<p>
+  <strong>Firstname:</strong>
+  <%= @user.firstName %>
+</p>
 
-    <p>
-      <strong>Firstname:</strong>
-      <%= @user.firstName %>
-    </p>
+<p>
+  <strong>Lastname:</strong>
+  <%= @user.lastName %>
+</p>
 
-    <p>
-      <strong>Lastname:</strong>
-      <%= @user.lastName %>
-    </p>
+<p>
+  <strong>Birthdate:</strong>
+  <%= @user.birthdate %>
+</p>
 
-    <p>
-      <strong>Birthdate:</strong>
-      <%= @user.birthdate %>
-    </p>
+<p>
+  <strong>City:</strong>
+  <%= @user.city %>
+</p>
 
-    <p>
-      <strong>City:</strong>
-      <%= @user.city %>
-    </p>
+<p>
+  <strong>State:</strong>
+  <%= @user.state %>
+</p>
 
-    <p>
-      <strong>State:</strong>
-      <%= @user.state %>
-    </p>
+<p>
+  <strong>Zip:</strong>
+  <%= @user.zip %>
+</p>
 
-    <p>
-      <strong>Zip:</strong>
-      <%= @user.zip %>
-    </p>
+<p>
+  <strong>About:</strong>
+  <%= @user.about %>
+</p>
 
-    <p>
-      <strong>About:</strong>
-      <%= @user.about %>
-    </p>
+<p>
+  <strong>Gender:</strong>
+  <%= @user.gender %>
+</p>
 
-    <p>
-      <strong>Gender:</strong>
-      <%= @user.gender %>
-    </p>
+<p>
+  <strong>Admin:</strong>
+  <%= @user.admin %>
+</p>
 
-    <p>
-      <strong>Admin:</strong>
-      <%= @user.admin %>
-    </p>
+<p>
+  <strong>Avatar:</strong>
+  <%= @user.avatar.to_s %>
+</p>
 
+  <p>
+    <strong>Survey:</strong>
 
-
-    <% if @user.avatar.present? %>
-        <p>
-          <strong>Avatar:</strong>
-          <%= @user.avatar.to_s %>
-        </p>
+    <% if @user.survey %>
+        <%= @user.survey %>
     <% else %>
-        <p>
-          <strong>Image:</strong>
-          <%= @user.thumbnail %>
-        </p>
+        This user hasn't taken a survey yet.
     <% end %>
-    <p>
-      <strong>Survey:</strong>
+  </p>
 
+  <br/>
+  <% if @user.id == @current_user.id %>
       <% if @user.survey %>
-          <%= @user.survey %>
+          <%= link_to "Edit My Survey", edit_survey_path(@user.survey) %>
+          <br/>
       <% else %>
-          This user hasn't taken a survey yet.
+          <%= link_to 'Take Survey to get matched', new_survey_path %>
+          <br/>
       <% end %>
-    </p>
+    <%= link_to 'Edit My Profile', edit_user_path(@user) %>
+      <br>
+  <% end %>
 
-    <br/>
-    <% if @user.id == @current_user.id %>
-        <% if @user.survey %>
-            <%= link_to "Edit My Survey", edit_survey_path(@user.survey) %>
-            <br/>
-        <% else %>
-            <%= link_to 'Take Survey to get matched', new_survey_path %>
-            <br/>
-        <% end %>
-        <%= link_to 'Edit My Profile', edit_user_path(@user) %>
-        <br>
-    <% end %>
-
-    <%= link_to 'Back', browse_path %>
-  </div>
+<%= link_to 'Back', browse_path %>
 </div>
+      </div>
