@@ -1,6 +1,6 @@
 <div id="layout" class="container-fluid">
 <header class="head"></header>
-<div class="profilePicture"><%= image_tag(@user.avatar, height: '250', width: '250') %></div>
+<div class="profilePicture"><%= image_tag(@user.avatar.url(:thumb).to_s) %></div>
 <div class="usersForm col-xs-6">
 <div class="usersName"></div>
 
