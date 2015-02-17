@@ -65,10 +65,10 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    users_scope = User.active
+    users_scope = User.current_scope
     users_scope = users_scope.like(params[:filter]) if params[:filter]
-    @users = smart_listing_create :users, users_scope, partial: "users/list",
-                                  default_sort: {zip: "asc"}
+    @users = smart_listing_create :users, users_scope, partial: "users/listing",
+                                  default_sort: {firstName: "asc"}
 
 
   end

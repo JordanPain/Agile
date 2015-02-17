@@ -8,6 +8,17 @@ class PageController < ApplicationController
   end
 
   def browse
+    #users_scope = User.all
+    if params[:filter]
+      users_scope = User.all.where("userName LIKE '#{params[:filter]}'") if params[:filter]
+    else
+      users_scope = User.all
+    end
+
+    @users = smart_listing_create(:users, users_scope,
+                                  partial: "page/listing",
+                                  default_sort: {firstName: "asc"})
+  end
 =begin
     page = params[:page]
     limit = 10
@@ -19,8 +30,7 @@ class PageController < ApplicationController
       @byCity = true
       whereString << "city = ?"
       whereArray << ['Spokane']
-      if params[:male] == "yes" or params[:female] == "yes"
-        whereString << " AND ("
+      if params[:male] == "yes" or params[:female] == "yes"       whereString << " AND ("
       end
     end
     if params[:male] == "yes"
@@ -40,15 +50,9 @@ class PageController < ApplicationController
 =end
 
 
-    @users = smart_listing_create(:users,
-                                  User.all,#.where(whereArray),
-                                  partial: "page/listing")
-                                  #, default_sort: {firstName: "asc"}
-
-
     #@users = @users.page(page).per(limit)
 
-  end
+
 
   def match
     @surveys = Survey.all
