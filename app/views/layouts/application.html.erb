@@ -38,6 +38,9 @@
         <% if current_user %>
             <li><%= link_to "PROFILE", user_path(current_user[:id]) %></li>
         <% end %>
+
+        <li><%= link_to "MESSAGES", mail_path %></li>
+
         <li><%= link_to "SUPPORT", support_path %></li>
         <li><%= link_to "CONTACT US", contact_us_path %></li>
         <% if user_signed_in? %>
