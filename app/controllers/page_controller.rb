@@ -7,6 +7,24 @@ class PageController < ApplicationController
   def home
   end
 
+  def messages
+    @contact_list = []
+    Message.all do |message|
+      if message.author_id == current_user.id
+        if !@contact_list.include?(message.receiver_id)
+          @contact_list << message.receiver_id
+        end
+      elsif message.receiver_id == current_user.id
+        if !@contact_list.include?(message.author_id)
+          @contact_list << message.author_id
+        end
+      end
+    end
+
+    @contacts = User.all.where( @contact_list )
+
+  end
+
   def browse
 =begin
     page = params[:page]

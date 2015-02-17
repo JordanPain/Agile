@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :messages
+
   resources :surveys
 
   root to: 'page#home'
@@ -18,9 +20,13 @@ Rails.application.routes.draw do
   get 'contact_us', to: 'page#contact_us'
   post '/contact_us', to: 'page#contact_us'
 
+  get 'mail', to: 'page#messages'
+
 
   devise_for :users
-  resources :users
+  resources :users do
+    resources :messages
+  end
 
   #get 'users/edit', to: 'users#edit'
 

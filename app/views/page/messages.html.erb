@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<h1>Contacts:</h1>
+<ul>
+  <% @contacts.each do |contact| %>
+    <li>
+      <%= link_to contact.userName, messages_path( {:contact_id => contact.id} ) %>
+    </li>
+  <% end %>
+</ul>
+
+
+</body>
+</html>

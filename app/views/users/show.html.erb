@@ -4,70 +4,84 @@
 <div class="usersForm col-xs-6">
 <div class="usersName"></div>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
+  <p>
+    <%= link_to "Message this user",
+                new_message_path( {:receiver_id => @user.id} ) %>
+  </p>
 
-<p>
-  <strong>Password:</strong>
-  <%= @user.password %>
-</p>
+  <p>
+    <strong>Username:</strong>
+    <%= @user.userName %>
+  </p>
 
-<p>
-  <strong>Username:</strong>
-  <%= @user.userName %>
-</p>
+  <p>
+    <strong>User ID:</strong>
+    <%= @user.id %>
+  </p>
 
-<p>
-  <strong>Firstname:</strong>
-  <%= @user.firstName %>
-</p>
+    <p>
+      <strong>Email:</strong>
+      <%= @user.email %>
+    </p>
 
-<p>
-  <strong>Lastname:</strong>
-  <%= @user.lastName %>
-</p>
+    <p>
+      <strong>Firstname:</strong>
+      <%= @user.firstName %>
+    </p>
 
-<p>
-  <strong>Birthdate:</strong>
-  <%= @user.birthdate %>
-</p>
+    <p>
+      <strong>Lastname:</strong>
+      <%= @user.lastName %>
+    </p>
 
-<p>
-  <strong>City:</strong>
-  <%= @user.city %>
-</p>
+    <p>
+      <strong>Birthdate:</strong>
+      <%= @user.birthdate %>
+    </p>
 
-<p>
-  <strong>State:</strong>
-  <%= @user.state %>
-</p>
+    <p>
+      <strong>City:</strong>
+      <%= @user.city %>
+    </p>
 
-<p>
-  <strong>Zip:</strong>
-  <%= @user.zip %>
-</p>
+    <p>
+      <strong>State:</strong>
+      <%= @user.state %>
+    </p>
 
-<p>
-  <strong>About:</strong>
-  <%= @user.about %>
-</p>
+    <p>
+      <strong>Zip:</strong>
+      <%= @user.zip %>
+    </p>
 
-<p>
-  <strong>Gender:</strong>
-  <%= @user.gender %>
-</p>
+    <p>
+      <strong>About:</strong>
+      <%= @user.about %>
+    </p>
 
-<p>
-  <strong>Admin:</strong>
-  <%= @user.admin %>
-</p>
+    <p>
+      <strong>Gender:</strong>
+      <%= @user.gender %>
+    </p>
 
-<p>
-  <strong>Avatar:</strong>
-  <%= @user.avatar.to_s %>
-</p>
+    <p>
+      <strong>Admin:</strong>
+      <% if @user.admin %>
+          Yes
+      <% else %>
+          No
+      <% end %>
+    </p>
+
+    <p>
+      <strong>Avatar:</strong>
+      <% if @user.avatar %>
+          <%= @user.avatar.to_s %>
+      <% else %>
+          This user hasn't uploaded a profile picture yet.
+      <% end %>
+
+    </p>
 
   <p>
     <strong>Survey:</strong>

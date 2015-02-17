@@ -1,0 +1,57 @@
+<%= form_for(@message) do |f| %>
+  <% if @message.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@message.errors.count, "error") %> prohibited this message from being saved:</h2>
+
+      <ul>
+      <% @message.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :from %>
+    <%= @sender.userName %>
+  </div>
+  <div class="field">
+    <%= f.hidden_field :author_id, :value => @sender.id %>
+  </div>
+
+    <% if @receiver %>
+        <% receiver_id = @receiver.id %>
+        <% receiver_name = @receiver.userName %>
+        <div class="field">
+          <%= f.label :to %>
+          <%= receiver_name %>
+        </div>
+        <%= f.hidden_field :receiver_id, :value => @receiver.id %>
+        <%= f.hidden_field :contact_id, :value => @receiver.id %>
+    <% else %>
+        <% receiver_id = "" %>
+        <% receiver_name = "" %>
+        <div class="field">
+          <%= f.label :receiver_id %><br>
+          <%= f.number_field :receiver_id %>
+        </div>
+    <% end %>
+
+
+
+
+
+  <div class="field">
+    <%= f.label :subject %><br>
+    <%= f.text_field :subject %>
+  </div>
+  <div class="field">
+    <%= f.label :content %><br>
+    <%= f.text_area :content %>
+  </div>
+
+
+  <div class="actions">
+    <%= f.submit "Send"%>
+  </div>
+<% end %>
