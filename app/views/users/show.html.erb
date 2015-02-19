@@ -1,23 +1,27 @@
 <div id="layout" class="container-fluid">
 <header class="head"></header>
-<div class="profilePicture"><%= image_tag(@user.avatar, height: '250', width: '250') %></div>
+  <% if @user.avatar.present? %>
+      <div class="profilePicture"><%=  image_tag(@user.avatar.url(:thumb).to_s) %></div>
+  <% else %>
+      <div class="profilePicture"><%= image_tag @user.thumbnail, height: '250', width: '250' %></div>
+  <% end %>
 <div class="usersForm col-xs-6">
 <div class="usersName"></div>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
+  <p>
+    <%= link_to "Message this user",
+                new_message_path( {:receiver_id => @user.id} ) %>
+  </p>
 
-<p>
-  <strong>Password:</strong>
-  <%= @user.password %>
-</p>
+  <p>
+    <strong>Username:</strong>
+    <%= @user.userName %>
+  </p>
 
-<p>
-  <strong>Username:</strong>
-  <%= @user.userName %>
-</p>
+  <p>
+    <strong>User ID:</strong>
+    <%= @user.id %>
+  </p>
 
 <p>
   <strong>Firstname:</strong>

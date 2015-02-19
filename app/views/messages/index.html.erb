@@ -1,0 +1,60 @@
+<h1>
+  Correspondence with <%= @contact.userName %>
+</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>From</th>
+      <th>Subject</th>
+      <th>Content</th>
+      <th>Time</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @messages.each do |message| %>
+      <% if message.receiver_id == @current_user.id %>
+          <tr class="received_msg">
+          <td class="sender_box"><%= @contact.userName %></td>
+          <td class="subject_box"><%= message.subject %></td>
+          <td class="content_box"><%= message.content %></td>
+          <td class="time_box"><%= message.created_at %></td>
+
+          <!-- These shouldn't ever be needed except by an administrator
+            <td><%= link_to 'Show', message %></td>
+            <td><%= link_to 'Edit', edit_message_path(message) %></td>
+            <td><%= link_to 'Destroy', message, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            -->
+
+
+          </tr>
+      <% else %>
+          <tr class="sent_msg">
+            <td class="sender_box">Me</td>
+            <td class="subject_box"><%= message.subject %></td>
+            <td class="content_box">&nbsp;&nbsp;<%= message.content %></td>
+            <td class="time_box"><%= message.created_at %></td>
+
+            <!-- These shouldn't ever be needed except by an administrator
+            <td><%= link_to 'Show', message %></td>
+            <td><%= link_to 'Edit', edit_message_path(message) %></td>
+            <td><%= link_to 'Destroy', message, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            -->
+
+
+          </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Message', new_message_path( :receiver_id => @contact.id ), class:"new_message btn btn-default" %>
+
+<br>
+<br>
+
+<%= link_to 'Back to Contacts', mail_path, class:"btn btn-default" %>

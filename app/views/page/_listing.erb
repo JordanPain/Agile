@@ -1,6 +1,21 @@
+<%= smart_listing_controls_for(:users) do %>
+    <div class="filter input-append">
+      <%= text_field_tag :filter, '', class: "search", placeholder: "Type name here", autocomplete: "off" %>
+    </div>
+<% end %>
+
 <%= smart_listing.paginate :users %>
 
 <%= smart_listing.pagination_per_page_links :users %>
+<%= smart_listing_controls_for(:users, {class: "form-inline text-right"}) do %>
+    <div class="form-group filter input-append">
+      <br />
+      <%= text_field_tag :filter, '', class: "search form-control",placeholder: "Search...", autocomplete: :off  %>
+        <button class="btn btn-primary disabled" type="<%= :submit %>">
+  <span class="glyphicon glyphicon-search"></span>
+</button>
+<% end %>
+</div>
 <table>
   <thead>
   <tr>
@@ -11,6 +26,7 @@
     <th><%= smart_listing.sortable "City", :city %></th>
     <th><%= smart_listing.sortable "State", :state %></th>
     <th><%= smart_listing.sortable "Zip Code", :zip %></th>
+    <th>Image</th>
     <th class="xs-hidden"><%= smart_listing.sortable "About", :about %></th>
     <th><%= smart_listing.sortable "Gender", :gender %></th>
 
@@ -28,6 +44,13 @@
         <td><%= user.city %></td>
         <td><%= user.state %></td>
         <td><%= user.zip %></td>
+
+        <% if user.avatar.present? %>
+            <td><%= image_tag(user.avatar.url(:small_thumb).to_s) %></td>
+            <%#= image_tag user.avatar, size: '100x100' %>
+        <% else %>
+            <td><%= image_tag user.thumbnail, size: '100x100' %></td>
+        <% end %>
         <td class="xs-hidden"><%= user.about %></td>
         <td><%= user.gender %></td>
 

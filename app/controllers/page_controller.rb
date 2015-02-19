@@ -9,7 +9,40 @@ class PageController < ApplicationController
   def home
   end
 
+  def messages
+
+    contact_list = []
+    Message.all.each do |message|
+      puts contact_list.inspect
+      if message.author_id == current_user.id
+        if !contact_list.include?(message.receiver_id)
+          contact_list << message.receiver_id
+        end
+      elsif message.receiver_id == current_user.id
+        if !contact_list.include?(message.author_id)
+          contact_list << message.author_id
+        end
+      end
+    end
+    @contacts = User.where({ id: contact_list})
+
+
+    puts contact_list.inspect
+    puts current_user.inspect
+  end
+
   def browse
+    #users_scope = User.all
+    if params[:filter]
+      users_scope = User.all.where("userName LIKE '#{params[:filter]}'") if params[:filter]
+    else
+      users_scope = User.all
+    end
+
+    @users = smart_listing_create(:users, users_scope,
+                                  partial: "page/listing",
+                                  default_sort: {firstName: "asc"})
+  end
 =begin
     page = params[:page]
     limit = 10
@@ -21,8 +54,7 @@ class PageController < ApplicationController
       @byCity = true
       whereString << "city = ?"
       whereArray << ['Spokane']
-      if params[:male] == "yes" or params[:female] == "yes"
-        whereString << " AND ("
+      if params[:male] == "yes" or params[:female] == "yes"       whereString << " AND ("
       end
     end
     if params[:male] == "yes"
@@ -42,15 +74,9 @@ class PageController < ApplicationController
 =end
 
 
-    @users = smart_listing_create(:users,
-                                  User.all,#.where(whereArray),
-                                  partial: "page/listing")
-                                  #, default_sort: {firstName: "asc"}
-
-
     #@users = @users.page(page).per(limit)
 
-  end
+
 
   def match
 
@@ -187,26 +213,27 @@ end
   end
 
   def contact_us
-    flash[:notice] == nil
+    flash[:error] == nil
+
     @email = params[:email]
     if @email && @email.empty?
-      flash[:notice] = "Please enter your email!"
+      flash[:error] = "Please enter your email!"
     else
-      flash[:notice] == nil
+      flash[:error] == nil
     end
 
     @last_name = params[:last_name]
     if @last_name && @last_name.empty?
-      flash[:notice] = "Please enter your last name!"
+      flash[:error] = "Please enter your last name!"
     else
-      flash[:notice] == nil
+      flash[:error] == nil
     end
 
     @first_name = params[:first_name]
     if @first_name && @first_name.empty?
-      flash[:notice] = "Please enter your first name!"
+      flash[:error] = "Please enter your first name!"
     else
-      flash[:notice] == nil
+      flash[:error] == nil
     end
 
     @phone = params[:phone]
@@ -226,13 +253,8 @@ end
       @subscribe_newsletter = "yes"
     end
 
-    @notify_products = params[:notify_products]
-    if @notify_products == "1"
-      @notify_products = "yes"
-    end
-
-
     @commit = params[:commit].nil? ? false : true
+
   end
 
 end
