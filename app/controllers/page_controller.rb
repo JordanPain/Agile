@@ -9,6 +9,28 @@ class PageController < ApplicationController
   def home
   end
 
+  def messages
+
+    contact_list = []
+    Message.all.each do |message|
+      puts contact_list.inspect
+      if message.author_id == current_user.id
+        if !contact_list.include?(message.receiver_id)
+          contact_list << message.receiver_id
+        end
+      elsif message.receiver_id == current_user.id
+        if !contact_list.include?(message.author_id)
+          contact_list << message.author_id
+        end
+      end
+    end
+    @contacts = User.where({ id: contact_list})
+
+
+    puts contact_list.inspect
+    puts current_user.inspect
+  end
+
   def browse
     #users_scope = User.all
     if params[:filter]

@@ -1,0 +1,44 @@
+// Place all the styles related to the messages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+h1{
+  background-color:#ffffff;
+  color:#ffffff;
+}
+
+thead{
+  color:#ffffff;
+  text-decoration: underline;
+}
+
+
+.received_msg{
+  background-color:#ffffff;
+
+}
+.sent_msg{
+  background-color:#d4dee8;
+
+  padding-left: 150px;
+}
+
+.sender_box{
+  padding: 0 5px 0 5px;
+  border-right: 1px solid black;
+}
+.subject_box{
+  min-width: 50px;
+  padding: 0 5px 0 5px;
+  border-right: 1px solid black;
+
+}
+.content_box{
+  padding: 0 5px 0 5px;
+  min-width: 300px;
+  border-right: 1px solid black;
+}
+
+.new_message{
+
+}

@@ -8,15 +8,20 @@
 <div class="usersForm col-xs-6">
 <div class="usersName"></div>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
+  <p>
+    <%= link_to "Message this user",
+                new_message_path( {:receiver_id => @user.id} ) %>
+  </p>
 
-<p>
-  <strong>Username:</strong>
-  <%= @user.userName %>
-</p>
+  <p>
+    <strong>Username:</strong>
+    <%= @user.userName %>
+  </p>
+
+  <p>
+    <strong>User ID:</strong>
+    <%= @user.id %>
+  </p>
 
 <p>
   <strong>Firstname:</strong>

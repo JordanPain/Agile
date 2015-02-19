@@ -7,8 +7,9 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 include Faker
-
+=begin
 User.destroy_all
+# just to clear the table Survey.destroy_all
 
 # just to clear the table
 Survey.destroy_all
@@ -28,6 +29,23 @@ taylor = User.create(
 )
 taylor.save!
 puts taylor.inspect
+
+dave = User.create(
+    email:"dljones@gmail.com",
+    password:"password",
+    userName:"PirateSinker",
+    firstName:"Dave",
+    lastName:"Jones",
+    birthdate:Date.new(1865,4,26),
+    city:"Spokane",
+    state:"WA",
+    zip:99203,
+    about:"I am the ancient master of all things Macintosh.",
+    gender:"male",
+    admin:true
+)
+dave.save!
+puts dave.inspect
 
 userNameNumber = 1
 101.times do
@@ -52,6 +70,26 @@ userNameNumber = 1
   puts user.inspect
 userNameNumber += 1
 end
+
+=end
+
+
+#Message.destroy_all
+=begin
+100.times do
+    User.all.each do |user|
+        message = Message.create(
+            author_id:user.id,
+            receiver_id:User.order("RANDOM()").limit(1)[0].id,
+            subject:Lorem.word,
+            content:Lorem.sentences.sample()
+        )
+        message.save!
+        puts message.inspect
+    end
+end
+=end
+Survey.destroy_all
 
 User.all.each do |user|
     sampleone = ["Yes", "No"]
@@ -99,7 +137,10 @@ User.all.each do |user|
     user_id: user.id
 
     )
+    user.survey = newSurvey.id
     user.save!
+    newSurvey.save!
+    puts newSurvey.inspect
     puts user.inspect
 end
 
