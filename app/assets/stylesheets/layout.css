@@ -12,7 +12,7 @@
     }
 }
 
-body{margin:0px; font:11px/13px Arial, Helvetica, sans-serif; color:#010000; background:#e7eef6 url(body_bg.jpg) repeat-x 0 0 fixed; }
+body{margin:0px; font:11px/13px Arial, Helvetica, sans-serif; color:#010000; background:#e7eef6 url("body_bg.jpg") repeat-x 0 0 fixed; }
 img{border:none}
 .clear{clear:both}
 /*background:#e7eef6 url(body_bg.jpg) repeat-x 0 0 fixed*/
@@ -167,7 +167,7 @@ img.service-img{float:left;
 .container_row .column_partner .bottom_curve p a:hover{color:#fff; text-decoration:underline}
 
 .container_row .column_profile{float:left; width:276px; padding:0 0 0 19px}
-.container_row .column_profile h2{float:left; width:203px; background:url(new_profile.gif) no-repeat 0 0; font-size:12px; line-height:14px; font-weight:bold; padding:17px 0 21px 74px; color:#fff; margin:0}
+.container_row .column_profile h2{float:left; width:203px; background:url(column_border.gif) repeat-y 0 0; font-size:12px; line-height:14px; font-weight:bold; padding:17px 0 21px 74px; color:#fff; margin:0}
 .container_row .column_profile .detail{float:left; width:276px; background:url(column_border.gif) repeat-y 0 0}
 
 .container_row .column_profile .detail .row{float:left; width:262px; padding:0 0 0 14px; margin:0; background:url(bg_1.gif) no-repeat 15px 0}
@@ -456,7 +456,6 @@ p{line-height:15px; text-align:justify}
 .box2{width:45%; float:left;padding:5px;margin-left:5%}
 h2{font:bold 13px Arial, Helvetica, sans-serif;	color:#221E21; padding:0px 0px 5px 0px;	border-bottom:1px dotted #d8d6ba;margin:0px 0px 0 0px;}
 h3{font:bold 13px Arial, Helvetica, sans-serif;	color:#221E21; padding:0px 0px 5px 0px;	margin:0px;}
-.blog-posted-row{background:url(body_container_bg.gif) repeat-y 0 0; padding:3px;}
 /* 	Inside Page Design  */
 textarea{width:322px}
 /***** inner page css ends *****/
