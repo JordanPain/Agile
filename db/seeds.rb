@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 include Faker
-=begin
+#=begin
 User.destroy_all
 # just to clear the table Survey.destroy_all
 
@@ -71,7 +71,7 @@ userNameNumber = 1
 userNameNumber += 1
 end
 
-=end
+#=end
 
 
 #Message.destroy_all

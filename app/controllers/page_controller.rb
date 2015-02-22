@@ -2,7 +2,7 @@ class PageController < ApplicationController
   before_action :set_survey, only: [:show, :edit, :update, :destroy]
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
-  helper_method :bool_compare, :score_surveys, :order_scores, :find_user, :find_score, :getUsername
+  helper_method :bool_compare, :score_surveys, :order_scores, :find_user, :find_score, :getUsername, :getUserAvatar
   include SmartListing::Helper::ControllerExtensions
   helper  SmartListing::Helper
 
@@ -104,9 +104,24 @@ end
     name = ""
    person = User.where("id == #{userid}")
      person.each do |person|
-     name = person.userName
+     name = person.firstName
      end
     return name
+  end
+
+  def getUserAvatar( userid )
+    picture = ""
+    person = User.where("id == #{userid}")
+    person.each do |person|
+
+        if person.avatar.present?
+          picture = person.avatar.url(:thumb).to_s
+        else
+          picture =   person.thumbnail
+        end
+    end
+    return picture
+
   end
 
  # Finds the User object asscioted with id
