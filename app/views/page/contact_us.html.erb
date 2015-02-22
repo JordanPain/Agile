@@ -119,12 +119,6 @@
           <%= label_tag("newsletter", "Subscribe to newsletter?") %>
         </div>
 
-        <div class="checkbox">
-          <!-- <input type="checkbox" name="newProductNotify" value="1" id="newProductNotify"/>-->
-          <%= check_box_tag("notify_products", value = "1", @notify_products) %>
-          <%= label_tag("new_products", "Notify me of new products") %>
-        </div>
-
         <%= submit_tag("Submit", class: "btn btn-default col-xs-12 col-sm-12 col-md-6 col-lg-6") %>
 
         <%= link_to("Cancel", home_path, class: "btn btn-default col-xs-12 col-sm-12 col-md-6 col-lg-6") %>

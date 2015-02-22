@@ -45,7 +45,7 @@
         <li><%= link_to "CONTACT US", contact_us_path %></li>
         <% if user_signed_in? %>
             <li><a href="#">Hello, <strong><%= current_user.firstName %></strong></a></li>
-            <li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %><li>
+            <li><%= link_to "Logout", destroy_user_session_please_path, method: :destroy, :class => 'navbar-link'  %><li>
         <% else %>
             <li><%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %></li>
             <li><%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %></li>
