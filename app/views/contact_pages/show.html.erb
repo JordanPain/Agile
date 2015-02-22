@@ -1,0 +1,69 @@
+<div class="container alt-layout">
+   <br>
+  <% flash.each do |key, value| %>
+      <div class="<%= flash_class(key) %>">
+        <%= value %>
+      </div>
+  <% end %>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Here is your information!</h3>
+    </div>
+
+    <div class="panel-body">
+      <br>
+      <p>
+        <strong>First name:</strong>
+        <%= @contact_page.first_name %>
+      </p>
+
+      <p>
+        <strong>Last name:</strong>
+        <%= @contact_page.last_name %>
+      </p>
+
+      <p>
+        <strong>Email:</strong>
+        <%= @contact_page.email %>
+      </p>
+
+      <p>
+        <strong>Phone:</strong>
+        <%= @contact_page.phone %>
+      </p>
+
+      <p>
+        <strong>Contact me:</strong>
+        <%= @contact_page.contact_me %>
+      </p>
+
+      <p>
+        <strong>Reason selected:</strong>
+        <%= @contact_page.reason_selected %>
+      </p>
+
+      <p>
+        <strong>Question:</strong>
+        <%= @contact_page.question %>
+      </p>
+
+      <p>
+        <strong>Subscribe newsletter:</strong>
+        <%= @contact_page.subscribe_newsletter %>
+      </p>
+      <!--<%= link_to 'Edit', edit_contact_page_path(@contact_page) %> |
+      <%= link_to 'Back', contact_pages_path %>-->
+      <% %>
+
+      <script>
+          setTimeout(function () {
+              window.location.href = "<%= home_path %>";
+          }, 4000);
+      </script>
+
+    </div>
+  </div>
+</div>
+
+

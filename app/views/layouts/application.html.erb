@@ -42,7 +42,7 @@
         <li><%= link_to "MESSAGES", mail_path %></li>
 
         <li><%= link_to "SUPPORT", support_path %></li>
-        <li><%= link_to "CONTACT US", contact_us_path %></li>
+        <li><%= link_to "CONTACT US", new_contact_page_path %></li>
         <% if user_signed_in? %>
             <li><a href="#">Hello, <strong><%= current_user.firstName %></strong></a></li>
             <li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %><li>

@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   has_many :surveys
 
   has_many :messages
+  has_many :contact_pages
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable

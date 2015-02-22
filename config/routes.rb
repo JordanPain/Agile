@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :contact_pages
+
   resources :messages
 
   resources :surveys
