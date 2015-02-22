@@ -44,18 +44,18 @@
     <div class="container-fluid match-body">
 
            <% @user_objects.each do |survey| %>
-
                     <% if (countercolumn == 0) %>
                         <div class="row">
                     <% end %>
-                    <div class="col-xs-6 col-md-2 col-sm-2">
+                 <div class="col-xs-6 col-md-2 col-sm-4">
                       <div class="match-user">
                         <% survey.each do |more| %>
+
                             <h2><%= getUsername(more.user_id)%></h2>
-                            <%= image_tag(getUserAvatar(more.user_id))%>
+                            <%= link_to   image_tag(getUserAvatar(more.user_id)), user_path(more.user_id) %>
                             <%= %>
                             <h4>Match Score: <%= @user_scores[counter] %></h4>
-                            <h4><%= link_to 'Show', user_path(more.user_id) %></h4>
+
                             <% counter += 1 %>
                         <% end %>
                       </div>

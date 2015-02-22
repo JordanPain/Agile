@@ -104,7 +104,7 @@ end
     name = ""
    person = User.where("id == #{userid}")
      person.each do |person|
-     name = person.firstName
+     name = person.userName
      end
     return name
   end
@@ -113,7 +113,6 @@ end
     picture = ""
     person = User.where("id == #{userid}")
     person.each do |person|
-
         if person.avatar.present?
           picture = person.avatar.url(:thumb).to_s
         else
@@ -121,7 +120,6 @@ end
         end
     end
     return picture
-
   end
 
  # Finds the User object asscioted with id
