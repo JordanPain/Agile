@@ -2,16 +2,21 @@
 <header class="head"></header>
 
 
-  <div class="profilePicture"><%= image_tag(current_user.avatar.url, height: '250', width: '250') %></div>
+  <div class="profilePicture"><%= image_tag(@user.avatar.url, height: '250', width: '250') %></div>
 
 
 <div class="usersForm col-xs-6">
 <div class="usersName"></div>
 
+  <% if @user.id == @current_user.id %>
+
+  <% else %>
   <p>
     <%= link_to "Message this user",
                 new_message_path( {:receiver_id => @user.id} ) %>
   </p>
+  <% end %>
+
 
   <p>
     <strong>Username:</strong>
@@ -34,8 +39,8 @@
 </p>
 
 <p>
-  <strong>Birthdate:</strong>
-  <%= @user.birthdate %>
+  <strong>Age:</strong>
+  <%= userAge( @user.birthdate ) %>
 </p>
 
 <p>
