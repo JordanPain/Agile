@@ -32,9 +32,8 @@ class PageController < ApplicationController
   end
 
   def browse
-    #users_scope = User.all
     if params[:filter]
-      users_scope = User.all.where("userName LIKE '#{params[:filter]}'") if params[:filter]
+       users_scope = User.all.where("userName LIKE '#{params[:filter]}' OR city LIKE '#{params[:filter]}' OR gender LIKE '#{params[:filter]}' OR state LIKE '#{params[:filter]}' OR zip LIKE '#{params[:filter]}'") if params[:filter]
     else
       users_scope = User.all
     end
