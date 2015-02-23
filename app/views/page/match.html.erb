@@ -1,5 +1,6 @@
-<h1>Match</h1>
-<p></p>
+
+<!--
+
 <% if (current_user.survey) %>
     <table>
       <thead>
@@ -18,7 +19,7 @@
               <tr>
                 <td><%= getUsername(more.user_id)%></td>
                 <td><%= @user_scores[counter] %></td>
-                <!--<td><%= link_to 'Show', more %></td>-->
+                <td><%= link_to 'Show', more %></td>
                 <td><%= link_to 'Show', user_path(more.user_id) %></td>
                 <% counter += 1 %>
               </tr>
@@ -29,6 +30,48 @@
     </table>
 
 <%else %>
+    <%= link_to 'Take Survey to get matched', new_survey_path %>
+    <br/>
+<% end %>
+
+-->
+
+<% if (current_user.survey) %>
+    <h1>Match</h1>
+<%= %>
+    <% counter = 0%>
+    <% countercolumn = 0%>
+    <div class="container-fluid match-body">
+
+           <% @user_objects.each do |survey| %>
+                    <% if (countercolumn == 0) %>
+                        <div class="row">
+                    <% end %>
+                 <div class="col-xs-6 col-md-2 col-sm-4">
+                      <div class="match-user">
+                        <% survey.each do |more| %>
+
+                            <h2><%= getUsername(more.user_id)%></h2>
+                            <%= link_to   image_tag(getUserAvatar(more.user_id)), user_path(more.user_id) %>
+                            <%= %>
+                            <h4>Match Score: <%= @user_scores[counter] %></h4>
+
+                            <% counter += 1 %>
+                        <% end %>
+                      </div>
+                      <% countercolumn += 1%>
+                      <% if (countercolumn == 6) %>
+                         </div>
+                          <% countercolumn = 0%>
+                      <% end %>
+                    </div>
+            <% end %>
+
+    </div>
+
+
+<%else %>
+    <h1>Match</h1>
     <%= link_to 'Take Survey to get matched', new_survey_path %>
     <br/>
 <% end %>
