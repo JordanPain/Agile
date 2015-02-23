@@ -19,4 +19,15 @@ body {
   padding-top: 70px;
   margin-left: 0;
   margin-right: 0;
+  background:#e7eef6 asset_url("body_bg.jpg") repeat-x 0 0 fixed;
+}
+
+.banner{
+  background:asset_url("banner.jpg") no-repeat;
+}
+.head{
+  background:asset_url("coming-soon.jpg") no-repeat;
+}
+.profilePicture {
+  background: asset_url("placeholder.jpg") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
 }

@@ -21,9 +21,7 @@ gem 'faker'
 gem 'kaminari'
 
 gem 'smart_listing'
-
 gem 'carrierwave'
-
 gem 'mini_magick'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

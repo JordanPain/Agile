@@ -1,0 +1,72 @@
+<%= form_for(@contact_page, class: "col-xs-12") do |f| %>
+    <% if @contact_page.errors.any? %>
+        <div class="panel panel-default">
+          <div class="panel-heading error_explanation contact-page-errors">
+              <h2 class="panel-title"><%= pluralize(@contact_page.errors.count, "error") %> prohibited this message from being sent:</h2>
+          </div>
+
+          <div class="panel-body">
+            <ul>
+              <% @contact_page.errors.full_messages.each do |message| %>
+                  <li><span class="alert-warning"><%= message %></span></li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+        <!--<div id="error_explanation">-->
+          <!--<h2><%= pluralize(@contact_page.errors.count, "error") %> prohibited this contact_page from being sent:</h2>-->
+
+          <!--<ul>-->
+            <!--<% @contact_page.errors.full_messages.each do |message| %>-->
+                <!--<li><%= message %></li>-->
+            <!--<% end %>-->
+          <!--</ul>-->
+        <!--</div>-->
+    <% end %>
+
+
+    <div class="form_group">
+      <%= f.label :first_name %><br>
+      <%= f.text_field :first_name, class: "form-control" %>
+    </div>
+    <div class="form_group">
+      <%= f.label :last_name %><br>
+      <%= f.text_field :last_name, class: "form-control" %>
+    </div>
+    <div class="form_group">
+      <%= f.label :email %><br>
+      <%= f.text_field :email, class: "form-control" %>
+    </div>
+    <div class="form_group">
+      <%= f.label :phone %><br>
+      <%= f.text_field :phone, class: "form-control" %>
+    </div>
+
+    <p><strong>Preferred Contact Method:</strong></p>
+
+    <div class="radioButtons radio-inline">
+      <%= f.radio_button :contact_me, "email", class: "radioHeading" %>
+      <%= f.label "Email" %>
+    </div>
+    <div class="radioButtons radio-inline">
+      <%= f.radio_button :contact_me, "phone", class: "radioHeading" %>
+      <%= f.label "Phone" %>
+    </div>
+
+    <div class="contact-reason form_group">
+      <%= f.label "Contact Reason" %><br>
+      <%= f.select :reason_selected, [['Technical Issue', "tech issue"], ['Customer Support', "customer support"]],{:include_blank => false},{class: "form-control"} %>
+    </div>
+    <div class="form_group">
+      <%= f.label :question %><br>
+      <%= f.text_area :question, class: "form-control" %>
+    </div>
+    <div class="checkbox">
+      <%= f.check_box :subscribe_newsletter, {}, true, false %>
+      <%= f.label :subscribe_newsletter %>
+    </div>
+    <div class="actions">
+      <%= f.submit "Submit", class: "btn btn-default col-xs-12 col-sm-12 col-md-6 col-lg-6" %>
+      <%= link_to("Cancel", home_path, class: "btn btn-default col-xs-12 col-sm-12 col-md-6 col-lg-6") %>
+    </div>
+<% end %>

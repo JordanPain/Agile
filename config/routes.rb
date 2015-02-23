@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :contact_pages
+
   resources :messages
 
   resources :surveys
@@ -23,10 +25,17 @@ Rails.application.routes.draw do
   get 'mail', to: 'page#messages'
 
 
+  devise_scope :user do
+    get 'sign_out', as: 'destroy_user_session_please', to: 'devise/sessions#destroy'
+
+  end
+
   devise_for :users
   resources :users do
     resources :messages
   end
+
+
 
   #get 'users/edit', to: 'users#edit'
 

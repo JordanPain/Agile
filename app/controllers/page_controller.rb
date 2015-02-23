@@ -2,7 +2,7 @@ class PageController < ApplicationController
   before_action :set_survey, only: [:show, :edit, :update, :destroy]
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
-  helper_method :bool_compare, :score_surveys, :order_scores, :find_user, :find_score, :getUsername
+  helper_method :bool_compare, :score_surveys, :order_scores, :find_user, :find_score, :getUsername, :getUserAvatar
   include SmartListing::Helper::ControllerExtensions
   helper  SmartListing::Helper
 
@@ -32,9 +32,8 @@ class PageController < ApplicationController
   end
 
   def browse
-    #users_scope = User.all
     if params[:filter]
-      users_scope = User.all.where("userName LIKE '#{params[:filter]}'") if params[:filter]
+       users_scope = User.all.where("userName LIKE '#{params[:filter]}' OR city LIKE '#{params[:filter]}' OR gender LIKE '#{params[:filter]}' OR state LIKE '#{params[:filter]}' OR zip LIKE '#{params[:filter]}'") if params[:filter]
     else
       users_scope = User.all
     end
@@ -109,6 +108,19 @@ end
     return name
   end
 
+  def getUserAvatar( userid )
+    picture = ""
+    person = User.where("id == #{userid}")
+    person.each do |person|
+        if person.avatar.present?
+          picture = person.avatar.url(:thumb).to_s
+        else
+          picture =   person.thumbnail
+        end
+    end
+    return picture
+  end
+
  # Finds the User object asscioted with id
   def find_user ( list )
     users = []
@@ -135,8 +147,22 @@ end
  # and 11. Depending on if they can cook or can't cook, And if they perfer they can cook or doens't matter if they can cook
  # . If statments should complish this.
   def bool_compare( current_survey, other_survey, survey_score , question,  point_value)
-   
-    if current_survey.send(question.to_sym) == other_survey.send(question.to_sym)
+
+
+
+    if current_survey.send(question.to_sym) == current_survey.send("question_ten".to_sym) && current_survey.send(question.to_sym) == "Yes" &&
+        other_survey.send(question.to_sym) == other_survey.send("question_eleven".to_sym) && other_survey.send(question.to_sym) == "Yes"
+      survey_score += point_value
+    elsif current_survey.send(question.to_sym) == current_survey.send("question_ten".to_sym) && current_survey.send(question.to_sym) == "Doesn't Matter" &&
+        other_survey.send(question.to_sym) == other_survey.send("question_eleven".to_sym) && other_survey.send(question.to_sym) == "Yes"
+    survey_score += point_value
+    elsif  current_survey.send(question.to_sym) == current_survey.send("question_ten".to_sym) && current_survey.send(question.to_sym) == "Doesn't Matter" &&
+        other_survey.send(question.to_sym) == other_survey.send("question_eleven".to_sym) && other_survey.send(question.to_sym) == "No"
+      survey_score += point_value
+    elsif current_survey.send(question.to_sym) == current_survey.send("question_ten".to_sym) && current_survey.send(question.to_sym) == "Yes" &&
+         other_survey.send(question.to_sym) == other_survey.send("question_eleven".to_sym) && other_survey.send(question.to_sym) == "No"
+       survey_score += 0
+    elsif current_survey.send(question.to_sym) == other_survey.send(question.to_sym)
       survey_score += point_value
     else current_survey.send(question.to_sym) != other_survey.send(question.to_sym)
     survey_score += 0

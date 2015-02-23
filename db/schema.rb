@@ -11,7 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150216004029) do
+ActiveRecord::Schema.define(version: 20150222042109) do
+
+  create_table "contact_pages", force: true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.string   "phone"
+    t.string   "contact_me"
+    t.string   "reason_selected"
+    t.text     "question"
+    t.string   "subscribe_newsletter"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "messages", force: true do |t|
     t.integer  "author_id"
