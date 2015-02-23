@@ -113,7 +113,7 @@ end
     person = User.where("id == #{userid}")
     person.each do |person|
         if person.avatar.present?
-          picture = person.avatar.url(:thumb).to_s
+          picture = person.avatar
         else
           picture =   person.thumbnail
         end
