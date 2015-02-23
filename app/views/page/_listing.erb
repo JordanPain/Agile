@@ -27,7 +27,7 @@
 
   <tbody>
   <% smart_listing.collection.each do |user| %>
-      <tr>
+      <tr id="browseCol">
 
         <td><%= user.userName %></td>
 
@@ -42,7 +42,7 @@
         <% else %>
             <td><%= image_tag user.thumbnail, size: '100x100' %></td>
         <% end %>
-        <td class="xs-hidden"><%= user.about %></td>
+        <td id="aboutBrowse" class="xs-hidden"><%= user.about %></td>
         <td><%= user.gender %></td>
 
         <td><%= link_to 'Show', user %></td>

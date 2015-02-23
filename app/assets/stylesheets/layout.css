@@ -567,3 +567,17 @@ a {
     color: black;
     border: 1px solid cyan;
 }
+
+#browseTitle {
+    color: blue;
+    font-family: "Times New Roman", Times, serif;
+}
+
+#browseCol td {
+    width: 200px;
+}
+
+#aboutBrowse {
+    width: 150px;
+    padding-right: 1%;
+}
