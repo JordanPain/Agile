@@ -37,10 +37,10 @@
         <td><%= user.zip %></td>
 
         <% if user.avatar.present? %>
-            <td><%= image_tag(user.avatar.url(:small_thumb).to_s) %></td>
+            <td><%= image_tag user.avatar, height: '100', width: '100' %></td>
             <%#= image_tag user.avatar, size: '100x100' %>
         <% else %>
-            <td><%= image_tag user.thumbnail, size: '100x100' %></td>
+            <td><%= image_tag user.thumbnail, height: '100', width: '100' %></td>
         <% end %>
         <td id="aboutBrowse" class="xs-hidden"><%= user.about %></td>
         <td><%= user.gender %></td>

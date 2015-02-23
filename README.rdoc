@@ -1,0 +1,11 @@
+== README
+
+Directions to start project initially.
+
+1. Bundle install
+2. Run rake task db:migrate
+3. Run rake task db:seed
+
+ImageMagick must be installed on your local machine for the mini_magick gem to work.
+You can download ImageMagick from here - http://www.imagemagick.org/script/binary-releases.php#windows
+Follow the installation directions and restart your rubymine after installing ImageMagick.
