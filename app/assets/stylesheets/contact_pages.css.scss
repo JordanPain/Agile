@@ -1,0 +1,24 @@
+// Place all the styles related to the ContactPages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+//@import "bootstrap";
+///* Rails scaffold style compatibility */
+///* Rails scaffold style compatibility */
+//#error_explanation {
+//  @extend .alert;
+//  @extend .alert-danger;
+//  width: inherit;
+//}
+//
+//.field_with_errors {
+//  @extend .has-error;
+//  display: inherit;
+//  padding: inherit;
+//  background-color: inherit;
+//}
+
+.contact-page-errors h2{
+  color:red;
+  border: none;
+}

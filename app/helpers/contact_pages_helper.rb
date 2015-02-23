@@ -1,0 +1,3 @@
+module ContactPagesHelper
+
+end
