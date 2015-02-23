@@ -25,7 +25,10 @@ class ContactPagesController < ApplicationController
 
 	def create
 		@contact_page = ContactPage.new(contact_page_params)
-		# if @contact_page.save
+
+		# @contact_page.user_id = current_user.id
+		# @user = current_user
+		# @user.contact_page = @contact_page.id
 
 		if @contact_page.save
 			flash[:success] = "Message created!"
