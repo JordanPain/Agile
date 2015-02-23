@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 include Faker
-
+=begin
 User.destroy_all
 # just to clear the table Survey.destroy_all
 
@@ -71,11 +71,11 @@ userNameNumber = 1
 userNameNumber += 1
 end
 
-
+=end
 
 
 #Message.destroy_all
-
+=begin
 100.times do
     User.all.each do |user|
         message = Message.create(
@@ -88,7 +88,7 @@ end
         puts message.inspect
     end
 end
-
+=end
 Survey.destroy_all
 
 User.all.each do |user|
