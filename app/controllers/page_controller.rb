@@ -1,6 +1,7 @@
 class PageController < ApplicationController
   before_action :set_survey, only: [:show, :edit, :update, :destroy]
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_contact_page, only: [:show, :edit, :update, :destroy]
 
   helper_method :bool_compare, :score_surveys, :order_scores, :find_user, :find_score, :getUsername, :getUserAvatar
   include SmartListing::Helper::ControllerExtensions
@@ -222,6 +223,9 @@ end
   end
 
   def support
+    @contact_pages = ContactPage.all
+    @question = params[:question]
+    @support_questions =  ContactPage.where(published: true)
   end
 
   def contact_us
