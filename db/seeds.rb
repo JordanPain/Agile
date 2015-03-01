@@ -7,28 +7,28 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 include Faker
-=begin
+
 User.destroy_all
 # just to clear the table Survey.destroy_all
 
 # just to clear the table
 Survey.destroy_all
-taylor = User.create(
-    email:"righteousquesty@gmail.com",
-    password:"password",
-    userName:"Sir_Fricksalot",
-    firstName:"Taylor",
-    lastName:"Smith",
+jeff = User.create(
+    email:"jlslickt78@yahoo.com",
+    password:"slick1978",
+    userName:"jlslickt78",
+    firstName:"Jeff",
+    lastName:"Tartt",
     birthdate:Date.new(1991,6,15),
     city:"Spokane",
     state:"WA",
-    zip:99224,
-    about:"I am a very cool and sexy guy. You probably want to melt all over me.",
+    zip:99207,
+    about:"I am a very cool.",
     gender:"male",
     admin:true
 )
-taylor.save!
-puts taylor.inspect
+jeff.save!
+puts jeff.inspect
 
 dave = User.create(
     email:"dljones@gmail.com",
@@ -70,8 +70,6 @@ userNameNumber = 1
   puts user.inspect
 userNameNumber += 1
 end
-
-=end
 
 
 #Message.destroy_all
