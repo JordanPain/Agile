@@ -4,7 +4,7 @@ class AvatarUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
-   include CarrierWave::MiniMagick
+  include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
   storage :file
@@ -27,22 +27,37 @@ class AvatarUploader < CarrierWave::Uploader::Base
   # Process files as they are uploaded:
   # process :scale => [500, 500]
   #
-   #def scale(width, height)
+  #def scale(width, height)
   #   # do something
-   #end
+  #end
 
   # Create different versions of your uploaded files:
 
+  version :large do
+    resize_to_limit(600,600)
+  end
 
+  version :thumb do
+    process :crop
+    resize_to_fill(250,250)
+  end
 
-     version :thumb do
-       process :resize_to_fill => [250, 250]
-     end
+  version :small_thumb do
+    resize_to_fill(100,100)
+  end
 
-     version :small_thumb do
-       process :resize_to_fill => [100,100]
-     end
-
+  def crop
+    if model.crop_x.present?
+      resize_to_limit(600,600)
+      manipulate! do |img|
+        x = model.crop_x.to_i
+        y = model.crop_y.to_i
+        w = model.crop_w.to_i
+        h = model.crop_h.to_i
+        img.crop "#{model.crop_w}x#{model.crop_h}+#{model.crop_x}+#{model.crop_y}"
+      end
+    end
+  end
 
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
