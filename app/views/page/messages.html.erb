@@ -5,15 +5,25 @@
     <title></title>
 </head>
 <body>
-<h1>Contacts</h1>
-<ul>
+<div id="layout">
+
+<ul id="msgul">
+  <h1 id="msgh1">Contacts</h1>
   <% @contacts.each do |contact| %>
-    <li>
-      <%= link_to contact.userName, messages_path( {:contact_id => contact.id} ) %>
+
+    <li id="msgli">
+      <% if contact.avatar.present? %>
+          <%= image_tag contact.avatar, height: '200', width: '200' %>
+          <%#= image_tag user.avatar, size: '100x100' %>
+      <% else %>
+          <%= image_tag contact.thumbnail, height: '200', width: '200' %>
+      <% end %>
+      <%= contact.firstName %>
+      <%= contact.lastName %>
+      <%= link_to 'Message me!', messages_path( {:contact_id => contact.id} ) %>
     </li>
   <% end %>
 </ul>
-
-
+</div>
 </body>
 </html>
