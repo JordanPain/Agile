@@ -2,7 +2,9 @@
 
 # Version of your assets, change this if you want to expire all your assets.
 Rails.application.config.assets.version = '1.0'
-
+Rails.application.config.assets.precompile += %w( jquery.Jcrop.css )
+Rails.application.config.assets.precompile += %w( jquery.Jcrop.js )
+Rails.application.config.assets.precompile += %w( users.js )
 Rails.application.config.assets.precompile += %w( layout.css )
 Rails.application.config.assets.precompile += %w( reset.css )
 Rails.application.config.assets.precompile += %w( layout-tablet.css )
