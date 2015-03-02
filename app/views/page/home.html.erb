@@ -48,7 +48,42 @@
       <!--</a>-->
 
     </div>
-</div>
+  </div>
+
+  <div>
+    <div>
+      <h2 class="text-center">Play Matchmaker!</h2>
+      <h4>Today's Featured Single</h4>
+      <p><%= link_to @featured_user.userName, user_path(@featured_user.id) %></p>
+      <%= image_tag(getUserAvatar(@featured_user.id), size: "100x100") %>
+
+      <p>Choose which bachelor/ette you think this person should go out with:</p>
+    </div>
+
+
+    <% flash.each do |name, msg| %>
+        <%= content_tag :div, msg, class: name %>
+    <% end %>
+    <div class="candidates col-md-12 col-sm-6 col-xs-6 text-center">
+    <% @candidates.each do |candidate| %>
+
+        <div class="candidate col-md-2 col-sm-6 col-xs-6 text-center">
+
+          <p><%= link_to candidate.userName, user_path(candidate.id) %></p>
+          <%= image_tag(getUserAvatar(candidate.id), size: "100x100") %>
+          <% if !@current_user.voted %>
+            <p><%= link_to "Vote!", vote_path(candidate.id) %></p>
+          <% end %>
+          <p>
+          <% if candidate == @winner %>
+              This candidate is currently winning.
+          <% end %>
+          </p>
+        </div>
+    <% end %>
+    </div>
+
+  </div>
 
 
     <div class="welcomezone col-xs-4 col-sm-9  col-md-8">

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150222042109) do
+ActiveRecord::Schema.define(version: 20150301222321) do
 
   create_table "contact_pages", force: true do |t|
     t.string   "first_name"
@@ -22,6 +22,14 @@ ActiveRecord::Schema.define(version: 20150222042109) do
     t.string   "reason_selected"
     t.text     "question"
     t.string   "subscribe_newsletter"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "matchmakers", force: true do |t|
+    t.integer  "featured_user_id"
+    t.integer  "candidate_id"
+    t.integer  "votes",            default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -77,12 +85,12 @@ ActiveRecord::Schema.define(version: 20150222042109) do
     t.boolean  "admin"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
+    t.string   "email",                  default: "",    null: false
+    t.string   "encrypted_password",     default: "",    null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",          default: 0,     null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
@@ -90,6 +98,7 @@ ActiveRecord::Schema.define(version: 20150222042109) do
     t.integer  "survey"
     t.string   "avatar"
     t.string   "thumbnail"
+    t.boolean  "voted",                  default: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

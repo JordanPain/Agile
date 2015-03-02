@@ -24,6 +24,8 @@ Rails.application.routes.draw do
 
   get 'mail', to: 'page#messages'
 
+  get 'vote/:id', as: 'vote', to: 'page#vote'
+
 
   devise_scope :user do
     get 'sign_out', as: 'destroy_user_session_please', to: 'devise/sessions#destroy'

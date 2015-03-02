@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+</head>
+<body>
+<h1>Hi <%= @matched_user.userName %>!</h1>
+<p>
+  You were selected as a candidate for this week's featured single, <%= link_to @featured_user.userName, user_path(@featured_user.id) %>.
+  Even better, our site has voted you the most eligible candidate!
+</p>
+<p>
+  We've handed you an icebreaker! Look them up!
+</p>
+<br>
+<p>
+  *There is no obligation to actually date or do anything whatsoever with anyone on our site, period.
+</p>
+
+</body>
+</html>
