@@ -65,7 +65,7 @@
         <div class="panel-body">
           <div class="blog-posted-row">
             Posted on <%= contact_page.updated_at %> by
-            <a href="#" class="supports">admin</a>
+            <a href="#" class="supports"><%= contact_page.first_name + " " + contact_page.last_name %></a>
           </div>
           <br>
           <p><%= contact_page.question %></p>
@@ -82,7 +82,9 @@
                 <%= f.submit "Submit", class: "btn btn-default col-xs-12 col-sm-12 col-md-6 col-lg-6" %>
               </div>
           <% end %>
+          <br><br>
           <%= link_to 'Show', contact_page, class: "btn btn-default" %>
+          <br>
           <%= link_to 'Edit', edit_contact_page_path(contact_page), class: "btn btn-default" %>
           <!--<%= link_to 'Destroy', contact_page, method: :delete, data: { confirm: 'Are you sure?' },class: "btn btn-default" %>-->
 

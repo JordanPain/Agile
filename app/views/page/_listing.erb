@@ -10,17 +10,17 @@
 <table>
   <thead>
   <tr>
-    <th>Image</th>
-    <!--<th><%= smart_listing.sortable "Username", :userName %></th>-->
-    <th><%= smart_listing.sortable "First Name", :firstName %></th>
-    <th><%= smart_listing.sortable "Last Name", :lastName %></th>
+    <th></th>
+    <th><%= smart_listing.sortable "Username", :userName %></th>
+    <!--<th><%= smart_listing.sortable "First Name", :firstName %></th>-->
+    <!--<th><%= smart_listing.sortable "Last Name", :lastName %></th>-->
     <th><%= smart_listing.sortable "Age", :birthdate %></th>
     <th><%= smart_listing.sortable "City", :city %></th>
     <th><%= smart_listing.sortable "State", :state %></th>
     <!--<th><%= smart_listing.sortable "Zip Code", :zip %></th>-->
     <th><%= smart_listing.sortable "Gender", :gender %></th>
 
-    <th colspan="1"></th>
+    <!--<th colspan="1"></th>-->
   </tr>
   </thead>
 
@@ -28,20 +28,20 @@
   <% smart_listing.collection.each do |user| %>
       <tr id="browseCol">
         <% if user.avatar.present? %>
-            <td><%= image_tag user.avatar, height: '200', width: '200' %></td>
+            <td><%= link_to(image_tag(user.avatar, height: '200', width: '200'), user_path(user.id)) %></td>
             <%#= image_tag user.avatar, size: '100x100' %>
         <% else %>
-            <td><%= image_tag user.thumbnail, height: '200', width: '200' %></td>
+            <td><%= link_to(image_tag(user.thumbnail, height: '200', width: '200'), user_path(user.id)) %></td>
         <% end %>
-        <td id="firstcol"><%= user.firstName %></td>
-        <td><%= user.lastName %></td>
+        <td id="firstcol"><%= user.userName %></td>
+        <!--<td><%= user.lastName %></td>-->
         <td><%= userAge( user.birthdate ) %></td>
         <td><%= user.city %></td>
         <td><%= user.state %></td>
 
         <td><%= user.gender %></td>
 
-        <td><%= link_to 'Show', user %></td>
+        <!--<td><%= link_to 'Show', user %></td>-->
 
       </tr>
   <% end %>

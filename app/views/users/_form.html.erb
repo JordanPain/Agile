@@ -61,6 +61,7 @@
   </div>-->
     <div>
       <p>
+        <%= f.label :avatar %>
         <%= f.file_field :avatar %>
       </p>
     </div>
@@ -68,6 +69,7 @@
     <div>
 
       <p>
+        <%= f.label :cover, "Background Image" %>
         <%= f.file_field :cover, title: "Background Image", class: "file-picker" %>
       </p>
     </div>
