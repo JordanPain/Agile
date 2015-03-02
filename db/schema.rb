@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150222042109) do
+ActiveRecord::Schema.define(version: 20150301222321) do
 
   create_table "contact_pages", force: true do |t|
     t.string   "first_name"
@@ -98,9 +98,8 @@ ActiveRecord::Schema.define(version: 20150222042109) do
     t.integer  "survey"
     t.string   "avatar"
     t.string   "thumbnail"
-    t.string   "cover"
     t.boolean  "voted",                  default: false
-
+    t.string   "cover"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

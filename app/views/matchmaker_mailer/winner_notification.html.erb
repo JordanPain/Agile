@@ -6,7 +6,7 @@
 <body>
 <h1>Hi <%= @matched_user.userName %>!</h1>
 <p>
-  You were selected as a candidate for this week's featured single, <%= link_to @featured_user.userName, user_path(@featured_user.id) %>.
+  You were selected as a candidate for this week's featured single, <%= link_to @featured_user.userName, "http://localhost:3000/#{user_path(@featured_user.id)}" %>.
   Even better, our site has voted you the most eligible candidate!
 </p>
 <p>

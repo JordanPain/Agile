@@ -8,6 +8,14 @@ class PageController < ApplicationController
 
 
   def home
+
+    #uncomment to vote multiple times
+
+#    User.all.each do |user|
+#      user.voted = false
+#      user.save
+#    end
+
     @current_user = current_user
     if Matchmaker.all[0]
       @date = Matchmaker.all[0].created_at.in_time_zone("Pacific Time (US & Canada)").to_date
@@ -42,17 +50,22 @@ class PageController < ApplicationController
     end
 
       if @date != Date.today
-        featured_match( @featured_user, @winner )
-        winner_notification( @winner, @featured_user )
+        MatchmakerMailer.featured_match( @featured_user, @winner ).deliver
+        MatchmakerMailer.winner_notification( @winner, @featured_user ).deliver
         @featured_user = User.all.sample
         while @featured_user.id == Matchmaker.all[0].featured_user_id &&
             @featured_user.survey != null
           @featured_user = User.all.sample
         end
 
-        featured_notification( @featured_user )
+        MatchmakerMailer.featured_notification( @featured_user ).deliver
 
         Matchmaker.destroy_all
+
+        User.all.each do |user|
+          user.voted = false
+          user.save
+        end
 
         @candidate_ids = []
         candidate_counter = 0
