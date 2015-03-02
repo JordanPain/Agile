@@ -15,10 +15,31 @@
   <div class="row">
     <div class="col-xs-12">
 
+      <% @support_questions.each do |contact_page| %>
+
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title"><%= contact_page.question%></h3>
+            </div>
+
+            <div class="panel-body">
+              <div class="blog-posted-row">
+                Posted on <%= contact_page.updated_at %> by
+                <a href="#" class="supports">admin</a>
+              </div>
+              <br>
+                <%= contact_page.answer %>
+            </div>
+          </div>
+          <!-- End panel 1 -->
+
+      <% end %>
+
+
       <!-- begin panel 1 -->
       <div class="panel panel-default">
         <div class="panel-heading">
-          <h3 class="panel-title">Question One</h3>
+          <h3 class="panel-title"><%= @question %></h3>
         </div>
 
         <div class="panel-body">
@@ -39,7 +60,7 @@
       <!-- begin panel 2 -->
       <div class="panel panel-default">
         <div class="panel-heading">
-          <h3 class="panel-title">Question Two</h3>
+          <h3 class="panel-title"><%= @question %></h3>
         </div>
 
         <div class="panel-body">

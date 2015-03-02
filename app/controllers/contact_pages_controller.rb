@@ -1,17 +1,17 @@
 class ContactPagesController < ApplicationController
 	before_action :set_contact_page, only: [:show, :edit, :update, :destroy]
+
 	#before_action :redirect, only: [:index, :show]
 	respond_to :html
 
 	def index
 		@contact_pages = ContactPage.all
-		respond_with(@contact_pages)
 	end
 
 	def show
 		@contact_page = ContactPage.find(params[:id])
 		respond_with(@contact_page)
-		flash[:success] = "Message created! You will be redirected in a moment..."
+	#	flash[:success] = "Message created! You will be redirected in a moment..."
 	end
 
 	def new
@@ -21,6 +21,7 @@ class ContactPagesController < ApplicationController
 	end
 
 	def edit
+
 	end
 
 	def create
@@ -58,6 +59,6 @@ class ContactPagesController < ApplicationController
 	end
 
 	def contact_page_params
-		params.require(:contact_page).permit(:first_name, :last_name, :email, :phone, :contact_me, :reason_selected, :question, :subscribe_newsletter)
+		params.require(:contact_page).permit(:first_name, :last_name, :email, :phone, :contact_me, :reason_selected, :question, :subscribe_newsletter, :answer, :published)
 	end
 end
