@@ -1,5 +1,5 @@
 <div id="layout" class="container-fluid">
-<header class="head"></header>
+<header class="head"><%= image_tag @user.cover, height: '496', width: '880' %></header>
   <% if @user.avatar.present? %>
       <div class="profilePicture"><%= image_tag @user.avatar, height: '250', width: '250' %></div>
   <% else %>
@@ -67,6 +67,11 @@
   <strong>Avatar:</strong>
   <%= @user.avatar.to_s %>
 </p>
+
+  <p>
+    <strong>Cover:</strong>
+    <%= @user.cover.to_s %>
+  </p>
 
   <p>
     <strong>Survey:</strong>

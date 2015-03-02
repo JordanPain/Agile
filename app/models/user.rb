@@ -15,5 +15,9 @@ class User < ActiveRecord::Base
   validates_length_of :zip, is: 5, message: "must be 5 digits."
 
   mount_uploader :avatar, AvatarUploader
+
+  mount_uploader :cover, CoverUploader
+
+
 end
 
