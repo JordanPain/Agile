@@ -1,7 +1,7 @@
 <div id="layout" class="container-fluid">
-<header class="head"></header>
+  <header class="head"><%= image_tag @user.cover.url(:thumb_cover)%></header>
   <% if @user.avatar.present? %>
-      <div class="profilePicture"><%= image_tag @user.avatar, height: '250', width: '250' %></div>
+      <div class="profilePicture"><%= image_tag @user.avatar.url(:thumb) %></div>
   <% else %>
       <div class="profilePicture"><%= image_tag @user.thumbnail, height: '250', width: '250' %></div>
   <% end %>
@@ -63,10 +63,10 @@
   <%= @user.admin %>
 </p>
 
-<p>
-  <strong>Avatar:</strong>
-  <%= @user.avatar.to_s %>
-</p>
+    <p>
+      <strong>Avatar:</strong>
+      <%= @user.avatar.to_s %>
+    </p>
 
   <p>
     <strong>Survey:</strong>

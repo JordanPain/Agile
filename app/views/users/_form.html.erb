@@ -64,7 +64,15 @@
         <%= f.file_field :avatar %>
       </p>
     </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+
+    <div>
+
+      <p>
+        <%= f.file_field :cover, title: "Background Image", class: "file-picker" %>
+      </p>
+    </div>
+
+    <div class="actions">
+      <%= f.submit %>
+    </div>
 <% end %>
