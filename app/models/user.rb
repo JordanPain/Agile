@@ -16,12 +16,20 @@ class User < ActiveRecord::Base
 
   mount_uploader :avatar, AvatarUploader
   attr_accessor :crop_x, :crop_y, :crop_w, :crop_h
+
+
   after_update :crop_avatar
   def crop_avatar
     avatar.recreate_versions! if crop_x.present?
   end
 
   mount_uploader :cover, CoverUploader
+  attr_accessor :cropbackground_x, :cropbackground_y, :cropbackground_w, :cropbackground_h
+  after_update :crop_background
+  def crop_background
+    cover.recreate_versions! if cropbackground_x.present?
+  end
+
 
 end
 

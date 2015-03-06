@@ -34,11 +34,11 @@ class CoverUploader < CarrierWave::Uploader::Base
     if model.crop_x.present?
       resize_to_limit(600,600)
       manipulate! do |img|
-        x = model.crop_x.to_i
-        y = model.crop_y.to_i
-        w = model.crop_w.to_i
-        h = model.crop_h.to_i
-        img.crop "#{model.crop_w}x#{model.crop_h}+#{model.crop_x}+#{model.crop_y}"
+        x = model.cropbackground_x.to_i
+        y = model.cropbackground_y.to_i
+        w = model.cropbackground_w.to_i
+        h = model.cropbackground_h.to_i
+        img.crop "#{model.cropbackground_w}x#{model.cropbackground_h}+#{model.cropbackground_x}+#{model.cropbackground_y}"
       end
     end
   end
