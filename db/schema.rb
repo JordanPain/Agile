@@ -100,8 +100,8 @@ ActiveRecord::Schema.define(version: 20150302083825) do
     t.integer  "survey"
     t.string   "avatar"
     t.string   "thumbnail"
-    t.boolean  "voted",                  default: false
     t.string   "cover"
+    t.boolean  "voted",                  default: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
