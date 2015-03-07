@@ -34,8 +34,11 @@ class ContactPagesController < ApplicationController
 		if @contact_page.save
 			flash[:success] = "Message created!"
 
+			SupportNotification.support_notifier(params[:contact_page]).deliver
+
 			respond_with(@contact_page)
 			#redirect_to home_path
+
 		else
 			render :action => 'new'
 		end
