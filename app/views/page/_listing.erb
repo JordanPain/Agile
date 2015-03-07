@@ -1,3 +1,15 @@
+<script>
+    $(document).ready(function() {
+        var rows = $('table.tr');
+        $('.hidebtn').click(function() {
+        $(this).closest('tr').hide();
+        });
+
+        $('#showbtn').click(function() {
+            location.reload();
+        });
+    });
+</script>
 <%= smart_listing.paginate :users %>
 
 <%= smart_listing.pagination_per_page_links :users %>
@@ -7,6 +19,7 @@
       <%= text_field_tag :filter, '', class: "search form-control",placeholder: "Search...", autocomplete: :off  %>
 <% end %>
 </div>
+<button id="showbtn">Unblock Users</button>
 <table>
   <thead>
   <tr>
@@ -42,7 +55,7 @@
         <td><%= user.gender %></td>
 
         <!--<td><%= link_to 'Show', user %></td>-->
-
+        <td><button class="hidebtn">Block User</button></td>
       </tr>
   <% end %>
   </tbody>
