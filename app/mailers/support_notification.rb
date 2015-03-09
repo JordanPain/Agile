@@ -5,9 +5,11 @@ class SupportNotification < ActionMailer::Base
     @admin = "agile.soulmate@gmail.com"
     @subject = email_params[:reason_selected]
 
-    @first_name = email_params[:first_name]
-    @last_name = email_params[:last_name]
-    @email = email_params[:email]
+    @user = User.find(email_params[:user_id])
+
+    @first_name = @user.firstName
+    @last_name = @user.lastName
+    @email = @user.email
     @phone = email_params[:phone]
     @body = email_params[:question]
 

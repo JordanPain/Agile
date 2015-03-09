@@ -14,14 +14,11 @@
 ActiveRecord::Schema.define(version: 20150302083825) do
 
   create_table "contact_pages", force: true do |t|
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "email"
+    t.integer  "user_id"
     t.string   "phone"
     t.string   "contact_me"
     t.string   "reason_selected"
     t.text     "question"
-    t.string   "subscribe_newsletter"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "answer"
