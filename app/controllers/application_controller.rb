@@ -25,4 +25,41 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.for(:sign_up) << :remove_avatar
   end
 
+  def voting_setup
+    if @featured_user
+      @winner = Matchmaker.where( "votes" == Matchmaker.maximum("votes") )
+    end
+    if Matchmaker.all[0]
+      @date = Matchmaker.all[0].created_at
+      if @date != Date.today
+        @featured_user = User.all.sample
+        while @featured_user.id == Matchmaker.all[0].featured_user_id &&
+            @featured_user.survey != null
+          @featured_user = User.all.sample
+        end
+
+        Matchmaker.destroy_all
+
+        @candidate_ids = []
+        candidate_counter = 0
+        5.times do
+          @candidate_ids << match(@featured_user)[candidate_counter][0]
+          candidate_counter += 1
+        end
+
+        @candidate_ids.each do |candidate|
+          new_candidate = Matchmaker.create(
+              featured_user_id: @featured_user.id,
+              candidate_id: candidate
+          )
+          new_candidate.save!
+        end
+
+      end
+    end
+
+
+
+  end
+
 end

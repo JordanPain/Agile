@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+</head>
+<body>
+<h1>Hi <%= @featured_user.userName %>!</h1>
+<p>
+  The voting period has ended, and the people have spoken!
+</p>
+<p>
+  They've matched you with <%= link_to @matched_user.userName,
+                                       "http://localhost:3000/#{user_path(@matched_user.id)}" %>.
+  Find them on our site and meet up!
+</p>
+<br>
+<p>
+  *There is no obligation to actually date or do anything whatsoever with anyone on our site, period.
+</p>
+
+</body>
+</html>

@@ -43,7 +43,13 @@
         <li><%= link_to "MESSAGES", mail_path %></li>
 
         <li><%= link_to "SUPPORT", support_path %></li>
-        <li><%= link_to "CONTACT US", new_contact_page_path %></li>
+        <% if current_user %>
+            <% if current_user.admin %>
+                <li><%= link_to "CONTACT US", contact_pages_path %></li>
+            <% else %>
+                <li><%= link_to "CONTACT US", new_contact_page_path %></li>
+            <% end %>
+        <% end %>
         <% if user_signed_in? %>
             <li><a href="#">Hello, <strong><%= current_user.firstName %></strong></a></li>
             <li><%= link_to "Logout", destroy_user_session_please_path, method: :destroy, :class => 'navbar-link'  %><li>

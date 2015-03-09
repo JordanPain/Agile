@@ -1,13 +1,120 @@
 class PageController < ApplicationController
   before_action :set_survey, only: [:show, :edit, :update, :destroy]
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_contact_page, only: [:show, :edit, :update, :destroy]
 
   helper_method :bool_compare, :score_surveys, :order_scores, :find_user, :find_score, :getUsername, :getUserAvatar
   include SmartListing::Helper::ControllerExtensions
   helper  SmartListing::Helper
 
+
   def home
+
+    #uncomment to vote multiple times
+
+#    User.all.each do |user|
+#      user.voted = false
+#      user.save
+#    end
+
+    @current_user = current_user
+    if Matchmaker.all[0]
+      @date = Matchmaker.all[0].created_at.in_time_zone("Pacific Time (US & Canada)").to_date
+      @featured_user = User.find_by_id( Matchmaker.all[0].featured_user_id )
+      @most_votes = Matchmaker.maximum("votes")
+      @winning_candidate = Matchmaker.find_by_votes(Matchmaker.maximum("votes"))
+      @winner = User.find(@winning_candidate.candidate_id)
+
+    else
+      @featured_user = User.all.sample
+
+
+      @candidate_ids = []
+      candidate_counter = 0
+      5.times do
+        @candidate_ids << match(@featured_user)[candidate_counter][0]
+        candidate_counter += 1
+      end
+
+      @candidate_ids.each do |candidate|
+        new_candidate = Matchmaker.create(
+            featured_user_id: @featured_user.id,
+            candidate_id: candidate
+        )
+        new_candidate.save!
+
+        @candidates = []
+        @candidate_ids.each do |candidate|
+          @candidates << User.find_by_id( candidate )
+        end
+      end
+    end
+
+      if @date != Date.today
+        MatchmakerMailer.featured_match( @featured_user, @winner ).deliver
+        MatchmakerMailer.winner_notification( @winner, @featured_user ).deliver
+        @featured_user = User.all.sample
+        while @featured_user.id == Matchmaker.all[0].featured_user_id &&
+            @featured_user.survey != null
+          @featured_user = User.all.sample
+        end
+
+        MatchmakerMailer.featured_notification( @featured_user ).deliver
+
+        Matchmaker.destroy_all
+
+        User.all.each do |user|
+          user.voted = false
+          user.save
+        end
+
+        @candidate_ids = []
+        candidate_counter = 0
+        5.times do
+          @candidate_ids << match(@featured_user)[candidate_counter][0]
+          candidate_counter += 1
+        end
+
+        @candidate_ids.each do |candidate|
+          new_candidate = Matchmaker.create(
+              featured_user_id: @featured_user.id,
+              candidate_id: candidate
+          )
+          new_candidate.save!
+        end
+      else
+        @candidate_ids = []
+        Matchmaker.all.each do |candidate|
+          @candidate_ids << candidate.candidate_id
+        end
+
+
+      end
+    @candidates = []
+    @candidate_ids.each do |candidate|
+      @candidates << User.find_by_id( candidate )
+    end
   end
+
+  def vote
+    @current_user = current_user
+    if @current_user.voted
+      flash[:notice] = "You have already voted today."
+    else
+      @current_user.voted = true
+      candidate = Matchmaker.find_by_candidate_id(params[:id])
+      candidate.votes += 1
+      candidate_user = User.find(params[:id])
+      @current_user.save
+      candidate.save
+
+      flash[:notice] = "You have voted for #{candidate_user.userName}!"
+    end
+    redirect_to home_path
+  end
+
+
+
 
   def messages
 
@@ -77,26 +184,25 @@ class PageController < ApplicationController
 
 
 
-  def match
+  def match( match_user=current_user )
+
+    if match_user.survey
+      @current_survey = Survey.find( match_user.survey )
+      @other_surveys = Survey.where("user_id != #{match_user.id}")
 
 
-if current_user.survey
-  @current_survey = Survey.find( current_user.survey )
-  @other_surveys = Survey.where("user_id != #{current_user.id}")
-  @person = User.where("id == id")
-
-  @user = current_user.id
+      @user = match_user.id
 
 
-  @surveys = Survey.all
-  @ordered_surveys = score_surveys(@current_survey, @other_surveys )
 
-  @user_objects = find_user( @ordered_surveys)
-  @user_scores = find_score( @ordered_surveys)
-  @survey_score = []
-end
+      @ordered_surveys = score_surveys(@current_survey, @other_surveys )
 
+      @user_objects = find_user( @ordered_surveys)
+      @user_scores = find_score( @ordered_surveys)
+      @survey_score = []
+    end
 
+    return @ordered_surveys
   end
 
   def getUsername( userid )
@@ -113,7 +219,7 @@ end
     person = User.where("id == #{userid}")
     person.each do |person|
         if person.avatar.present?
-          picture = person.avatar.url(:thumb).to_s
+          picture = person.avatar.url
         else
           picture =   person.thumbnail
         end
@@ -222,6 +328,9 @@ end
   end
 
   def support
+    @contact_pages = ContactPage.all
+    @question = params[:question]
+    @support_questions =  ContactPage.where(published: true)
   end
 
   def contact_us

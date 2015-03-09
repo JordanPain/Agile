@@ -4,7 +4,7 @@
 
   <div class="row">
     <div class="col-xs-12 col-lg-12">
-      <img src="../assets/banner_1200.png" class="img-responsive">
+      <img src="../assets/banner.jpg" class="img-responsive">
     </div>
   </div>
 
@@ -44,12 +44,13 @@
 
     <div class="col-xs-12 col-md-4 col-lg-4">
       <div>
-        <h3>Not a Member?</h3>
-        <p>Create an account.
         <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-            <%= link_to "Register here.", new_registration_path(resource_name) %><br />
+            <h3>Not a Member?</h3>
+            <p>
+            <%= link_to "Create an account.", new_registration_path(resource_name) %><br />
+            </p>
         <% end -%>
-          </p>
+
       </div>
     </div>
 

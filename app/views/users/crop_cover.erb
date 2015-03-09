@@ -1,0 +1,14 @@
+<%= stylesheet_link_tag("jquery.Jcrop.css") %>
+<%= javascript_include_tag("jquery.Jcrop") %>
+<%= javascript_include_tag("users") %>
+
+<div id="layout" class="container-fluid">
+    <%= image_tag @user.cover.url(:large), :id => "background_image", class: "jcrop" %>
+
+    <%= form_for @user do |f| %>
+    <% %w[x y w h].each do |attribute| %>
+    <%= f.hidden_field "cropbackground_#{attribute}" %>
+    <% end %>
+    <%= f.submit "Crop" %>
+    <% end %>
+</div>

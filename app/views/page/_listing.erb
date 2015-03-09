@@ -1,3 +1,15 @@
+<script>
+    $(document).ready(function() {
+        var rows = $('table.tr');
+        $('.hidebtn').click(function() {
+        $(this).closest('tr').hide();
+        });
+
+        $('#showbtn').click(function() {
+            location.reload();
+        });
+    });
+</script>
 <%= smart_listing.paginate :users %>
 
 <%= smart_listing.pagination_per_page_links :users %>
@@ -7,46 +19,42 @@
       <%= text_field_tag :filter, '', class: "search form-control",placeholder: "Search...", autocomplete: :off  %>
 <% end %>
 </div>
+<button id="showbtn">Unblock Users</button>
 <table>
   <thead>
   <tr>
-
+    <th></th>
     <th><%= smart_listing.sortable "Username", :userName %></th>
-
+    <!--<th><%= smart_listing.sortable "First Name", :firstName %></th>-->
+    <!--<th><%= smart_listing.sortable "Last Name", :lastName %></th>-->
     <th><%= smart_listing.sortable "Age", :birthdate %></th>
     <th><%= smart_listing.sortable "City", :city %></th>
     <th><%= smart_listing.sortable "State", :state %></th>
-    <th><%= smart_listing.sortable "Zip Code", :zip %></th>
-    <th>Image</th>
-    <th class="xs-hidden"><%= smart_listing.sortable "About", :about %></th>
+    <!--<th><%= smart_listing.sortable "Zip Code", :zip %></th>-->
     <th><%= smart_listing.sortable "Gender", :gender %></th>
-
-    <th colspan="1"></th>
+    
   </tr>
   </thead>
 
   <tbody>
   <% smart_listing.collection.each do |user| %>
       <tr id="browseCol">
-
-        <td><%= user.userName %></td>
-
+        <% if user.avatar.present? %>
+            <td><%= link_to(image_tag(user.avatar, height: '200', width: '200'), user_path(user.id)) %></td>
+            <%#= image_tag user.avatar, size: '100x100' %>
+        <% else %>
+            <td><%= link_to(image_tag(user.thumbnail, height: '200', width: '200'), user_path(user.id)) %></td>
+        <% end %>
+        <td id="firstcol"><%= user.userName %></td>
+        <!--<td><%= user.lastName %></td>-->
         <td><%= userAge( user.birthdate ) %></td>
         <td><%= user.city %></td>
         <td><%= user.state %></td>
-        <td><%= user.zip %></td>
 
-        <% if user.avatar.present? %>
-            <td><%= image_tag user.avatar, height: '100', width: '100' %></td>
-            <%#= image_tag user.avatar, size: '100x100' %>
-        <% else %>
-            <td><%= image_tag user.thumbnail, height: '100', width: '100' %></td>
-        <% end %>
-        <td id="aboutBrowse" class="xs-hidden"><%= user.about %></td>
         <td><%= user.gender %></td>
 
-        <td><%= link_to 'Show', user %></td>
-
+        <!--<td><%= link_to 'Show', user %></td>-->
+        <td><button class="hidebtn">Block User</button></td>
       </tr>
   <% end %>
   </tbody>

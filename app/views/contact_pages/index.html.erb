@@ -18,14 +18,11 @@
   <!--<tbody>-->
     <!--<% @contact_pages.each do |contact_page| %>-->
       <!--<tr>-->
-        <!--<td><%= contact_page.first_name %></td>-->
-        <!--<td><%= contact_page.last_name %></td>-->
-        <!--<td><%= contact_page.email %></td>-->
+        <!--<td><%= contact_page.user_id%></td>-->
         <!--<td><%= contact_page.phone %></td>-->
         <!--<td><%= contact_page.contact_me %></td>-->
         <!--<td><%= contact_page.reason_selected %></td>-->
         <!--<td><%= contact_page.question %></td>-->
-        <!--<td><%= contact_page.subscribe_newsletter %></td>-->
         <!--<td><%= link_to 'Show', contact_page %></td>-->
         <!--<td><%= link_to 'Edit', edit_contact_page_path(contact_page) %></td>-->
         <!--<td><%= link_to 'Destroy', contact_page, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
@@ -57,6 +54,7 @@
 
       <!-- begin panel 1 -->
       <% @contact_pages.each do |contact_page| %>
+          <% submitter = User.find(contact_page.user_id) %>
       <div class="panel panel-default">
         <div class="panel-heading">
           <h3 class="panel-title"><%= contact_page.reason_selected %></h3>
@@ -65,20 +63,36 @@
         <div class="panel-body">
           <div class="blog-posted-row">
             Posted on <%= contact_page.updated_at %> by
-            <a href="#" class="supports">admin</a>
+            <%= link_to (submitter.firstName + " " + submitter.lastName),
+                        user_path(submitter.id) %>
+
           </div>
           <br>
-
           <p><%= contact_page.question %></p>
+          <p><%= contact_page.answer %></p>
+          <%= form_for(contact_page, class: "col-xs-12") do |f| %>
+              <%= f.label :answer %><br>
+              <%= f.text_area :answer%>
 
+              <%= f.label :published %>
+              <%= f.check_box :published, {}, true, false %>
+
+
+              <div class="actions">
+                <%= f.submit "Submit", class: "btn btn-default col-xs-12 col-sm-12 col-md-6 col-lg-6" %>
+              </div>
+          <% end %>
+          <br><br>
           <%= link_to 'Show', contact_page, class: "btn btn-default" %>
+          <br>
           <%= link_to 'Edit', edit_contact_page_path(contact_page), class: "btn btn-default" %>
           <!--<%= link_to 'Destroy', contact_page, method: :delete, data: { confirm: 'Are you sure?' },class: "btn btn-default" %>-->
+
         </div>
       </div>
       <!-- End panel 1 -->
       <% end %>
-
+      <%= link_to 'New Question', new_contact_page_path, class: "btn btn-default" %>
     </div>
   </div>
 

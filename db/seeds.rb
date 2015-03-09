@@ -72,9 +72,11 @@ userNameNumber += 1
 end
 
 
-#Message.destroy_all
-=begin
-100.times do
+
+
+Message.destroy_all
+
+20.times do
     User.all.each do |user|
         message = Message.create(
             author_id:user.id,
@@ -86,7 +88,7 @@ end
         puts message.inspect
     end
 end
-=end
+
 Survey.destroy_all
 
 User.all.each do |user|

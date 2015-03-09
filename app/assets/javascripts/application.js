@@ -17,6 +17,7 @@
 //= require bootstrap/modal
 //= require bootstrap/dropdown
 //= require jquery_ujs
+//= require jquery.Jcrop
 //= require turbolinks
 //= require smart_listing
 //= require_tree .

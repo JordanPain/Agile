@@ -28,7 +28,7 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
     arel (5.0.1.20140414130214)
-    autoprefixer-rails (5.1.5)
+    autoprefixer-rails (5.1.7)
       execjs
       json
     bcrypt (3.1.10-x86-mingw32)
@@ -47,7 +47,7 @@ GEM
     coffee-script (2.3.0)
       coffee-script-source
       execjs
-    coffee-script-source (1.9.0)
+    coffee-script-source (1.9.1)
     devise (3.4.1)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -61,7 +61,7 @@ GEM
       i18n (~> 0.5)
     hike (1.2.3)
     i18n (0.7.0)
-    jbuilder (2.2.7)
+    jbuilder (2.2.8)
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
     jquery-rails (3.1.2)
@@ -74,7 +74,7 @@ GEM
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
     mime-types (2.4.3)
-    mini_magick (4.0.4)
+    mini_magick (4.1.0)
     minitest (5.5.1)
     multi_json (1.10.1)
     orm_adapter (0.5.0)
@@ -134,7 +134,7 @@ GEM
       thread_safe (~> 0.1)
     tzinfo-data (1.2015.1)
       tzinfo (>= 1.0.0)
-    uglifier (2.7.0)
+    uglifier (2.7.1)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
     warden (1.2.3)

@@ -1,26 +1,30 @@
 class ContactPagesController < ApplicationController
 	before_action :set_contact_page, only: [:show, :edit, :update, :destroy]
+
 	#before_action :redirect, only: [:index, :show]
 	respond_to :html
 
 	def index
 		@contact_pages = ContactPage.all
-		respond_with(@contact_pages)
+
 	end
 
 	def show
 		@contact_page = ContactPage.find(params[:id])
+
 		respond_with(@contact_page)
-		flash[:success] = "Message created! You will be redirected in a moment..."
+	#	flash[:success] = "Message created! You will be redirected in a moment..."
 	end
 
 	def new
+		@current_user = current_user
 		@contact_page = ContactPage.new
 		respond_with(@contact_page)
 
 	end
 
 	def edit
+
 	end
 
 	def create
@@ -33,8 +37,11 @@ class ContactPagesController < ApplicationController
 		if @contact_page.save
 			flash[:success] = "Message created!"
 
+			SupportNotification.support_notifier(params[:contact_page]).deliver
+
 			respond_with(@contact_page)
 			#redirect_to home_path
+
 		else
 			render :action => 'new'
 		end
@@ -55,9 +62,10 @@ class ContactPagesController < ApplicationController
 	private
 	def set_contact_page
 		@contact_page = ContactPage.find(params[:id])
+		@submitter = User.find(@contact_page.user_id)
 	end
 
 	def contact_page_params
-		params.require(:contact_page).permit(:first_name, :last_name, :email, :phone, :contact_me, :reason_selected, :question, :subscribe_newsletter)
+		params.require(:contact_page).permit(:user_id, :phone, :contact_me, :reason_selected, :question, :answer, :published)
 	end
 end

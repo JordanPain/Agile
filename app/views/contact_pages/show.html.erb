@@ -13,19 +13,10 @@
 
     <div class="panel-body">
       <br>
-      <p>
-        <strong>First name:</strong>
-        <%= @contact_page.first_name %>
-      </p>
-
-      <p>
-        <strong>Last name:</strong>
-        <%= @contact_page.last_name %>
-      </p>
 
       <p>
         <strong>Email:</strong>
-        <%= @contact_page.email %>
+        <%= @submitter.email %>
       </p>
 
       <p>
@@ -48,19 +39,15 @@
         <%= @contact_page.question %>
       </p>
 
-      <p>
-        <strong>Subscribe newsletter:</strong>
-        <%= @contact_page.subscribe_newsletter %>
-      </p>
       <!--<%= link_to 'Edit', edit_contact_page_path(@contact_page) %> |
       <%= link_to 'Back', contact_pages_path %>-->
       <% %>
 
-      <script>
+      <!--<script>
           setTimeout(function () {
               window.location.href = "<%= home_path %>";
           }, 4000);
-      </script>
+      </script>-->
 
     </div>
   </div>
