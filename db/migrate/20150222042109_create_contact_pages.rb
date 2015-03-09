@@ -12,5 +12,7 @@ class CreateContactPages < ActiveRecord::Migration
 
       t.timestamps
     end
+
   end
 end
+
