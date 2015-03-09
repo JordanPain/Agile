@@ -25,17 +25,10 @@
     <% end %>
 
 
+
     <div class="form_group">
-      <%= f.label :first_name %><br>
-      <%= f.text_field :first_name, class: "form-control" %>
-    </div>
-    <div class="form_group">
-      <%= f.label :last_name %><br>
-      <%= f.text_field :last_name, class: "form-control" %>
-    </div>
-    <div class="form_group">
-      <%= f.label :email %><br>
-      <%= f.text_field :email, class: "form-control" %>
+
+      <%= f.hidden_field :user_id, class: "form-control", :value => @current_user.id %>
     </div>
     <div class="form_group">
       <%= f.label :phone %><br>
@@ -45,7 +38,7 @@
     <p><strong>Preferred Contact Method:</strong></p>
 
     <div class="radioButtons radio-inline">
-      <%= f.radio_button :contact_me, "email", class: "radioHeading" %>
+      <%= f.radio_button :contact_me, "email", class: "radioHeading", :checked => true %>
       <%= f.label "Email" %>
     </div>
     <div class="radioButtons radio-inline">
@@ -62,8 +55,6 @@
       <%= f.text_area :question, class: "form-control" %>
     </div>
     <div class="checkbox">
-  <%= f.check_box :subscribe_newsletter, {}, true, false %>
-  <%= f.label :subscribe_newsletter %>
 </div>
     <!--
     <%= f.label :answer %><br>

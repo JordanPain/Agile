@@ -6,15 +6,18 @@ class ContactPagesController < ApplicationController
 
 	def index
 		@contact_pages = ContactPage.all
+
 	end
 
 	def show
 		@contact_page = ContactPage.find(params[:id])
+
 		respond_with(@contact_page)
 	#	flash[:success] = "Message created! You will be redirected in a moment..."
 	end
 
 	def new
+		@current_user = current_user
 		@contact_page = ContactPage.new
 		respond_with(@contact_page)
 
@@ -59,9 +62,10 @@ class ContactPagesController < ApplicationController
 	private
 	def set_contact_page
 		@contact_page = ContactPage.find(params[:id])
+		@submitter = User.find(@contact_page.user_id)
 	end
 
 	def contact_page_params
-		params.require(:contact_page).permit(:first_name, :last_name, :email, :phone, :contact_me, :reason_selected, :question, :subscribe_newsletter, :answer, :published)
+		params.require(:contact_page).permit(:user_id, :phone, :contact_me, :reason_selected, :question, :answer, :published)
 	end
 end

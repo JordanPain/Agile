@@ -18,14 +18,11 @@
   <!--<tbody>-->
     <!--<% @contact_pages.each do |contact_page| %>-->
       <!--<tr>-->
-        <!--<td><%= contact_page.first_name %></td>-->
-        <!--<td><%= contact_page.last_name %></td>-->
-        <!--<td><%= contact_page.email %></td>-->
+        <!--<td><%= contact_page.user_id%></td>-->
         <!--<td><%= contact_page.phone %></td>-->
         <!--<td><%= contact_page.contact_me %></td>-->
         <!--<td><%= contact_page.reason_selected %></td>-->
         <!--<td><%= contact_page.question %></td>-->
-        <!--<td><%= contact_page.subscribe_newsletter %></td>-->
         <!--<td><%= link_to 'Show', contact_page %></td>-->
         <!--<td><%= link_to 'Edit', edit_contact_page_path(contact_page) %></td>-->
         <!--<td><%= link_to 'Destroy', contact_page, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
@@ -55,8 +52,10 @@
   <div class="row">
     <div class="col-xs-12">
 
+
       <!-- begin panel 1 -->
       <% @contact_pages.each do |contact_page| %>
+          <% submitter = User.find(contact_page.user_id) %>
       <div class="panel panel-default">
         <div class="panel-heading">
           <h3 class="panel-title"><%= contact_page.reason_selected %></h3>
@@ -65,7 +64,9 @@
         <div class="panel-body">
           <div class="blog-posted-row">
             Posted on <%= contact_page.updated_at %> by
-            <a href="#" class="supports"><%= contact_page.first_name + " " + contact_page.last_name %></a>
+            <%= link_to (submitter.firstName + " " + submitter.lastName),
+                        user_path(submitter.id) %>
+
           </div>
           <br>
           <p><%= contact_page.question %></p>
@@ -92,8 +93,9 @@
       </div>
       <!-- End panel 1 -->
       <% end %>
-
+      <%= link_to 'New Question', new_contact_page_path, class: "btn btn-default" %>
     </div>
+    
   </div>
 
 </div>
